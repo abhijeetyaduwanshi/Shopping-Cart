@@ -1,0 +1,75 @@
+.navbar1 {
+	width: 100%;
+	background-color: #005177;
+	color: white;
+}
+
+.white {
+	color: #ffffff;
+}
+
+.navbar2 {
+	width: 100%;
+	box-shadow: 2px 2px 4px #d3d3d3;
+}
+
+.navbar2 ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar2 ul li {
+	float: left;
+}
+
+.navbar2 ul li a {
+	display: block;
+    color: #005177;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.divCenter {
+	display: table;
+	margin: 0 auto;
+}
+
+.topBanner {
+	margin-top: 50px;
+	height: 200px;
+	border-radius: 10px;
+	border: 2px solid #005177;
+}
+
+.productTiles {
+	margin-top: 10px;
+	height: 80px;
+	border-radius: 2px;
+	border: 1px solid #005177;
+}
+
+.floating {
+	margin-top: 50px;
+	position: fixed;
+	left: 820px;
+}
+
+.myOrder {
+	border-radius: 2px;
+	border: 1px solid #005177;
+}
+
+.orderSettings {
+	margin-top: 10px;
+	border-radius: 2px;
+	border: 1px solid #005177;	
+}
+
+#footer {
+	height: 200px;
+	border-top: 2px solid black;
+	margin-top: 10px;
+}

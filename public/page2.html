@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home page</title>
+	<!-- This is the bootstrap cdn link -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles2.css">
+</head>
+<body>
+	<nav class="navbar navbar1 navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">
+			<img src="images/logo.jpg" width="30" height="30" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link white" href="#">HOME</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">MENU</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">COUPONS</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">GROUP ORDERING</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">TRACKER</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">PIZZA PROFILE</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<nav class="navbar2">
+		<div class="divCenter">
+			<ul>
+				<li>
+					<a href="#">VIEW ALL</a>
+				</li>
+				<li>
+					<a href="#">PIZZA</a>
+				</li>
+				<li>
+					<a href="#">CHICKEN</a>
+				</li>
+				<li>
+					<a href="#">SANDWICHES</a>
+				</li>
+				<li>
+					<a href="#">PASTA</a>
+				</li>
+				<li>
+					<a href="#">BREADS & SIDES</a>
+				</li>
+				<li>
+					<a href="#">DESSERTS</a>
+				</li>
+				<li>
+					<a href="#">DRINKS</a>
+				</li>
+				<li>
+					<a href="#">EXTRAS</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-8 topBanner">Top banner</div>
+			<div class="col-8 productTiles popularItems">Popular Items<br>No time to waste? Choose a meal and head stright for checkout.</div>
+			<div class="col-8 productTiles coupons">Coupons<br>Find the perfect hot online deal.</div>
+			<div class="col-8 productTiles buildYourOwnPizza">Build Your Own Pizza<br>Watch the pizza of your wildest dreams come to life.</div>
+			<div class="col-8 productTiles specialtyPizzas">Specialty Pizzas<br>Enjoy one of our chef-inspired pizza combinations.</div>
+			<div class="col-8 productTiles pasta">Pasta<br>Prepared to order and baked to perfection.</div>
+			<div class="col-8 productTiles ovenBakedSandwiches">Oven Baked Sandwiches<br>All on artisan bread with premium ingredients and baked to perfection.</div>
+			<div class="col-8 productTiles chicken">Chicken<br>Specialty Chicken, Wings, and Boneless Chicken in a selection of bold flavors.</div>
+			<div class="col-8 productTiles sides">Sides<br>Complement your meal and your appetite.</div>
+			<div class="col-8 productTiles drinks">Drinks<br>Quench your thirst.</div>
+			<div class="col-8 productTiles desserts">Desserts<br>Satisfy your sweet tooth.</div>
+			<div class="col-3 floating">
+				<div class="inFloating myOrder"><h6>MY ORDER</h6>Awaiting your delicious selections</div>
+				<div class="inFloating orderSettings">
+					<h6>
+						ORDER SETTINGS
+					</h6>
+					<h6>
+						My Location <a href="#">CHANGE</a>
+					</h6>
+					<p>AddressLine1<br>AddressLine2<br>AddressLine3</p>
+					<hr>
+					<h6>
+						My Store <a href="#">CHANGE</a>
+					</h6>
+					<p>AddressLine1 (StoreId)<br>AddressLine2<br>AddressLine3<br><a href="#">Phone Number</a></p>
+					<hr>
+					<h6>
+						Service Method
+					</h6>
+					<input type="radio" name="carryout"> Carryout <br>
+					<input type="radio" name="delivery"> Delivery
+					<hr>
+					<h6>
+						Order Timing
+					</h6>
+					<input type="radio" name="now"> Now <br>
+					<input type="radio" name="later"> Later
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		footer
+	</div>
+
+	<!-- This is the angular cdn link -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script type="text/javascript" src="controllers/customerController.js"></script>
+</body>
+</html>
