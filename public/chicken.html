@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Home page</title>
+	<!-- This is the bootstrap cdn link -->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles2.css">
+	<link rel="stylesheet" type="text/css" href="styles/styles3.css">
+</head>
+<body>
+	<nav class="navbar navbar1 navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">
+			<img src="images/logo.jpg" width="30" height="30" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link white" href="#">HOME</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">MENU</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">COUPONS</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">GROUP ORDERING</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">TRACKER</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">PIZZA PROFILE</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<nav class="navbar2">
+		<div class="divCenter">
+			<ul>
+				<li>
+					<a href="#">VIEW ALL</a>
+				</li>
+				<li>
+					<a href="#">PIZZA</a>
+				</li>
+				<li>
+					<a href="#">CHICKEN</a>
+				</li>
+				<li>
+					<a href="#">SANDWICHES</a>
+				</li>
+				<li>
+					<a href="#">PASTA</a>
+				</li>
+				<li>
+					<a href="#">BREADS & SIDES</a>
+				</li>
+				<li>
+					<a href="#">DESSERTS</a>
+				</li>
+				<li>
+					<a href="#">DRINKS</a>
+				</li>
+				<li>
+					<a href="#">EXTRAS</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-controller="productCtrl">
+		<div ng-repeat="chickenProducts in chickenProductList" class="row">
+			<div ng-repeat="chickenProduct in chickenProducts" class="col-3 inProductTiles">
+				<div class="productPicture">
+					
+				</div>
+				<div class="orderButton btn btn-danger">
+					Order
+				</div>
+				<div class="productName">
+					<strong>
+						{{chickenProduct.productName}}
+					</strong>
+				</div>
+				<div class="productMessage">
+					<p>
+						{{chickenProduct.productMessage}}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		footer
+	</div>
+
+	<!-- This is the angular cdn link -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.4/angular.min.js"></script>
+	<script type="text/javascript" src="controllers/productController.js"></script>
+</body>
+</html>
