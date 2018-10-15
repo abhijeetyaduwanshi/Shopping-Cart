@@ -74,8 +74,8 @@
 	</nav>
 
 	<div class="container" ng-controller="productCtrl">
-		<div ng-repeat="popularItems in popularItemsProductList" class="row">
-			<div ng-repeat="popularItem in popularItems" class="col-3 inProductTiles">
+		<div ng-repeat="drinkProducts in drinkProductList" class="row">
+			<div ng-repeat="drinkProduct in drinkProducts" class="col-3 inProductTiles">
 				<div class="productPicture">
 					
 				</div>
@@ -84,12 +84,12 @@
 				</div>
 				<div class="productName">
 					<strong>
-						{{popularItem.productName}}
+						{{drinkProduct.productName}}
 					</strong>
 				</div>
 				<div class="productMessage">
 					<p>
-						{{popularItem.productMessage}}
+						{{drinkProduct.productMessage}}
 					</p>
 				</div>
 			</div>

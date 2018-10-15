@@ -73,10 +73,10 @@
 	</nav>
 
 	<div class="container" ng-controller="productCtrl">
-		<div ng-repeat="product in productList">
+		<div ng-repeat="menuProduct in menuProductList">
 			<div class="row">
 				<!-- <div class="col-8 topBanner">Top banner</div> -->
-				<div class="col-8 productTiles">{{product.productName}}<br>{{product.productMessage}}</div>
+				<div class="col-8 productTiles">{{menuProduct.productName}}<br>{{menuProduct.productMessage}}</div>
 				<!-- <div class="col-3 floating">
 					<div class="inFloating myOrder"><h6>MY ORDER</h6>Awaiting your delicious selections</div>
 					<div class="inFloating orderSettings">

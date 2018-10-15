@@ -74,8 +74,8 @@
 	</nav>
 
 	<div class="container" ng-controller="productCtrl">
-		<div ng-repeat="desserts in dessertProductList" class="row">
-			<div ng-repeat="dessert in desserts" class="col-3 inProductTiles">
+		<div ng-repeat="dessertProducts in dessertProductList" class="row">
+			<div ng-repeat="dessertProduct in dessertProducts" class="col-3 inProductTiles">
 				<div class="productPicture">
 					
 				</div>
@@ -84,12 +84,12 @@
 				</div>
 				<div class="productName">
 					<strong>
-						{{dessert.productName}}
+						{{dessertProduct.productName}}
 					</strong>
 				</div>
 				<div class="productMessage">
 					<p>
-						{{dessert.productMessage}}
+						{{dessertProduct.productMessage}}
 					</p>
 				</div>
 			</div>

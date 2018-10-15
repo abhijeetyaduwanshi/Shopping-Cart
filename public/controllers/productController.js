@@ -2,160 +2,160 @@ var myApp = angular.module('myApp', []);
 myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	console.log("Hello world from the product controller");
 
-	product1 = {
+	menuProduct1 = {
 		productName: 'Popular Items',
 		productMessage: 'No time to waste? Choose a meal and head stright for checkout.'
 	};
 
- 	product2 = {
+ 	menuProduct2 = {
 		productName: 'Coupons',
 		productMessage: 'Find the perfect hot online deal.'
 	};
 
-	product3 = {
+	menuProduct3 = {
 		productName: 'Build Your Own Pizza',
 		productMessage: 'Watch the pizza of your wildest dreams come to life.'
 	};
 
-	product4 = {
+	menuProduct4 = {
 		productName: 'Specialty Pizzas',
 		productMessage: 'Enjoy one of our chef-inspired pizza combinations.'
 	};
 
-	product5 = {
+	menuProduct5 = {
 		productName: 'Pasta',
 		productMessage: 'Prepared to order and baked to perfection.'
 	};
 
-	product6 = {
+	menuProduct6 = {
 		productName: 'Oven Baked Sandwiches',
 		productMessage: 'All on artisan bread with premium ingredients and baked to perfection.'
 	};
 
-	product7 = {
+	menuProduct7 = {
 		productName: 'Chicken',
 		productMessage: 'Specialty Chicken, Wings, and Boneless Chicken in a selection of bold flavors.'
 	};
 
-	product8 = {
+	menuProduct8 = {
 		productName: 'Sides',
 		productMessage: 'Complement your meal and your appetite.'
 	};
 
-	product9 = {
+	menuProduct9 = {
 		productName: 'Drinks',
 		productMessage: 'Quench your thirst.'
 	};
 
-	product10 = {
+	menuProduct10 = {
 		productName: 'Desserts',
 		productMessage: 'Satisfy your sweet tooth.'
 	};
 
- 	var productList = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10];
-	$scope.productList = productList;
+ 	var menuProductList = [menuProduct1, menuProduct2, menuProduct3, menuProduct4, menuProduct5, menuProduct6, menuProduct7, menuProduct8, menuProduct9, menuProduct10];
+	$scope.menuProductList = menuProductList;
 
-	popularItemsProduct1 = {
+	popularItemProduct1 = {
 		productName: 'Large (14") Hand Tossed Pizza'
 	};
 
-	popularItemsProduct2 = {
+	popularItemProduct2 = {
 		productName: 'Large (14") Hand Tossed Pizza Whole: Pepperoni'
 	};
 
-	popularItemsProduct3 = {
+	popularItemProduct3 = {
 		productName: 'Medium (12") Hand Tossed Pizza Whole: Ham, Pinapple'
 	};
 
-	popularItemsProduct4 = {
+	popularItemProduct4 = {
 		productName: 'Medium (12") Hand Tossed Pizza Whole: Mashrooms, Pepperoni'
 	};
 
-	popularItemsProduct5 = {
+	popularItemProduct5 = {
 		productName: 'Medium (12") Hand Tossed Pacific Veggie'
 	};
 
-	popularItemsProduct6 = {
+	popularItemProduct6 = {
 		productName: 'Chicken Bacon Ranch Sandwich'
 	};
 
-	popularItemsProduct7 = {
+	popularItemProduct7 = {
 		productName: 'Chicken Alfredo Pasta'
 	};
 
-	popularItemsProduct8 = {
+	popularItemProduct8 = {
 		productName: '8-Piece BBQ Wings (1) Ranch'
 	};
 
-	popularItemsProduct9 = {
+	popularItemProduct9 = {
 		productName: 'Chocolate Lava Crunch Cakes'
 	};
 
- 	var popularItemsProductList = [[popularItemsProduct1, popularItemsProduct2, popularItemsProduct3, popularItemsProduct4, popularItemsProduct5], [popularItemsProduct6, popularItemsProduct7, popularItemsProduct8, popularItemsProduct9]];
-	$scope.popularItemsProductList = popularItemsProductList;
+	var popularItemProductList = [[popularItemProduct1, popularItemProduct2, popularItemProduct3], [popularItemProduct4, popularItemProduct5, popularItemProduct6], [popularItemProduct7, popularItemProduct8, popularItemProduct9]];
+	$scope.popularItemProductList = popularItemProductList;
 
-	specialtyPizzasProduct1 = {
-		productName: 'ExtravaganZZa™',
+	specialtyPizzaProduct1 = {
+		productName: 'ExtravaganZZa',
 		productMessage: 'Pepperoni, ham, Italian sausage, beef, fresh onions, fresh green peppers, fresh mushrooms and black olives, all sandwiched between two layers of cheese made with 100% real mozzarella.'
 	};
 
-	specialtyPizzasProduct2 = {
-		productName: 'MeatZZa™',
+	specialtyPizzaProduct2 = {
+		productName: 'MeatZZa',
 		productMessage: 'Pepperoni, ham, Italian sausage and beef, all sandwiched between two layers of cheese made with 100% real mozzarella.'
 	};
 
-	specialtyPizzasProduct3 = {
+	specialtyPizzaProduct3 = {
 		productName: 'Philly Cheese Steak',
 		productMessage: 'Tender slices of steak, fresh onions, fresh green peppers, fresh mushrooms, provolone and American cheese.'
 	};
 
-	specialtyPizzasProduct4 = {
+	specialtyPizzaProduct4 = {
 		productName: 'Pacific Veggie',
 		productMessage: 'Roasted red peppers, fresh baby spinach, fresh onions, fresh mushrooms, tomatoes, black olives, feta, provolone, cheese made with 100% real mozzarella and sprinkled with a garlic herb seasoning.'
 	};
 
-	specialtyPizzasProduct5 = {
+	specialtyPizzaProduct5 = {
 		productName: 'Honolulu Hawaiian',
 		productMessage: 'Sliced ham, smoked bacon, pineapple, roasted red peppers, provolone and cheese made with 100% real mozzarella.'
 	};
 
-	specialtyPizzasProduct6 = {
+	specialtyPizzaProduct6 = {
 		productName: 'Deluxe',
 		productMessage: 'Pepperoni, Italian sausage, fresh green peppers, fresh mushrooms, fresh onions and cheese made with 100% real mozzarella.'
 	};
 
-	specialtyPizzasProduct7 = {
+	specialtyPizzaProduct7 = {
 		productName: 'Cali Chicken Bacon Ranch',
 		productMessage: 'Grilled chicken breast, garlic Parmesan white sauce, smoked bacon, tomatoes, provolone and cheese made with 100% real mozzarella.'
 	};
 
-	specialtyPizzasProduct8 = {
+	specialtyPizzaProduct8 = {
 		productName: 'Buffalo Chicken',
 		productMessage: 'Grilled chicken breast, fresh onions, provolone, American cheese, cheddar, cheese made with 100% real mozzarella and drizzled with a hot sauce.'
 	};
 
-	specialtyPizzasProduct9 = {
+	specialtyPizzaProduct9 = {
 		productName: 'Ultimate Pepperoni',
 		productMessage: 'Two layers of pepperoni sandwiched between provolone, Parmesan-Asiago and cheese made with 100% real mozzarella then sprinkled with oregano.'
 	};
 
-	specialtyPizzasProduct10 = {
+	specialtyPizzaProduct10 = {
 		productName: 'Memphis BBQ Chicken',
 		productMessage: 'Grilled chicken breast, BBQ sauce, fresh onions, cheddar, provolone and cheese made with 100% real mozzarella.'
 	};
 
-	specialtyPizzasProduct11 = {
+	specialtyPizzaProduct11 = {
 		productName: 'Wisconsin 6 Cheese',
 		productMessage: 'Feta, provolone, cheddar, Parmesan-Asiago, cheese made with 100% real mozzarella and sprinkled with oregano.'
 	};
 
-	specialtyPizzasProduct12 = {
+	specialtyPizzaProduct12 = {
 		productName: 'Spinach & Feta',
 		productMessage: 'Creamy Alfredo sauce, fresh spinach, fresh onions, feta, Parmesan-Asiago, provolone and cheese made with 100% real mozzarella.'
 	};
 
-	var specialtyPizzasProductList = [[specialtyPizzasProduct1, specialtyPizzasProduct2, specialtyPizzasProduct3, specialtyPizzasProduct4], [specialtyPizzasProduct5, specialtyPizzasProduct6, specialtyPizzasProduct7, specialtyPizzasProduct8], [specialtyPizzasProduct9, specialtyPizzasProduct10, specialtyPizzasProduct11, specialtyPizzasProduct12]];
-	$scope.specialtyPizzasProductList = specialtyPizzasProductList;
+	var specialtyPizzaProductList = [[specialtyPizzaProduct1, specialtyPizzaProduct2, specialtyPizzaProduct3], [specialtyPizzaProduct4, specialtyPizzaProduct5, specialtyPizzaProduct6], [specialtyPizzaProduct7, specialtyPizzaProduct8, specialtyPizzaProduct9], [specialtyPizzaProduct10, specialtyPizzaProduct11, specialtyPizzaProduct12]];
+	$scope.specialtyPizzaProductList = specialtyPizzaProductList;
 
 	pastaProduct1 = {
 		productName: 'Chicken Alfredo',
@@ -182,7 +182,7 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 		productMessage: 'Choose a sauce and up to 3 ingredients from more than a dozen meat or vegetable toppings.'
 	};
 
-	var pastaProductList = [[pastaProduct1, pastaProduct2, pastaProduct3, pastaProduct4], [pastaProduct5]];
+	var pastaProductList = [[pastaProduct1, pastaProduct2, pastaProduct3], [pastaProduct4, pastaProduct5]];
 	$scope.pastaProductList = pastaProductList;
 
 	sandwichProduct1 = {
@@ -220,26 +220,26 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 		productMessage: 'Grilled chicken breast, tomato basil marinara, Parmesan-Asiago and provolone cheese. On artisan bread and baked to a golden brown.'
 	};
 
-	var sandwichProductList = [[sandwichProduct1, sandwichProduct2, sandwichProduct3, sandwichProduct4], [sandwichProduct5, sandwichProduct6, sandwichProduct7]];
+	var sandwichProductList = [[sandwichProduct1, sandwichProduct2, sandwichProduct3], [sandwichProduct4, sandwichProduct5, sandwichProduct6], [sandwichProduct7]];
 	$scope.sandwichProductList = sandwichProductList;
 
 	chickenProduct1 = {
-		productName: 'Specialty Chicken – Crispy Bacon & Tomato',
+		productName: 'Specialty Chicken - Crispy Bacon & Tomato',
 		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with garlic parmesan white sauce, a blend of cheese made with mozzarella and cheddar, crispy bacon and tomato.'
 	};
 
 	chickenProduct2 = {
-		productName: 'Specialty Chicken – Classic Hot Buffalo',
+		productName: 'Specialty Chicken - Classic Hot Buffalo',
 		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with classic hot buffalo sauce, ranch, a blend of cheese made with mozzarella and cheddar, and feta.'
 	};
 
 	chickenProduct3 = {
-		productName: 'Specialty Chicken – Spicy Jalapeno - Pineapple',
+		productName: 'Specialty Chicken - Spicy Jalapeno - Pineapple',
 		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with sweet and spicy mango-habanero sauce, a blend of cheese made with mozzarella and cheddar, jalapeno and pineapple.'
 	};
 
 	chickenProduct4 = {
-		productName: 'Specialty Chicken – Sweet BBQ Bacon',
+		productName: 'Specialty Chicken - Sweet BBQ Bacon',
 		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with sweet and smoky BBQ sauce, a blend of cheese made with mozzarella and cheddar, and crispy bacon.'
 	};
 
@@ -268,7 +268,7 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 		productMessage: 'Marinated and oven-baked and then smothered in Sweet Mango Habanero Sauce. Customize with your choice of dipping sauce: Sweet Mango Habanero, BBQ, Kicker Hot Sauce, Blue Cheese, or Ranch'
 	};
 
-	var chickenProductList = [[chickenProduct1, chickenProduct2, chickenProduct3, chickenProduct4], [chickenProduct5, chickenProduct6, chickenProduct7, chickenProduct8], [chickenProduct9]];
+	var chickenProductList = [[chickenProduct1, chickenProduct2, chickenProduct3], [chickenProduct4, chickenProduct5, chickenProduct6], [chickenProduct7, chickenProduct8, chickenProduct9]];
 	$scope.chickenProductList = chickenProductList;
 
 	sidesBreadProduct1 = {
@@ -301,7 +301,7 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 		productMessage: 'Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.'
 	};
 
-	var sidesBreadProductList = [[sidesBreadProduct1, sidesBreadProduct2, sidesBreadProduct3, sidesBreadProduct4], [sidesBreadProduct5, sidesBreadProduct6]];
+	var sidesBreadProductList = [[sidesBreadProduct1, sidesBreadProduct2, sidesBreadProduct3], [sidesBreadProduct4, sidesBreadProduct5, sidesBreadProduct6]];
 	$scope.sidesBreadProductList = sidesBreadProductList;
 
 	sidesSaladProduct1 = {
@@ -316,6 +316,16 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 
 	var sidesSaladProductList = [[sidesSaladProduct1, sidesSaladProduct2]];
 	$scope.sidesSaladProductList = sidesSaladProductList;
+
+
+
+
+
+
+
+
+
+
 
 	sidesExtraProduct1 = {
 		productName: 'Parmesan Cheese Packets',
@@ -387,7 +397,7 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 		productMessage: 'A light dressing with a blend of balsamic vinegar, oil and garlic.'
 	}
 
-	var sidesExtraProductList = [[sidesExtraProduct1, sidesExtraProduct2, sidesExtraProduct3, sidesExtraProduct4], [sidesExtraProduct5, sidesExtraProduct6, sidesExtraProduct7, sidesExtraProduct8], [sidesExtraProduct9, sidesExtraProduct10, sidesExtraProduct11, sidesExtraProduct12], [sidesExtraProduct13, sidesExtraProduct14]];
+	var sidesExtraProductList = [[sidesExtraProduct1, sidesExtraProduct2, sidesExtraProduct3], [sidesExtraProduct4, sidesExtraProduct5, sidesExtraProduct6], [sidesExtraProduct7, sidesExtraProduct8, sidesExtraProduct9], [sidesExtraProduct10, sidesExtraProduct11, sidesExtraProduct12], [sidesExtraProduct13, sidesExtraProduct14]];
 	$scope.sidesExtraProductList = sidesExtraProductList;
 
 	drinkProduct1 = {
@@ -445,7 +455,7 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 		productMessage: 'Monster packs a powerful punch but has a smooth easy drinking flavor.'
 	};
 
-	var drinkProductList = [[drinkProduct1, drinkProduct2, drinkProduct3, drinkProduct4], [drinkProduct5, drinkProduct6, drinkProduct7, drinkProduct8], [drinkProduct9, drinkProduct10, drinkProduct11]];
+	var drinkProductList = [[drinkProduct1, drinkProduct2, drinkProduct3], [drinkProduct4, drinkProduct5, drinkProduct6], [drinkProduct7, drinkProduct8, drinkProduct9], [drinkProduct10, drinkProduct11]];
 	$scope.drinkProductList = drinkProductList;
 
 	dessertProduct1 = {
