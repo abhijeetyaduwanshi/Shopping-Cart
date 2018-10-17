@@ -15,7 +15,12 @@
 	margin-top: 10px;
 	height: 250px;
 	width: 250px;
-	border: 2px solid #005177;
+	/*border-radius: 2px;*/
+	/*border: 2px solid #005177;*/
+}
+
+.productPicture img {
+	border-radius: 2px;
 }
 
 .productHeading {
