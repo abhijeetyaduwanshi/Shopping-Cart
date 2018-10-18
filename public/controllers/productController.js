@@ -305,31 +305,37 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.chickenProductList = chickenProductList;
 
 	sidesBreadProduct1 = {
+		productImage: 'sides-bread-parmesan-bread-bites.jpg',
 		productName: 'Parmesan Bread Twists',
 		productMessage: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.'
 	};
 
 	sidesBreadProduct2 = {
+		productImage: 'sides-bread-garlic-bread-twists.jpg',
 		productName: 'Garlic Bread Twists',
 		productMessage: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.'
 	};
 
 	sidesBreadProduct3 = {
+		productImage: 'sides-bread-stuffed-cheesy-bread.jpg',
 		productName: 'Stuffed Cheesy Bread',
 		productMessage: 'Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.'
 	};
 
 	sidesBreadProduct4 = {
+		productImage: 'sides-bread-stuffed-cheesy-bread-with-spinach-and-feta.jpg',
 		productName: 'Stuffed Cheesy Bread with Spinach & Feta',
 		productMessage: 'Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.'
 	};
 
 	sidesBreadProduct5 = {
+		productImage: 'sides-bread-stuffed-cheesy-bread-with-bacon-and-jalapeno.jpg',
 		productName: 'Stuffed Cheesy Bread with Bacon & Jalapeno',
 		productMessage: 'Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.'
 	};
 
 	sidesBreadProduct6 = {
+		productImage: 'sides-bread-parmesan-bread-bites.jpg',
 		productName: 'Parmesan Bread Bites',
 		productMessage: 'Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.'
 	};
@@ -338,11 +344,13 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.sidesBreadProductList = sidesBreadProductList;
 
 	sidesSaladProduct1 = {
+		productImage: 'sides-salad-classic-garden.jpg',
 		productName: 'Classic Garden',
 		productMessage: 'A crisp and colorful combination of grape tomatoes, red onion, carrots, red cabbage, cheddar cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.'
 	};
 
 	sidesSaladProduct2 = {
+		productImage: 'sides-salad-chicken-caesar.jpg',
 		productName: 'Chicken Caesar',
 		productMessage: 'The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.'
 	};
@@ -350,82 +358,86 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	var sidesSaladProductList = [[sidesSaladProduct1, sidesSaladProduct2]];
 	$scope.sidesSaladProductList = sidesSaladProductList;
 
-
-
-
-
-
-
-
-
-
-
 	sidesExtraProduct1 = {
+		productImage: 'sides-extra-parmesan-cheese-packets.jpg',
 		productName: 'Parmesan Cheese Packets',
 		productMessage: 'Grated Parmesan cheese packets'
 	}
 
 	sidesExtraProduct2 = {
+		productImage: 'sides-extra-red-pepper-packets.jpg',
 		productName: 'Red Pepper Packets',
 		productMessage: 'Crushed red pepper flake packets'
 	}
 
 	sidesExtraProduct3 = {
+		productImage: 'sides-extra-kicker-hot-sauce.jpg',
 		productName: 'Kicker Hot Sauce',
 		productMessage: 'Domino\'s own spicy Buffalo sauce'
 	}
 
 	sidesExtraProduct4 = {
+		productImage: 'sides-extra-sweet-mango-habanero-sauce.jpg',
 		productName: 'Sweet Mango Habanero Sauce',
 		productMessage: 'A perfect blend of sweet and spicy in one sauce'
 	}
 
 	sidesExtraProduct5 = {
+		productImage: '',
 		productName: 'BBQ Sauce',
 		productMessage: 'A smoky BBQ sauce with bold flavor'
 	}
 
 	sidesExtraProduct6 = {
+		productImage: 'sides-extra-ranch.jpg',
 		productName: 'Ranch',
 		productMessage: 'A creamy buttermilk ranch dressing with hints of garlic and onion'
 	}
 
 	sidesExtraProduct7 = {
+		productImage: 'sides-extra-blue-cheese.jpg',
 		productName: 'Blue Cheese',
 		productMessage: 'A creamy dressing with bits of aged blue cheese'
 	}
 
 	sidesExtraProduct8 = {
+		productImage: 'sides-extra-garlic-dipping-sauce.jpg',
 		productName: 'Garlic Dipping Sauce',
 		productMessage: 'A buttery garlic sauce'
 	}
 
 	sidesExtraProduct9 = {
+		productImage: 'sides-extra-icing-dipping-sauce.jpg',
 		productName: 'Icing Dipping Sauce',
 		productMessage: 'A thick sweet icing with a hint of vanilla'
 	}
 
 	sidesExtraProduct10 = {
+		productImage: 'sides-extra-marinara-dipping-sauce.jpg',
 		productName: 'Marinara Dipping Sauce',
 		productMessage: 'A sweet tomato sauce blended with garlic, basil and oregano'
 	}
 
 	sidesExtraProduct11 = {
+		productImage: 'sides-extra-caesar-dressing.jpg',
 		productName: 'Caesar Dressing',
 		productMessage: 'A savory dressing with a combination of garlic, anchovy and subtle notes of cheese.'
 	}
 
 	sidesExtraProduct12 = {
+		productImage: 'sides-extra-italian-dressing.jpg',
 		productName: 'Italian Dressing',
 		productMessage: 'A classic dressing flavored with red bell pepper, a touch of garlic and spices.'
 	}
 
 	sidesExtraProduct13 = {
+		productImage: 'sides-extra-ranch-dressing.jpg',
 		productName: 'Ranch Dressing',
 		productMessage: 'A creamy, flavorful dressing with a blend of buttermilk, garlic, onion and spices.'
 	}
 
 	sidesExtraProduct14 = {
+		productImage: 'sides-extra-balsamic.jpg',
 		productName: 'Balsamic',
 		productMessage: 'A light dressing with a blend of balsamic vinegar, oil and garlic.'
 	}
@@ -434,56 +446,67 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.sidesExtraProductList = sidesExtraProductList;
 
 	drinkProduct1 = {
+		productImage: 'drink-coke.jpg',
 		productName: 'Coke®',
 		productMessage: 'The authentic cola sensation that is a refreshing part of sharing life\'s enjoyable moments.'
 	};
 
 	drinkProduct2 = {
+		productImage: 'drink-coca-cola-zero-sugar.jpg',
 		productName: 'Coca-Cola Zero Sugar',
 		productMessage: 'Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.'
 	};
 
 	drinkProduct3 = {
+		productImage: 'drink-diet-coke.jpg',
 		productName: 'Diet Coke®',
 		productMessage: 'Beautifully balanced adult cola taste in a no calorie beverage.'
 	};
 
 	drinkProduct4 = {
+		productImage: '',
 		productName: 'Cherry Coke®',
 		productMessage: 'Combines the great taste of Coca-Cola® with a blast of cherry.'
 	};
 
 	drinkProduct5 = {
+		productImage: 'drink-sprite.jpg',
 		productName: 'Sprite®',
 		productMessage: 'Unique Lymon (lemon-lime) flavor, clear, clean and crisp with no caffeine.'
 	};
 
 	drinkProduct6 = {
+		productImage: 'drink-dasani-bottle-water.jpg',
 		productName: 'Dasani® Bottle Water',
 		productMessage: 'Fresh, crisp tasting water.'
 	};
 
 	drinkProduct7 = {
+		productImage: 'drink-dr-pepper.jpg',
 		productName: 'Dr. Pepper®',
 		productMessage: 'Unique our own Dr. Pepper direct from the cold fridge'
 	};
 
 	drinkProduct8 = {
+		productImage: 'drink-barqs-root-beer.jpg',
 		productName: 'Barq\'s® Root Beer',
 		productMessage: 'No one can resist Barq\'s® light fizz and spicy kick.'
 	};
 
 	drinkProduct9 = {
+		productImage: 'drink-fanta-orange.jpg',
 		productName: 'Fanta® Orange',
 		productMessage: 'Exuberant tropical fun to release you from the everyday mundane.'
 	};
 
 	drinkProduct10 = {
+		productImage: '',
 		productName: 'Lemonade Bottle',
 		productMessage: 'Made with the goodness of real lemons, Minute Maid® Lemonade is the quintessential refreshing beverage with the great taste of a simpler time.'
 	};
 
 	drinkProduct11 = {
+		productImage: '',
 		productName: '16oz Can Monster Energy Drink',
 		productMessage: 'Monster packs a powerful punch but has a smooth easy drinking flavor.'
 	};
@@ -492,16 +515,19 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.drinkProductList = drinkProductList;
 
 	dessertProduct1 = {
+		productImage: 'dessert-cinnamon-bread-twists.jpg',
 		productName: 'Cinnamon Bread Twists',
 		productMessage: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.'
 	};
 
 	dessertProduct2 = {
+		productImage: 'dessert-dominos-marbled-cookie-brownie.jpg',
 		productName: 'Domino\'s Marbled Cookie Brownie™',
 		productMessage: 'Satisfy your sweet tooth! Taste the decadent blend of gooey milk chocolate chunk cookie and delicious fudge brownie. Oven-baked to perfection and cut into 9 pieces - this dessert is perfect to share with the whole group.'
 	};
 
 	dessertProduct3 = {
+		productImage: 'dessert-chocolate-lava-crunch-cakes.jpg',
 		productName: 'Chocolate Lava Crunch Cakes',
 		productMessage: 'Indulge in two delectable oven-baked chocolate cakes with molten chocolate fudge on the inside. Perfectly topped with a dash of powdered sugar.'
 	};

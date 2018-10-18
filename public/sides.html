@@ -81,7 +81,7 @@
 		<div ng-repeat="sidesBreadProducts in sidesBreadProductList" class="row">
 			<div ng-repeat="sidesBreadProduct in sidesBreadProducts" class="col-3 inProductTiles">
 				<div class="productPicture">
-					
+					<img ng-src="images/sides-bread/{{sidesBreadProduct.productImage}}" alt="sides-bread-image" height="250" width="250" />
 				</div>
 				<div class="orderButton btn btn-danger">
 					Order
@@ -106,7 +106,7 @@
 		<div ng-repeat="sidesSaladProducts in sidesSaladProductList" class="row">
 			<div ng-repeat="sidesSaladProduct in sidesSaladProducts" class="col-3 inProductTiles">
 				<div class="productPicture">
-					
+					<img ng-src="images/sides-salad/{{sidesSaladProduct.productImage}}" alt="sides-salad-image" height="250" width="250" />
 				</div>
 				<div class="orderButton btn btn-danger">
 					Order
@@ -131,7 +131,7 @@
 		<div ng-repeat="sidesExtraProducts in sidesExtraProductList" class="row">
 			<div ng-repeat="sidesExtraProduct in sidesExtraProducts" class="col-3 inProductTiles">
 				<div class="productPicture">
-					
+					<img ng-src="images/sides-extra/{{sidesExtraProduct.productImage}}" alt="sides-extra-image" height="250" width="250" />
 				</div>
 				<div class="orderButton btn btn-danger">
 					Order

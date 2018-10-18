@@ -77,7 +77,7 @@
 		<div ng-repeat="dessertProducts in dessertProductList" class="row">
 			<div ng-repeat="dessertProduct in dessertProducts" class="col-3 inProductTiles">
 				<div class="productPicture">
-					
+					<img ng-src="images/dessert/{{dessertProduct.productImage}}" alt="dessert-image" height="250" width="250" />
 				</div>
 				<div class="orderButton btn btn-danger">
 					Order
