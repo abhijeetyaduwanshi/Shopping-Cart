@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>ng-app-route</title>
+    </head>
+    <body>
+
+        <div>
+            <ng-view></ng-view>
+        </div>
+
+
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module("myApp", ["ngRoute"]);
+            app.config(function($routeProvider) {
+                $routeProvider
+                .when('/home', {
+                    templateUrl: 'home.html',
+		    	    controller: 'StudentController'
+        		})
+        		.when('/viewStudents', {
+        			templateUrl: 'viewStudents.html',
+        			controller: 'StudentController'
+        		})
+        		.otherwise({
+        			redirectTo: '/home'
+        		});
+            });
+
+            app.controller('StudentController', function($scope) {
+            	$scope.students = [
+            		{name: 'Mark Waugh', city:'New York'},
+            		{name: 'Steve Jonathan', city:'London'},
+            		{name: 'John Marcus', city:'Paris'}
+            	];
+
+        	$scope.message = "Click on the hyper link to view the students list.";
+            });
+        </script>
+    </body>
+</html>
