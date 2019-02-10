@@ -1,3 +1,12 @@
+var express = require('express');
+var app = express();
+
+app.get('/', function(request, response) {
+	response.send("Hello from the server");
+});
+
+app.listen(3000);
+console.log("Server running on port 3000");
 
 
 
@@ -10,13 +19,6 @@
 
 
 
-
-
-
-
-
-// var express = require('express');
-// var app = express();
 // var mongojs = require('mongojs');
 // var db = mongojs('customerList', ['customerList']);
 // var bodyParser = require('body-parser');
@@ -67,6 +69,3 @@
 // 		}
 // 	);
 // });
-
-// app.listen(3000);
-// console.log("Server running on port 3000");
