@@ -7,3 +7,12 @@
 
 # Steps to stop the application
 * In your terminal window put `ctrl + c` command, and this will stop the server
+
+# Frameworks used
+* ExpressJS
+* AngularJS 1
+* NodeJS
+* Bootstrap 4
+* HTML5
+* CSS3
+* JavaScript
