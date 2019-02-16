@@ -1,3 +1,6 @@
+# Summary
+This is the shopping cart project that I made in MEAN stack(MongoDB, ExpressJS, AngularJS and NodeJS). The purpose of the project is to create a web application to sell Pizza. The theme/inspiration of the project is dominos pizza. I am creating a project in MEAN stack to learn and share to code in JavaScrip.
+
 # Steps to run the application
 * Download or clone the project
 * Open terminal window and navigate to the project
@@ -16,3 +19,9 @@
 * HTML5
 * CSS3
 * JavaScript
+
+# TO DO:
+* All pages - Make the navigation fixed on the top of the page
+* All pages - Style the navigation bar
+* Category list page (home page) - get the categories images from dominos and put them in the category tabs
+* Category list page (home page) - Style the category tabs
