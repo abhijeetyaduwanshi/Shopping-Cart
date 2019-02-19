@@ -5,7 +5,7 @@ var app = express();
 // 	response.send("Hello from the server");
 // });
 
-app.use(express.static(__dirname + "/app"));
+app.use(express.static(__dirname + "/public"));
 
 app.listen(3000);
 console.log("Server running on port 3000");

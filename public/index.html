@@ -5,14 +5,19 @@
 	<link rel="stylesheet" type="text/css" href="styles/navigation.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
+<body ng-app="shoppingCartApp">
 
-	<div ng-app="navigationDirective">
+	<div id="myCustomNavBar">
 		<div ng-controller="navigationDirectiveCtrl">
 			<div my-Navigation></div>
 		</div>
 	</div>
 
+	<div id="myCustomRouter">
+		<a href="#!testOne">TestOne</a>
+		<a href="#!testTwo">TestTwo</a>
+		<div ng-view></div>
+	</div>
 
 	<div id="productsList">
 
@@ -166,7 +171,10 @@
 	<footer>
 		<p>Here comes the footer</p>
 	</footer>
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
-	<script type="text/javascript" src="navigationDirective.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.js"></script>
+	<script type="text/javascript" src="js/controllers/navigationDirective.js"></script>
+	<script type="text/javascript" src="js/controllers/pageNavigation.js"></script>
 </body>
 </html>

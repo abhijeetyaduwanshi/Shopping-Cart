@@ -25,3 +25,23 @@ This is the shopping cart project that I made in MEAN stack(MongoDB, ExpressJS, 
 * All pages - Style the navigation bar
 * Category list page (home page) - get the categories images from dominos and put them in the category tabs
 * Category list page (home page) - Style the category tabs
+* All pages - Update navigation according to domonis
+
+
+
+
+
+
+
+
+tabs a tag : text-decoration: none;
+tabs : margin-left: 50px;
+tabs : border: 1px solid #d9d9d9;
+tabs : margin-bottom: 1em;
+product-name : font-family: One Dot Condensed Bold,Arial Narrow,Arial,Helvetica,sans-serif;
+a : color: #0078ae;
+a : text-decoration: none;
+a : cursor: pointer;
+product description : font-size: 1em;
+product description : white-space: normal;
+product description : color: #666;
