@@ -4,5 +4,8 @@ myApp.config(function($routeProvider) {
 	$routeProvider
 	.when('/', {
 		templateUrl: '../views/home.html'
+	})
+	.when('/AllPizzas', {
+		templateUrl: '../views/allPizzas.html'
 	});
 });
