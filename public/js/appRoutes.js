@@ -2,7 +2,8 @@ var myApp = angular.module('shoppingCartApp', [
 	'ngRoute',
 	'shoppingCartApp.myCustomNavBar',
 	'shoppingCartApp.categoriesListController',
-	'shoppingCartApp.specialtyPizzasController'
+	'shoppingCartApp.specialtyPizzasController',
+	'shoppingCartApp.breadsController'
 	]);
 
 myApp.config(function($routeProvider) {
@@ -16,5 +17,9 @@ myApp.config(function($routeProvider) {
 	.when('/SpecialtyPizzas', {
 		templateUrl: '../views/specialtyPizzas.html',
 		controller: 'specialtyPizzasCtrl'
+	})
+	.when('/Bread', {
+		templateUrl: '../views/breads.html',
+		controller: 'breadsCtrl'
 	});
 });

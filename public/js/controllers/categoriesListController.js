@@ -20,7 +20,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem3 = {
 		categoryId: 'category-bread',
-		categoryRoute: '',
+		categoryRoute: '#!/Bread',
 		categoryImage: 'images/categoryItems/breads.png',
 		categoryTitle: 'Breads',
 		categoryDescription: 'Experience oven baked goodness with an order of our delicious breads.'

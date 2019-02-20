@@ -176,45 +176,6 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	var chickenProductList = [[chickenProduct1, chickenProduct2, chickenProduct3], [chickenProduct4, chickenProduct5, chickenProduct6], [chickenProduct7, chickenProduct8, chickenProduct9]];
 	$scope.chickenProductList = chickenProductList;
 
-	sidesBreadProduct1 = {
-		productImage: 'sides-bread-parmesan-bread-bites.jpg',
-		productName: 'Parmesan Bread Twists',
-		productMessage: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.'
-	};
-
-	sidesBreadProduct2 = {
-		productImage: 'sides-bread-garlic-bread-twists.jpg',
-		productName: 'Garlic Bread Twists',
-		productMessage: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.'
-	};
-
-	sidesBreadProduct3 = {
-		productImage: 'sides-bread-stuffed-cheesy-bread.jpg',
-		productName: 'Stuffed Cheesy Bread',
-		productMessage: 'Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.'
-	};
-
-	sidesBreadProduct4 = {
-		productImage: 'sides-bread-stuffed-cheesy-bread-with-spinach-and-feta.jpg',
-		productName: 'Stuffed Cheesy Bread with Spinach & Feta',
-		productMessage: 'Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.'
-	};
-
-	sidesBreadProduct5 = {
-		productImage: 'sides-bread-stuffed-cheesy-bread-with-bacon-and-jalapeno.jpg',
-		productName: 'Stuffed Cheesy Bread with Bacon & Jalapeno',
-		productMessage: 'Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.'
-	};
-
-	sidesBreadProduct6 = {
-		productImage: 'sides-bread-parmesan-bread-bites.jpg',
-		productName: 'Parmesan Bread Bites',
-		productMessage: 'Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.'
-	};
-
-	var sidesBreadProductList = [[sidesBreadProduct1, sidesBreadProduct2, sidesBreadProduct3], [sidesBreadProduct4, sidesBreadProduct5, sidesBreadProduct6]];
-	$scope.sidesBreadProductList = sidesBreadProductList;
-
 	sidesSaladProduct1 = {
 		productImage: 'sides-salad-classic-garden.jpg',
 		productName: 'Classic Garden',
