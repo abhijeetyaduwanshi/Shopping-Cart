@@ -1,4 +1,10 @@
-var myApp = angular.module('shoppingCartApp', ['ngRoute', 'shoppingCartApp.myCustomNavBar', 'shoppingCartApp.categoriesListController']);
+var myApp = angular.module('shoppingCartApp', [
+	'ngRoute',
+	'shoppingCartApp.myCustomNavBar',
+	'shoppingCartApp.categoriesListController',
+	'shoppingCartApp.specialtyPizzasController'
+	]);
+
 myApp.config(function($routeProvider) {
 	console.log("Hello world from the route provider");
 
@@ -7,7 +13,8 @@ myApp.config(function($routeProvider) {
 		templateUrl: '../views/home.html',
 		controller: 'categoriesListCtrl'
 	})
-	.when('/AllPizzas', {
-		templateUrl: '../views/allPizzas.html'
+	.when('/SpecialtyPizzas', {
+		templateUrl: '../views/specialtyPizzas.html',
+		controller: 'specialtyPizzasCtrl'
 	});
 });

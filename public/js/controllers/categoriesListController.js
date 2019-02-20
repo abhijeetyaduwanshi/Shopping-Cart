@@ -12,7 +12,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem2 = {
 		categoryId: 'category-specialtyPizza',
-		categoryRoute: '',
+		categoryRoute: '#!/SpecialtyPizzas',
 		categoryImage: 'images/categoryItems/specialty-pizzas.png',
 		categoryTitle: 'Specialty Pizzas',
 		categoryDescription: 'Enjoy one of our chef-inspired pizza combinations.'
