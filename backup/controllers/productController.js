@@ -2,59 +2,6 @@ var myApp = angular.module('myApp', []);
 myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	console.log("Hello world from the product controller");
 
-	menuProduct1 = {
-		productName: 'Popular Items',
-		productMessage: 'No time to waste? Choose a meal and head stright for checkout.'
-	};
-
- 	menuProduct2 = {
-		productName: 'Coupons',
-		productMessage: 'Find the perfect hot online deal.'
-	};
-
-	menuProduct3 = {
-		productName: 'Build Your Own Pizza',
-		productMessage: 'Watch the pizza of your wildest dreams come to life.'
-	};
-
-	menuProduct4 = {
-		productName: 'Specialty Pizzas',
-		productMessage: 'Enjoy one of our chef-inspired pizza combinations.'
-	};
-
-	menuProduct5 = {
-		productName: 'Pasta',
-		productMessage: 'Prepared to order and baked to perfection.'
-	};
-
-	menuProduct6 = {
-		productName: 'Oven Baked Sandwiches',
-		productMessage: 'All on artisan bread with premium ingredients and baked to perfection.'
-	};
-
-	menuProduct7 = {
-		productName: 'Chicken',
-		productMessage: 'Specialty Chicken, Wings, and Boneless Chicken in a selection of bold flavors.'
-	};
-
-	menuProduct8 = {
-		productName: 'Sides',
-		productMessage: 'Complement your meal and your appetite.'
-	};
-
-	menuProduct9 = {
-		productName: 'Drinks',
-		productMessage: 'Quench your thirst.'
-	};
-
-	menuProduct10 = {
-		productName: 'Desserts',
-		productMessage: 'Satisfy your sweet tooth.'
-	};
-
- 	var menuProductList = [menuProduct1, menuProduct2, menuProduct3, menuProduct4, menuProduct5, menuProduct6, menuProduct7, menuProduct8, menuProduct9, menuProduct10];
-	$scope.menuProductList = menuProductList;
-
 	popularItemProduct1 = {
 		productName: 'Large (14") Hand Tossed Pizza'
 	};

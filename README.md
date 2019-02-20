@@ -29,10 +29,11 @@ This is the shopping cart project that I made in MEAN stack(MongoDB, ExpressJS, 
 * home.html, categoriesListController.js - put categoryItem, a href, image src values
 
 # Common conversions
-|| HTML || ANGULAR ||
-| id | ng-attr-id |
-| a tag href | a tag ng-href |
-| img tag src | img tag ng-src |
+HTML | ANGULAR
+-----|--------
+id | ng-attr-id
+a tag href | a tag ng-href
+img tag src | img tag ng-src
 
 
 

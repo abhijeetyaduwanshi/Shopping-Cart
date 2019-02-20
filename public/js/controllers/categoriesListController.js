@@ -5,7 +5,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem1 = {
 		categoryId: 'category-buildYourOwnPizza',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/build-your-own-pizza.png',
 		categoryTitle: 'Build Your Own Pizza',
 		categoryDescription: 'Watch the pizza of your wildest dreams come to life.'
 	};
@@ -13,7 +13,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem2 = {
 		categoryId: 'category-specialtyPizza',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/specialty-pizzas.png',
 		categoryTitle: 'Specialty Pizzas',
 		categoryDescription: 'Enjoy one of our chef-inspired pizza combinations.'
 	};
@@ -21,7 +21,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem3 = {
 		categoryId: 'category-bread',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/breads.png',
 		categoryTitle: 'Breads',
 		categoryDescription: 'Experience oven baked goodness with an order of our delicious breads.'
 	};
@@ -29,7 +29,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem4 = {
 		categoryId: 'category-chicken',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/chicken.png',
 		categoryTitle: 'Chicken',
 		categoryDescription: 'Specialty Chicken, Wings, and Boneless Chicken in a selection of bold flavors.'
 	};
@@ -37,7 +37,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem5 = {
 		categoryId: 'category-desserts',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/desserts.png',
 		categoryTitle: 'Desserts',
 		categoryDescription: 'Satisfy your sweet tooth.'
 	};
@@ -45,7 +45,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem6 = {
 		categoryId: 'category-pasta',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/pasta.png',
 		categoryTitle: 'Pasta',
 		categoryDescription: 'Prepared to order and baked to perfection.'
 	};
@@ -53,7 +53,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem7 = {
 		categoryId: 'category-sandwich',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/oven-baked-sandwiches.png',
 		categoryTitle: 'Oven Baked Sandwiches',
 		categoryDescription: 'All on artisan bread with premium ingredients and baked to perfection.'
 	};
@@ -61,7 +61,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem8 = {
 		categoryId: 'category-salads',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/salads.png',
 		categoryTitle: 'Salads',
 		categoryDescription: 'Domino\'s Salads, the perfect compliment to pizza.'
 	};
@@ -69,7 +69,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem9 = {
 		categoryId: 'category-drinks',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/drinks.png',
 		categoryTitle: 'Drinks',
 		categoryDescription: 'Quench your thirst.'
 	};
@@ -77,7 +77,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem10 = {
 		categoryId: 'category-extras',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/extras.png',
 		categoryTitle: 'Extras',
 		categoryDescription: 'Add extra taste to you entree.'
 	};
@@ -85,7 +85,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem11 = {
 		categoryId: 'category-popularItems',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/popular-items.png',
 		categoryTitle: 'Popular Items',
 		categoryDescription: 'No time to waste? Choose a meal and head straight for checkout.'
 	};
@@ -93,7 +93,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 	categoryItem12 = {
 		categoryId: 'category-coupons',
 		categoryRoute: '',
-		categoryImage: '',
+		categoryImage: 'images/categoryItems/coupons.png',
 		categoryTitle: 'Coupons',
 		categoryDescription: 'Find the perfect hot online deal.'
 	};
