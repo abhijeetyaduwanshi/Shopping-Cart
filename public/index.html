@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>pizza app</title>
-	<link rel="stylesheet" type="text/css" href="styles/navigation.css">
+	<link rel="stylesheet" type="text/css" href="css/navigation.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body ng-app="shoppingCartApp">
@@ -13,8 +13,10 @@
 		</div>
 	</div>
 
-	<div id="myCustomRouter">
-		<div ng-view></div>
+	<div class="container">
+		<div id="myCustomRouter">
+			<div ng-view></div>
+		</div>
 	</div>
 
 	<footer>
@@ -24,6 +26,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.js"></script>
 	<script type="text/javascript" src="js/appRoutes.js"></script>
-	<script type="text/javascript" src="js/controllers/navigationDirective.js"></script>
+	<script type="text/javascript" src="js/directives/navigationDirective.js"></script>
+	<script type="text/javascript" src="js/controllers/categoriesListController.js"></script>
 </body>
 </html>

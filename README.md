@@ -26,7 +26,13 @@ This is the shopping cart project that I made in MEAN stack(MongoDB, ExpressJS, 
 * Category list page (home page) - get the categories images from dominos and put them in the category tabs
 * Category list page (home page) - Style the category tabs
 * All pages - Update navigation according to domonis
+* home.html, categoriesListController.js - put categoryItem, a href, image src values
 
+# Common conversions
+|| HTML || ANGULAR ||
+| id | ng-attr-id |
+| a tag href | a tag ng-href |
+| img tag src | img tag ng-src |
 
 
 
