@@ -119,63 +119,6 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	var sandwichProductList = [[sandwichProduct1, sandwichProduct2, sandwichProduct3], [sandwichProduct4, sandwichProduct5, sandwichProduct6], [sandwichProduct7]];
 	$scope.sandwichProductList = sandwichProductList;
 
-	chickenProduct1 = {
-		productImage: 'chicken-specialty-chicken-crispy-bacon-and-tomato.jpg',
-		productName: 'Specialty Chicken - Crispy Bacon & Tomato',
-		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with garlic parmesan white sauce, a blend of cheese made with mozzarella and cheddar, crispy bacon and tomato.'
-	};
-
-	chickenProduct2 = {
-		productImage: 'chicken-specialty-chicken-classic-hot-buffalo.jpg',
-		productName: 'Specialty Chicken - Classic Hot Buffalo',
-		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with classic hot buffalo sauce, ranch, a blend of cheese made with mozzarella and cheddar, and feta.'
-	};
-
-	chickenProduct3 = {
-		productImage: 'chicken-specialty-chicken-spicy-jalapeno-pineapple.jpg',
-		productName: 'Specialty Chicken - Spicy Jalapeno - Pineapple',
-		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with sweet and spicy mango-habanero sauce, a blend of cheese made with mozzarella and cheddar, jalapeno and pineapple.'
-	};
-
-	chickenProduct4 = {
-		productImage: 'chicken-specialty-chicken-sweet-bbq-bacon.jpg',
-		productName: 'Specialty Chicken - Sweet BBQ Bacon',
-		productMessage: 'Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with sweet and smoky BBQ sauce, a blend of cheese made with mozzarella and cheddar, and crispy bacon.'
-	};
-
-	chickenProduct5 = {
-		productImage: 'chicken-boneless-chicken.jpg',
-		productName: 'Boneless Chicken',
-		productMessage: 'Lightly breaded with savory herbs, made with 100% whole white breast meat. Customize with your choice of dipping sauce: Sweet Mango Habanero, BBQ, Kicker Hot Sauce, Blue Cheese or Ranch.'
-	};
-
-	chickenProduct6 = {
-		productImage: 'chicken-hot-wings.jpg',
-		productName: 'Hot Wings',
-		productMessage: 'Marinated and oven-baked and then smothered in Hot Sauce. Customize with your choice of dipping sauce: Sweet Mango Habanero, BBQ, Kicker Hot Sauce, Blue Cheese, or Ranch'
-	};
-
-	chickenProduct7 = {
-		productImage: 'chicken-bbq-wings.jpg',
-		productName: 'BBQ Wings',
-		productMessage: 'Marinated and oven-baked and then smothered in BBQ Sauce. Customize with your choice of dipping sauce: Sweet Mango Habanero, BBQ, Kicker Hot Sauce, Blue Cheese, or Ranch'
-	};
-
-	chickenProduct8 = {
-		productImage: 'chicken-plain-wings.jpg',
-		productName: 'Plain Wings',
-		productMessage: 'Oven-baked to perfection. Customize with your choice of dipping sauce: Sweet Mango Habanero, BBQ, Kicker Hot Sauce, Blue Cheese, or Ranch'
-	};
-
-	chickenProduct9 = {
-		productImage: 'chicken-sweet-mango-habanero-wings.jpg',
-		productName: 'Sweet Mango Habanero Wings',
-		productMessage: 'Marinated and oven-baked and then smothered in Sweet Mango Habanero Sauce. Customize with your choice of dipping sauce: Sweet Mango Habanero, BBQ, Kicker Hot Sauce, Blue Cheese, or Ranch'
-	};
-
-	var chickenProductList = [[chickenProduct1, chickenProduct2, chickenProduct3], [chickenProduct4, chickenProduct5, chickenProduct6], [chickenProduct7, chickenProduct8, chickenProduct9]];
-	$scope.chickenProductList = chickenProductList;
-
 	sidesSaladProduct1 = {
 		productImage: 'sides-salad-classic-garden.jpg',
 		productName: 'Classic Garden',

@@ -28,7 +28,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem4 = {
 		categoryId: 'category-chicken',
-		categoryRoute: '',
+		categoryRoute: '#!/Chicken',
 		categoryImage: 'images/categoryItems/chicken.png',
 		categoryTitle: 'Chicken',
 		categoryDescription: 'Specialty Chicken, Wings, and Boneless Chicken in a selection of bold flavors.'
