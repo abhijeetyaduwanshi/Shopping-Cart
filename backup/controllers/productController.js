@@ -289,25 +289,4 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 
 	var drinkProductList = [[drinkProduct1, drinkProduct2, drinkProduct3], [drinkProduct4, drinkProduct5, drinkProduct6], [drinkProduct7, drinkProduct8, drinkProduct9], [drinkProduct10, drinkProduct11]];
 	$scope.drinkProductList = drinkProductList;
-
-	dessertProduct1 = {
-		productImage: 'dessert-cinnamon-bread-twists.jpg',
-		productName: 'Cinnamon Bread Twists',
-		productMessage: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.'
-	};
-
-	dessertProduct2 = {
-		productImage: 'dessert-dominos-marbled-cookie-brownie.jpg',
-		productName: 'Domino\'s Marbled Cookie Brownie™',
-		productMessage: 'Satisfy your sweet tooth! Taste the decadent blend of gooey milk chocolate chunk cookie and delicious fudge brownie. Oven-baked to perfection and cut into 9 pieces - this dessert is perfect to share with the whole group.'
-	};
-
-	dessertProduct3 = {
-		productImage: 'dessert-chocolate-lava-crunch-cakes.jpg',
-		productName: 'Chocolate Lava Crunch Cakes',
-		productMessage: 'Indulge in two delectable oven-baked chocolate cakes with molten chocolate fudge on the inside. Perfectly topped with a dash of powdered sugar.'
-	};
-
-	var dessertProductList = [[dessertProduct1, dessertProduct2, dessertProduct3]];
-	$scope.dessertProductList = dessertProductList;
 }]);

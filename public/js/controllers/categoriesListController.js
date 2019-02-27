@@ -36,7 +36,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem5 = {
 		categoryId: 'category-desserts',
-		categoryRoute: '',
+		categoryRoute: '#!/Dessert',
 		categoryImage: 'images/categoryItems/desserts.png',
 		categoryTitle: 'Desserts',
 		categoryDescription: 'Satisfy your sweet tooth.'
