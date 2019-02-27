@@ -41,39 +41,6 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	var popularItemProductList = [[popularItemProduct1, popularItemProduct2, popularItemProduct3], [popularItemProduct4, popularItemProduct5, popularItemProduct6], [popularItemProduct7, popularItemProduct8, popularItemProduct9]];
 	$scope.popularItemProductList = popularItemProductList;
 
-	pastaProduct1 = {
-		productImage: 'pasta-chicken-alfredo.jpg',
-		productName: 'Chicken Alfredo',
-		productMessage: 'Try our savory Chicken Alfredo Pasta. Grilled chicken breast and creamy Alfredo sauce is mixed with penne pasta and baked to creamy perfection.'
-	};
-
-	pastaProduct2 = {
-		productImage: 'pasta-italian-sausage-marinara.jpg',
-		productName: 'Italian Sausage Marinara',
-		productMessage: 'Penne pasta baked in a zesty tomato basil marinara sauce with Italian sausage, a blend of Italian seasonings and provolone cheese.'
-	};
-
-	pastaProduct3 = {
-		productImage: 'pasta-chicken-carbonara.jpg',
-		productName: 'Chicken Carbonara',
-		productMessage: 'Taste the delectable blend of flavorful grilled chicken breast, smoked bacon, fresh onions, and fresh mushrooms mixed with penne pasta. Baked to perfection with rich Alfredo sauce.'
-	};
-
-	pastaProduct4 = {
-		productImage: 'pasta-pasta-primavera.jpg',
-		productName: 'Pasta Primavera',
-		productMessage: 'Fresh baby spinach, diced tomatoes, fresh mushrooms and fresh onions, mixed with penne pasta and baked with a creamy Alfredo sauce.'
-	};
-
-	pastaProduct5 = {
-		productImage: 'pasta-build-your-own-pasta.jpg',
-		productName: 'Build Your Own Pasta',
-		productMessage: 'Choose a sauce and up to 3 ingredients from more than a dozen meat or vegetable toppings.'
-	};
-
-	var pastaProductList = [[pastaProduct1, pastaProduct2, pastaProduct3], [pastaProduct4, pastaProduct5]];
-	$scope.pastaProductList = pastaProductList;
-
 	sandwichProduct1 = {
 		productImage: 'sandwich-buffalo-chicken.jpg',
 		productName: 'Buffalo Chicken',
