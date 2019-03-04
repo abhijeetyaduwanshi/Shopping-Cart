@@ -41,51 +41,6 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	var popularItemProductList = [[popularItemProduct1, popularItemProduct2, popularItemProduct3], [popularItemProduct4, popularItemProduct5, popularItemProduct6], [popularItemProduct7, popularItemProduct8, popularItemProduct9]];
 	$scope.popularItemProductList = popularItemProductList;
 
-	sandwichProduct1 = {
-		productImage: 'sandwich-buffalo-chicken.jpg',
-		productName: 'Buffalo Chicken',
-		productMessage: 'Grilled chicken breast, creamy blue cheese sauce, fresh onions, hot sauce, cheddar and provolone cheeses. On artisan bread and baked to a golden brown.'
-	};
-
-	sandwichProduct2 = {
-		productImage: 'sandwich-chicken-habanero.jpg',
-		productName: 'Chicken Habanero',
-		productMessage: 'Grilled chicken breast, pineapple, jalapeños, sweet mango habanero sauce, provolone and cheddar cheeses. On artisan bread and baked to a golden brown.'
-	};
-
-	sandwichProduct3 = {
-		productImage: 'sandwich-mediterranean-veggie.jpg',
-		productName: 'Mediterranean Veggie',
-		productMessage: 'Roasted red peppers, banana peppers, diced tomatoes, fresh baby spinach, fresh onions, feta, provolone and American cheese. On artisan bread and baked to a golden brown.'
-	};
-
-	sandwichProduct4 = {
-		productImage: 'sandwich-philly-cheese-steak.jpg',
-		productName: 'Philly Cheese Steak',
-		productMessage: 'Experience deliciously tender slices of steak, American and provolone cheeses, fresh onions, fresh green peppers and fresh mushrooms placed on artisan bread and baked to golden brown perfection.'
-	};
-
-	sandwichProduct5 = {
-		productImage: 'sandwich-chicken-bacon-ranch.jpg',
-		productName: 'Chicken Bacon Ranch',
-		productMessage: 'Enjoy our flavorful grilled chicken breast topped with smoked bacon, creamy ranch and provolone cheese on artisan bread baked to golden brown perfection.'
-	};
-
-	sandwichProduct6 = {
-		productImage: 'sandwich-italian.jpg',
-		productName: 'Italian',
-		productMessage: 'Pepperoni, salami, and ham topped with banana peppers, fresh green peppers, fresh onions, and provolone cheese. On artisan bread and baked to a golden brown.'
-	};
-
-	sandwichProduct7 = {
-		productImage: 'sandwich-chicken-parm.jpg',
-		productName: 'Chicken Parm',
-		productMessage: 'Grilled chicken breast, tomato basil marinara, Parmesan-Asiago and provolone cheese. On artisan bread and baked to a golden brown.'
-	};
-
-	var sandwichProductList = [[sandwichProduct1, sandwichProduct2, sandwichProduct3], [sandwichProduct4, sandwichProduct5, sandwichProduct6], [sandwichProduct7]];
-	$scope.sandwichProductList = sandwichProductList;
-
 	sidesSaladProduct1 = {
 		productImage: 'sides-salad-classic-garden.jpg',
 		productName: 'Classic Garden',

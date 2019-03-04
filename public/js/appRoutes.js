@@ -6,7 +6,8 @@ var myApp = angular.module('shoppingCartApp', [
 	'shoppingCartApp.breadsController',
 	'shoppingCartApp.chickenController',
 	'shoppingCartApp.dessertsController',
-	'shoppingCartApp.pastaController'
+	'shoppingCartApp.pastaController',
+	'shoppingCartApp.sandwichsController'
 	]);
 
 myApp.config(function($routeProvider) {
@@ -36,5 +37,9 @@ myApp.config(function($routeProvider) {
 	.when('/Pasta', {
 		templateUrl: '../views/pasta.html',
 		controller: 'pastaCtrl'
+	})
+	.when('/Sandwich', {
+		templateUrl: '../views/sandwichs.html',
+		controller: 'sandwichsCtrl'
 	});
 });

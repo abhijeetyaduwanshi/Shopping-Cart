@@ -52,7 +52,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem7 = {
 		categoryId: 'category-sandwich',
-		categoryRoute: '',
+		categoryRoute: '#!/Sandwich',
 		categoryImage: 'images/categoryItems/oven-baked-sandwiches.png',
 		categoryTitle: 'Oven Baked Sandwiches',
 		categoryDescription: 'All on artisan bread with premium ingredients and baked to perfection.'
