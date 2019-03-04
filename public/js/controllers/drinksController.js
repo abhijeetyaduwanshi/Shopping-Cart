@@ -24,7 +24,7 @@ controller.controller('drinksCtrl', ['$scope', '$http', function($scope, $http) 
 	};
 
 	drink4 = {
-		productImage: 'images/drinks/',
+		productImage: 'images/drinks/drink-cherryCoke.jpg',
 		productTitle: 'Cherry Coke®',
 		productDescription: 'Combines the great taste of Coca-Cola® with a blast of cherry.',
 		productPrice: ''
@@ -66,19 +66,26 @@ controller.controller('drinksCtrl', ['$scope', '$http', function($scope, $http) 
 	};
 
 	drink10 = {
-		productImage: 'images/drinks/',
+		productImage: 'images/drinks/drinks-lemonadeBottle.jpg',
 		productTitle: 'Lemonade Bottle',
 		productDescription: 'Made with the goodness of real lemons, Minute Maid® Lemonade is the quintessential refreshing beverage with the great taste of a simpler time.',
 		productPrice: ''
 	};
 
 	drink11 = {
-		productImage: 'images/drinks/',
+		productImage: 'images/drinks/drinks-pinkLemonadeBottle.jpg',
+		productTitle: 'Pink Lemonade',
+		productDescription: 'Made with the goodness of real lemons which are Pink in color, Minute Maid® Pink Lemonade is the quintessential refreshing beverage with the great taste of a simpler time.',
+		productPrice: ''
+	};
+
+	drink12 = {
+		productImage: 'images/drinks/drink-16ozCanMonsterEnergyDrink.jpg',
 		productTitle: '16oz Can Monster Energy Drink',
 		productDescription: 'Monster packs a powerful punch but has a smooth easy drinking flavor.',
 		productPrice: ''
 	};
 
-	var drinksList = [drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, drink9, drink10, drink11];
+	var drinksList = [drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, drink9, drink10, drink11, drink12];
 	$scope.drinksList = drinksList;
 }]);
