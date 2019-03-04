@@ -68,7 +68,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem9 = {
 		categoryId: 'category-drinks',
-		categoryRoute: '',
+		categoryRoute: '#!/AllDrinks',
 		categoryImage: 'images/categoryItems/drinks.png',
 		categoryTitle: 'Drinks',
 		categoryDescription: 'Quench your thirst.'

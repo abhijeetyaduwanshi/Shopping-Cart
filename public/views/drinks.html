@@ -1,0 +1,10 @@
+<div id="drinksPage">
+	<div ng-repeat="drink in drinksList">
+		<div>
+			<img ng-src="{{drink.productImage}}">
+		</div>
+		<button>Add to order</button>
+		<h3>{{drink.productTitle}}</h3>
+		<p>{{drink.productDescription}}</p>
+	</div>
+</div>

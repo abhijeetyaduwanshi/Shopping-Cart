@@ -8,7 +8,8 @@ var myApp = angular.module('shoppingCartApp', [
 	'shoppingCartApp.dessertsController',
 	'shoppingCartApp.pastaController',
 	'shoppingCartApp.sandwichsController',
-	'shoppingCartApp.saladsController'
+	'shoppingCartApp.saladsController',
+	'shoppingCartApp.drinksController'
 	]);
 
 myApp.config(function($routeProvider) {
@@ -46,5 +47,9 @@ myApp.config(function($routeProvider) {
 	.when('/Salad', {
 		templateUrl: '../views/salads.html',
 		controller: 'saladsCtrl'
+	})
+	.when('/AllDrinks', {
+		templateUrl: '../views/drinks.html',
+		controller: 'drinksCtrl'
 	});
 });
