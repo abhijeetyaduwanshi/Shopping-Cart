@@ -60,7 +60,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem8 = {
 		categoryId: 'category-salads',
-		categoryRoute: '',
+		categoryRoute: '#!/Salad',
 		categoryImage: 'images/categoryItems/salads.png',
 		categoryTitle: 'Salads',
 		categoryDescription: 'Domino\'s Salads, the perfect compliment to pizza.'

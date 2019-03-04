@@ -41,21 +41,6 @@ myApp.controller('productCtrl', ['$scope', '$http', function($scope, $http) {
 	var popularItemProductList = [[popularItemProduct1, popularItemProduct2, popularItemProduct3], [popularItemProduct4, popularItemProduct5, popularItemProduct6], [popularItemProduct7, popularItemProduct8, popularItemProduct9]];
 	$scope.popularItemProductList = popularItemProductList;
 
-	sidesSaladProduct1 = {
-		productImage: 'sides-salad-classic-garden.jpg',
-		productName: 'Classic Garden',
-		productMessage: 'A crisp and colorful combination of grape tomatoes, red onion, carrots, red cabbage, cheddar cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.'
-	};
-
-	sidesSaladProduct2 = {
-		productImage: 'sides-salad-chicken-caesar.jpg',
-		productName: 'Chicken Caesar',
-		productMessage: 'The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.'
-	};
-
-	var sidesSaladProductList = [[sidesSaladProduct1, sidesSaladProduct2]];
-	$scope.sidesSaladProductList = sidesSaladProductList;
-
 	sidesExtraProduct1 = {
 		productImage: 'sides-extra-parmesan-cheese-packets.jpg',
 		productName: 'Parmesan Cheese Packets',
