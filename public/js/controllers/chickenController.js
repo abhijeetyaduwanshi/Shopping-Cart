@@ -65,7 +65,6 @@ controller.controller('chickenCtrl',['$scope', '$http', function($scope, $http) 
 		productPrice: ''
 	};
 
-	var products = [chicken1, chicken2, chicken3, chicken4, chicken5,
-	 chicken6, chicken7, chicken8, chicken9];
+	var products = [chicken1, chicken2, chicken3, chicken4, chicken5, chicken6, chicken7, chicken8, chicken9];
 	$scope.products = products;
 }]);
