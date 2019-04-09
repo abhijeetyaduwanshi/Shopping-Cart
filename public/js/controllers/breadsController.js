@@ -44,6 +44,6 @@ controller.controller('breadsCtrl',['$scope', '$http', function($scope, $http) {
 		productPrice: ''
 	};
 
-	var breadsList = [bread1, bread2, bread3, bread4, bread5, bread6];
-	$scope.breadsList = breadsList;
+	var products = [bread1, bread2, bread3, bread4, bread5, bread6];
+	$scope.products = products;
 }]);

@@ -37,6 +37,6 @@ controller.controller('pastaCtrl', ['$scope', '$http', function($scope, $http) {
 		productPrice: ''
 	};
 
-	var pastaList = [pasta1, pasta2, pasta3, pasta4, pasta5];
-	$scope.pastaList = pastaList;
+	var products = [pasta1, pasta2, pasta3, pasta4, pasta5];
+	$scope.products = products;
 }]);

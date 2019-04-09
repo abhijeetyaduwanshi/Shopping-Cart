@@ -26,35 +26,35 @@ myApp.config(function($routeProvider) {
 		controller: 'specialtyPizzasCtrl'
 	})
 	.when('/Bread', {
-		templateUrl: '../views/breads.html',
+		templateUrl: '../views/productView.html',
 		controller: 'breadsCtrl'
 	})
 	.when('/Chicken', {
-		templateUrl: '../views/chicken.html',
+		templateUrl: '../views/productView.html',
 		controller: 'chickenCtrl'
 	})
 	.when('/Dessert', {
-		templateUrl: '../views/desserts.html',
+		templateUrl: '../views/productView.html',
 		controller: 'dessertsCtrl'
 	})
 	.when('/Pasta', {
-		templateUrl: '../views/pasta.html',
+		templateUrl: '../views/productView.html',
 		controller: 'pastaCtrl'
 	})
 	.when('/Sandwich', {
-		templateUrl: '../views/sandwichs.html',
+		templateUrl: '../views/productView.html',
 		controller: 'sandwichsCtrl'
 	})
 	.when('/Salad', {
-		templateUrl: '../views/salads.html',
+		templateUrl: '../views/productView.html',
 		controller: 'saladsCtrl'
 	})
 	.when('/AllDrinks', {
-		templateUrl: '../views/drinks.html',
+		templateUrl: '../views/productView.html',
 		controller: 'drinksCtrl'
 	})
 	.when('/Extras', {
-		templateUrl: '../views/extras.html',
+		templateUrl: '../views/productView.html',
 		controller: 'extrasCtrl'
 	});
 });

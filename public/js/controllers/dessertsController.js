@@ -23,6 +23,6 @@ controller.controller('dessertsCtrl', ['$scope', '$http', function($scope, $http
 		productPrice: ''
 	};
 
-	var dessertsList = [dessert1, dessert2, dessert3];
-	$scope.dessertsList = dessertsList;
+	var products = [dessert1, dessert2, dessert3];
+	$scope.products = products;
 }]);

@@ -100,6 +100,6 @@ controller.controller('extrasCtrl', ['$scope', '$http', function($scope, $http) 
 		productPrice: ''
 	};
 
-	var extrasList = [extras1, extras2, extras3, extras4, extras5, extras6, extras7, extras8, extras9, extras10, extras11];
-	$scope.extrasList = extrasList;
+	var products = [extras1, extras2, extras3, extras4, extras5, extras6, extras7, extras8, extras9, extras10, extras11];
+	$scope.products = products;
 }]);

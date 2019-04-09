@@ -52,6 +52,6 @@ controller.controller('sandwichsCtrl', ['$scope', '$http', function($scope, $htt
 		productPrice: ''
 	};
 
-	var sandwichsList = [sandwich1, sandwich2, sandwich3, sandwich4, sandwich5, sandwich6, sandwich7];
-	$scope.sandwichsList = sandwichsList;
+	var products = [sandwich1, sandwich2, sandwich3, sandwich4, sandwich5, sandwich6, sandwich7];
+	$scope.products = products;
 }]);

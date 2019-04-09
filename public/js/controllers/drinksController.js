@@ -86,6 +86,6 @@ controller.controller('drinksCtrl', ['$scope', '$http', function($scope, $http) 
 		productPrice: ''
 	};
 
-	var drinksList = [drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, drink9, drink10, drink11, drink12];
-	$scope.drinksList = drinksList;
+	var products = [drink1, drink2, drink3, drink4, drink5, drink6, drink7, drink8, drink9, drink10, drink11, drink12];
+	$scope.products = products;
 }]);

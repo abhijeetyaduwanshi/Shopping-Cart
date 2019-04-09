@@ -1,0 +1,12 @@
+<div id="productPage">
+	<div ng-repeat="product in products">
+		<div>
+			<img ng-src="{{product.productImage}}">
+		</div>
+
+		<button>Add to order</button>
+
+		<h3>{{product.productTitle}}</h3>
+		<p>{{product.productDescription}}</p>
+	</div>
+</div>

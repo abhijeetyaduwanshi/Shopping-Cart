@@ -16,6 +16,6 @@ controller.controller('saladsCtrl', ['$scope', '$http', function($scope, $http) 
 		productPrice: ''
 	};
 
-	var saladsList = [salad1, salad2];
-	$scope.saladsList = saladsList;
+	var products = [salad1, salad2];
+	$scope.products = products;
 }]);
