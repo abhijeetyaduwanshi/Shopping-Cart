@@ -76,7 +76,7 @@ controller.controller('categoriesListCtrl',['$scope', '$http', function($scope, 
 
 	categoryItem10 = {
 		categoryId: 'category-extras',
-		categoryRoute: '',
+		categoryRoute: '#!/Extras',
 		categoryImage: 'images/categoryItems/extras.png',
 		categoryTitle: 'Extras',
 		categoryDescription: 'Add extra taste to you entree.'
