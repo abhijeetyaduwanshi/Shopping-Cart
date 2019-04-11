@@ -1,12 +1,12 @@
-<div id="productPage">
-	<div ng-repeat="product in products">
-		<div>
-			<img ng-src="{{product.productImage}}">
+<div class="productPage">
+	<div class="productContainer" ng-repeat="product in products">
+		<div class="productImage">
+			<img width="180px" height="150px" ng-src="{{product.productImage}}">
 		</div>
 
-		<button>Add to order</button>
+		<button class="productAddToCrtBtn">Add to order</button>
 
-		<h3>{{product.productTitle}}</h3>
-		<p>{{product.productDescription}}</p>
+		<h3 class="productTitle">{{product.productTitle}}</h3>
+		<p class="productDescription">{{product.productDescription}}</p>
 	</div>
 </div>
