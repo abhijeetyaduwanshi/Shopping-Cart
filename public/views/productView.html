@@ -1,7 +1,7 @@
-<div class="productPage">
-	<div class="productContainer" ng-repeat="product in products">
+<div class="productPage row">
+	<div class="productContainer col-md" ng-repeat="product in products">
 		<div class="productImage">
-			<img width="180px" height="150px" ng-src="{{product.productImage}}">
+			<img ng-src="{{product.productImage}}">
 		</div>
 
 		<button class="productAddToCrtBtn">Add to order</button>

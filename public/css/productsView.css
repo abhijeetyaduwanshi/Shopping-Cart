@@ -1,18 +1,12 @@
-.productPage {
-	max-width: 900px;
-	display: table;
-}
-
 .productContainer {
 	width: 200px;
-	display: table-cell;
 }
 
 .productImage {
 	margin: 0px 10px;
 }
 
-..productImage > img {
+.productImage > img {
 	border-radius: 2px;
 }
 
