@@ -7,19 +7,29 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
+app.get('/Salad', function(request, response) {
+	console.log("This is for the salad");
+
+	salad1 = {
+		productImage: 'images/salads/salad-classicGarden.jpg',
+		productTitle: 'Classic Garden',
+		productDescription: 'A crisp and colorful combination of grape tomatoes, red onion, carrots, red cabbage, cheddar cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.',
+		productPrice: ''
+	};
+
+	salad2 = {
+		productImage: 'images/salads/salad-chickenCaesar.jpg',
+		productTitle: 'Chicken Caesar',
+		productDescription: 'The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.',
+		productPrice: ''
+	};
+
+	var products = [salad1, salad2];
+	response.json(products);
+});
+
 app.listen(3000);
 console.log("Server running on port 3000");
-
-
-
-
-
-
-
-
-
-
-
 
 // var mongojs = require('mongojs');
 // var db = mongojs('customerList', ['customerList']);
