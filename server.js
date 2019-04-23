@@ -1,30 +1,39 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('shoppingCart', ['salads']);
+var db = mongojs('shoppingCart', ['salads', 'cart']);
+var bodyParser = require('body-parser');
 
 // app.get('/', function(request, response) {
 // 	response.send("Hello from the server");
 // });
 
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
 
+// this method is to get the salads data for salads view
 app.get('/Salad', function(request, response) {
-	console.log("This is for the salad");
+	// console.log("This is for the salad");
 
 	db.salads.find(function (error, document) {
-		console.log(document);
+		// console.log(document);
+		response.json(document);
+	});
+});
+
+// this method is to post the item to cart collection
+app.post('/Salad/:id', function(request, response) {
+	var id = request.params.id;
+	// console.log(request.body);
+
+	db.cart.insert(request.body, function(error, document) {
+		// console.log(document);
 		response.json(document);
 	});
 });
 
 app.listen(3000);
 console.log("Server running on port 3000");
-
-// var bodyParser = require('body-parser');
-
-// app.use(express.static(__dirname + "/public"));
-// app.use(bodyParser.json());
 
 // app.get('/customerList', function(request, response) {
 // 	console.log("I received a GET response");
