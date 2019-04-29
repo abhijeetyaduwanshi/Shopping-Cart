@@ -1,0 +1,60 @@
+<div class="container">
+	<h4>Please create a category</h4>
+	<table class="table">
+		<tbody>
+			<!-- <tr>
+				<td><label>Category image</label></td>
+				<td><input type="file" name="pic" accept="image/*"></td>
+			</tr> -->
+			<tr>
+				<td><label>Category title</label></td>
+				<td><input class="form-control" type="text" name="category.categoryTitle" ng-model="categoryItem.categoryTitle"></td>
+			</tr>
+			<tr>
+				<td><label>Category description</label></td>
+				<td><input class="form-control" type="text" name="category.categoryDescription" ng-model="categoryItem.categoryDescription"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button class="btn btn-primary" ng-click="addCategoryItem()">Add category item</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Category name</th>
+				<th>Category description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="categoryItem in categoryItemsList">
+				<td>{{categoryItem.categoryTitle}}</td>
+				<td>{{categoryItem.categoryDescription}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- Please list products in a category
+		<table class="table">
+			<tbody>
+				<tr>
+					<td><label>Product image</label></td>
+					<td><input type="file" name="pic" accept="image/*"></td>
+				</tr>
+				<tr>
+					<td><label>Product name</label></td>
+					<td><input type="text" name="productName"></td>
+				</tr>
+				<tr>
+					<td><label>Product price</label></td>
+					<td><input type="text" name="productPrice"></td>
+				</tr>
+				<tr>
+					<td><label>Product description</label></td>
+					<td><input type="text" name="productDescription"></td>
+				</tr>
+			</tbody>
+		</table> -->
+</div>

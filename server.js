@@ -11,6 +11,26 @@ var bodyParser = require('body-parser');
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
+// this method is to get the category data for admin view
+app.get('/Admin', function(request, response) {
+	// console.log("This is for the admin");
+
+	db.categories.find(function (error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
+// this method is to post the category data form the admin view
+app.post('/Admin', function(request, response) {
+	// console.log(request.body);
+
+	db.categories.insert(request.body, function (error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
 // this method is to get the salads data for salads view
 app.get('/Salad', function(request, response) {
 	// console.log("This is for the salad");
