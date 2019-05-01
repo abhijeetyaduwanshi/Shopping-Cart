@@ -26,7 +26,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 		}).then(function success(response) {
 			// console.log(response);
 			refresh();
-			$scope.categoryItem = "";
+			// $scope.categoryItem = "";
 		}, function errorCallback(error) {
 			// TODO: add error page code here
 		});

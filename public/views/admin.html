@@ -1,18 +1,27 @@
 <div class="container">
+	<h4>This should have a button and should be model</h4>
 	<h4>Please create a category</h4>
 	<table class="table">
 		<tbody>
-			<!-- <tr>
-				<td><label>Category image</label></td>
-				<td><input type="file" name="pic" accept="image/*"></td>
-			</tr> -->
+			<tr>
+				<td><label>Category html id (should be disabled and auto prepare based on title)</label></td>
+				<td><input class="form-control" type="text" name="categoryItemsList.categoryId" ng-model="categoryItemsList.categoryId"></td>
+			</tr>
+			<tr>
+				<td><label>Category route (should be disabled and auto prepare based on title)</label></td>
+				<td><input class="form-control" type="text" name="categoryItemsList.categoryRoute" ng-model="categoryItemsList.categoryRoute"></td>
+			</tr>
+			<tr>
+				<td><label>Category image path (should be disabled and auto prepare based on title)</label></td>
+				<td><input class="form-control" type="text" name="categoryItemsList.categoryImage" ng-model="categoryItemsList.categoryImage"></td>
+			</tr>
 			<tr>
 				<td><label>Category title</label></td>
-				<td><input class="form-control" type="text" name="category.categoryTitle" ng-model="categoryItem.categoryTitle"></td>
+				<td><input class="form-control" type="text" name="categoryItemsList.categoryTitle" ng-model="categoryItemsList.categoryTitle"></td>
 			</tr>
 			<tr>
 				<td><label>Category description</label></td>
-				<td><input class="form-control" type="text" name="category.categoryDescription" ng-model="categoryItem.categoryDescription"></td>
+				<td><input class="form-control" type="text" name="categoryItemsList.categoryDescription" ng-model="categoryItemsList.categoryDescription"></td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -24,12 +33,18 @@
 	<table class="table">
 		<thead>
 			<tr>
+				<th>Category id</th>
+				<th>Category route</th>
+				<th>Category img path</th>
 				<th>Category name</th>
 				<th>Category description</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="categoryItem in categoryItemsList">
+				<td>{{categoryItem.categoryId}}</td>
+				<td>{{categoryItem.categoryRoute}}</td>
+				<td>{{categoryItem.categoryImage}}</td>
 				<td>{{categoryItem.categoryTitle}}</td>
 				<td>{{categoryItem.categoryDescription}}</td>
 			</tr>

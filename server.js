@@ -31,6 +31,16 @@ app.post('/Admin', function(request, response) {
 	});
 });
 
+// this method is to get the category data for home view
+app.get('/Home', function(request, response) {
+	// console.log("This is for the admin");
+
+	db.categories.find(function (error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
 // this method is to get the salads data for salads view
 app.get('/Salad', function(request, response) {
 	// console.log("This is for the salad");

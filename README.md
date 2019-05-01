@@ -77,6 +77,11 @@ In the inserted document, if we don't specify the `_id` parameter, then MongoDB 
 * All pages - Update navigation according to domonis
 * home.html, categoriesListController.js - put categoryItem, a href, image src values
 
+* admin.html - create a button which says add category, click on the button should be a model with the form to add category
+* admin.html - html id should be disabled and should auto prepare with when the user fills the category title (do it like netbeans)
+* admin.html - route same as above
+* admin.html - image should be a input that uploades image and gets saved in images/category folder
+
 # Common conversions
 HTML | ANGULAR
 -----|--------
