@@ -121,4 +121,19 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 			// TODO: add error page code here
 		});
 	};
+
+	// this function is to delete category item
+	// params: id, of the category
+	$scope.removeCat = function(id) {
+		// console.log("delete " + id);
+		$http({
+			method: 'DELETE',
+			url: '/Admin/' + id
+		}).then(function success(response) {
+			// console.log(response);
+			refresh();
+		}, function errorCallback(error) {
+			// TODO: add error page code here
+		});
+	};
 }]);

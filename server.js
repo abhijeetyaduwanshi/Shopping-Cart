@@ -42,6 +42,17 @@ app.get('/Admin/:id', function(request, response) {
 	});
 });
 
+// this method is to delete a single category by id
+app.delete('/Admin/:id', function(request, response) {
+	var id = request.params.id;
+	// console.log("delete " + id);
+
+	db.categories.remove({_id: mongojs.ObjectId(id)}, function(error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
 // this method is to get the category data for home view
 app.get('/Home', function(request, response) {
 	// console.log("This is for the admin");
