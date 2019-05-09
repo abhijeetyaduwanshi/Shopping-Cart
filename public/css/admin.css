@@ -1,3 +1,14 @@
 #categoryIdField, #categoryRouteField, #categoryImageField {
     display: none;
 }
+
+#categoryListHeader {
+    margin: 15px;
+    padding: 5px;
+}
+
+#addNewCategoriesBtn {
+    float: right;
+    width: 25%;
+    white-space: nowrap;
+}
