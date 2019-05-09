@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.get('/Admin', function(request, response) {
 	// console.log("This is for the admin");
 
-	db.categories.find(function (error, document) {
+	db.categories.find(function(error, document) {
 		// console.log(document);
 		response.json(document);
 	});
@@ -25,7 +25,18 @@ app.get('/Admin', function(request, response) {
 app.post('/Admin', function(request, response) {
 	// console.log(request.body);
 
-	db.categories.insert(request.body, function (error, document) {
+	db.categories.insert(request.body, function(error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
+// this method is to get the details of a single category by id
+app.get('/Admin/:id', function(request, response) {
+	var id = request.params.id;
+	// console.log(id);
+
+	db.categories.find({_id: mongojs.ObjectId(id)}, function(error, document) {
 		// console.log(document);
 		response.json(document);
 	});
@@ -35,7 +46,7 @@ app.post('/Admin', function(request, response) {
 app.get('/Home', function(request, response) {
 	// console.log("This is for the admin");
 
-	db.categories.find(function (error, document) {
+	db.categories.find(function(error, document) {
 		// console.log(document);
 		response.json(document);
 	});
@@ -45,7 +56,7 @@ app.get('/Home', function(request, response) {
 app.get('/Salad', function(request, response) {
 	// console.log("This is for the salad");
 
-	db.salads.find(function (error, document) {
+	db.salads.find(function(error, document) {
 		// console.log(document);
 		response.json(document);
 	});

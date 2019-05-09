@@ -105,4 +105,20 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 			// TODO: add error page code here
 		});
 	};
+
+	// this function is to view the details of a category item
+	// params: id, of the category
+	$scope.viewCategoryDetails = function(id) {
+		// console.log(id);
+		$http({
+			method: 'GET',
+			url: '/Admin/' + id
+		}).then(function success(response) {
+			// console.log(response);
+			$scope.selectedCategoryItem = {};
+			$scope.selectedCategoryItem = response.data[0];
+		}, function errorCallback(error) {
+			// TODO: add error page code here
+		});
+	};
 }]);
