@@ -11,7 +11,8 @@ var myApp = angular.module('shoppingCartApp', [
 	'shoppingCartApp.saladsController',
 	'shoppingCartApp.drinksController',
 	'shoppingCartApp.extrasController',
-	'shoppingCartApp.adminController'
+	'shoppingCartApp.adminController',
+	'shoppingCartApp.cartController'
 	]);
 
 myApp.config(function($routeProvider) {
@@ -61,5 +62,9 @@ myApp.config(function($routeProvider) {
 	.when('/Admin', {
 		templateUrl: '../views/admin.html',
 		controller: 'adminCtrl'
+	})
+	.when('/Cart', {
+		templateUrl: '../views/cartView.html',
+		controller: 'cartCtrl'
 	});
 });
