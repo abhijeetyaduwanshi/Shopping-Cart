@@ -84,6 +84,27 @@ app.post('/Salad/:id', function(request, response) {
 	});
 });
 
+// this method is to get the cart data for cart view
+app.get('/Cart', function(request, response) {
+	// console.log("This is for the cart");
+
+	db.cart.find(function(error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
+// this method is to get the item data for cart view
+app.get('/Salad/:id', function(request, response) {
+	var id = request.params.id;
+	// console.log(request.body);
+
+	db.salads.findOne({_id: mongojs.ObjectId(id)}, function(error, document) {
+		// console.log(document);
+		response.json(document);
+	});
+});
+
 app.listen(3000);
 console.log("Server running on port 3000");
 

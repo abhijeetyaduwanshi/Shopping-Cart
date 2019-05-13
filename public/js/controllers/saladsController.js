@@ -18,7 +18,7 @@ controller.controller('saladsCtrl', ['$scope', '$http', function($scope, $http) 
 		// console.log(id);
 		var itemDetails = {
 			itemId: id,
-			type: "salads"
+			type: "Salad"
 		};
 
 		// sending the salad id and type, id will be used to look up the salad item
