@@ -1,4 +1,4 @@
-#mainNav ul, #subNav ul {
+#mainNav ul {
   margin: auto;
 }
 
@@ -6,13 +6,9 @@
   color: white;
   text-align: center;
   padding: 14px 16px;
+  font-weight: 300;
 }
 
-#subNav li a {
-  text-align: center;
-  padding: 14px 16px;
-}
-
-#subNav {
+#mainNav {
   margin-bottom: 10px;
 }
