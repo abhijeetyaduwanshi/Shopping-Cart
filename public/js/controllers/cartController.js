@@ -9,6 +9,7 @@ controller.controller('cartCtrl', ['$scope', '$http', function($scope, $http) {
 	}).then(function success(response) {
 		// console.log("I got the data I requested");
 		$scope.products = [];
+		$scope.productFinalPrice = 0;
 
 		for(var i = 0; i < response.data.length; i++) {
 			var id = response.data[i].itemId;
@@ -20,6 +21,7 @@ controller.controller('cartCtrl', ['$scope', '$http', function($scope, $http) {
 			}).then(function success(response) {
 				// console.log(response.data);
 				$scope.products.push(response.data);
+				$scope.productFinalPrice += response.data.productPrice;
 				// console.log($scope.products);
 			}, function errorCallback(error) {
 				// TODO: add error page code here
