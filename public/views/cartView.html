@@ -5,6 +5,7 @@
 				<tr>
 					<th>Product</th>
 					<th>Quantity</th>
+					<th>Edit</th>
 					<th>Price</th>
 				</tr>
 			</thead>
@@ -21,11 +22,15 @@
 							<option value="4">4</option>
 						</select>
 					</td>
+					<td><button class="btn btn-danger">
+						Remove
+					</button></td>
 					<td>{{product.productPrice}}</td>
 				</tr>
 				<tr>
 					<td>Total</td>
-					<td></td>
+					<td>&nbsp</td>
+					<td>&nbsp</td>
 					<td>{{productFinalPrice}}</td>
 				</tr>
 			</tbody>
