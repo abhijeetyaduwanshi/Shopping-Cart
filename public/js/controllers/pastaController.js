@@ -1,6 +1,6 @@
 var controller = angular.module('shoppingCartApp.pastaController', []);
 controller.controller('pastaCtrl', ['$scope', '$http', function($scope, $http) {
-	console.log("Hello world from the pasta controller");
+	// console.log("Hello world from the pasta controller");
 
 	pasta1 = {
 		productImage: 'images/pasta/pasta-chickenAlfredo.jpg',

@@ -1,6 +1,6 @@
 var controller = angular.module('shoppingCartApp.dessertsController', []);
 controller.controller('dessertsCtrl', ['$scope', '$http', function($scope, $http) {
-	console.log("Hello world from the desserts controller");
+	// console.log("Hello world from the desserts controller");
 
 	dessert1 = {
 		productImage: 'images/desserts/desserts-cinnamonBreadTwists.jpg',

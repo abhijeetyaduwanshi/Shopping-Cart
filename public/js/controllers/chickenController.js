@@ -1,6 +1,6 @@
 var controller = angular.module('shoppingCartApp.chickenController', []);
 controller.controller('chickenCtrl',['$scope', '$http', function($scope, $http) {
-	console.log("Hello world from the chicken controller");
+	// console.log("Hello world from the chicken controller");
 
 	chicken1 = {
 		productImage: 'images/chicken/chicken-specialtyChickenCrispyBaconAndTomato.jpg',

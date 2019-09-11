@@ -1,39 +1,39 @@
 <div class="cartPage container">
-	<div class="cartContainer">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Product</th>
-					<th>Quantity</th>
-					<th>Edit</th>
-					<th>Price</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="product in products">
-					<td>{{product.productTitle}}
-						<div style="font-size: 12px">Calories</div>
-					</td>
-					<td>
-						<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-						</select>
-					</td>
-					<td><button class="btn btn-danger">
-						Remove
-					</button></td>
-					<td>{{product.productPrice}}</td>
-				</tr>
-				<tr>
-					<td>Total</td>
-					<td>&nbsp</td>
-					<td>&nbsp</td>
-					<td>{{productFinalPrice}}</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+    <div class="cartContainer">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Edit</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td>{{product.productTitle}}
+                        <div style="font-size: 12px">Calories</div>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                    <td><button class="btn btn-danger">
+                        Remove
+                    </button></td>
+                    <td>{{product.productPrice}}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>&nbsp</td>
+                    <td>&nbsp</td>
+                    <td>{{productFinalPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

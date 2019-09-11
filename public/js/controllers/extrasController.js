@@ -1,6 +1,6 @@
 var controller = angular.module('shoppingCartApp.extrasController', []);
 controller.controller('extrasCtrl', ['$scope', '$http', function($scope, $http) {
-	console.log("Hello world from the extras controller");
+	// console.log("Hello world from the extras controller");
 
 	extras1 = {
 		productImage: 'images/extras/extras-parmesanCheesePackets.jpg',

@@ -1,17 +1,17 @@
 <div id="productsList" class="container">
-	<div class="row">
-		<div ng-repeat="product in products" class="col-sm">
-			<a ng-href="{{}}">
-				<div class="productImage">
-					<img ng-src="{{product.productImage}}">
-				</div>
-				<button type="button" class="productAddToCrtBtn" ng-click="addToCart(product._id)">Add to order</button>
-				<div class="productDetails">
-					<h3>{{product.productTitle}}</h3>
-					<p>{{product.productDescription}}</p>
-					<span>${{product.productPrice}}</span>
-				</div>
-			</a>
-		</div>
-	</div>	
+    <div class="row">
+        <div ng-repeat="product in products" class="col-sm">
+            <a ng-href="{{}}">
+                <div class="productImage">
+                    <img ng-src="{{product.productImage}}">
+                </div>
+                <button type="button" class="productAddToCrtBtn" ng-click="addToCart(product._id)">Add to order</button>
+                <div class="productDetails">
+                    <h3>{{product.productTitle}}</h3>
+                    <p>{{product.productDescription}}</p>
+                    <span>${{product.productPrice}}</span>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>

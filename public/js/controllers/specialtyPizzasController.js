@@ -1,6 +1,6 @@
 var controller = angular.module('shoppingCartApp.specialtyPizzasController', []);
 controller.controller('specialtyPizzasCtrl',['$scope', '$http', function($scope, $http) {
-	console.log("Hello world from the speclty pizzas controller");
+	// console.log("Hello world from the speclty pizzas controller");
 
 	specialtyPizza1 = {
 		productImage: 'images/specialtyPizzas/specialtyPizza-extravaganzza.jpg',

@@ -1,79 +1,70 @@
 #productsList > .row > .col-sm {
-	border: 1px solid #343a40;
-	margin: 12px;
-	border-radius: 10px;
-	padding: 10px;
+    border: 1px solid #343a40;
+    margin: 12px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .productImage > img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
 }
 
 .productAddToCrtBtn {
-	width: 90%;
-	height: 38px;
-	margin: 10px;
-	padding: 6px 12px;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 5px;
-	color: #ffffff;
-	background-color: #dc3545;
-	border: 0px solid #dc3545;
+    width: 90%;
+    height: 38px;
+    margin: 10px;
+    padding: 6px 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #dc3545;
+    border: 0px solid #dc3545;
 }
 
 .productDetails > h3 {
-	font-size: 20px;
-	margin: auto;
+    font-size: 20px;
+    margin: auto;
 }
 
 .productDetails > p {
-	font-size: 14px;
-	margin: auto;
+    font-size: 14px;
+    margin: auto;
 }
 
-
-
-
-
-
-
-
-
-
 /* .productContainer {
-	width: 200px;
+    width: 200px;
 }
 
 .productImage {
-	margin: 0px 10px;
+    margin: 0px 10px;
 }
 
 .productImage > img {
-	border-radius: 2px;
+    border-radius: 2px;
 }
 
 .productAddToCrtBtn {
-	margin: 10px;
-	text-transform: uppercase;
-	width: 180px;
+    margin: 10px;
+    text-transform: uppercase;
+    width: 180px;
 }
 
 .productTitle {
-	color: #0078AE;
-	text-decoration: none;
-	cursor: pointer;
-	font-size: large;
-	margin: 0px 10px;
+    color: #0078AE;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: large;
+    margin: 0px 10px;
 }
 
 .productDescription {
-	color: #555555;
-	font-size: small;
-	margin: 10px;
-	text-align: justify;
+    color: #555555;
+    font-size: small;
+    margin: 10px;
+    text-align: justify;
 } */
