@@ -1,0 +1,188 @@
+<div class="adminPage">
+    <!-- Add New Categories Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Add new category</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody>
+                            <tr id="categoryIdField">
+                                <td><label>Category html id (should be disabled and auto prepare based on title)</label></td>
+                                <td><input class="form-control" type="text" name="categoryItem.categoryId" ng-model="categoryItem.categoryId"></td>
+                            </tr>
+                            <tr id="categoryRouteField">
+                                <td><label>Category route (should be disabled and auto prepare based on title)</label></td>
+                                <td><input class="form-control" type="text" name="categoryItem.categoryRoute" ng-model="categoryItem.categoryRoute"></td>
+                            </tr>
+                            <tr id="categoryImageField">
+                                <td><label>Category image path (should be disabled and auto prepare based on title)</label></td>
+                                <td><input class="form-control" type="text" name="categoryItem.categoryImage" ng-model="categoryItem.categoryImage"></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category title</label></td>
+                                <td><input class="form-control" type="text" name="categoryItem.categoryTitle" ng-model="categoryItem.categoryTitle"></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category description</label></td>
+                                <td><input class="form-control" type="text" name="categoryItem.categoryDescription" ng-model="categoryItem.categoryDescription"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="addCategoryItem()" data-dismiss="modal">Add category item</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- List of categories on Admin page -->
+    <h3 id="categoryListHeader">Category list <button id="addNewCategoriesBtn" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"> Add new Categories </button></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Category name</th>
+                <th>Category description</th>
+                <th>Action view</th>
+                <th>Action delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="categoryItem in categoryItemsList">
+                <td>{{categoryItem.categoryTitle}}</td>
+                <td>{{categoryItem.categoryDescription}}</td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#catDetailsModal" ng-click="viewCategoryDetails(categoryItem._id)"> View details </button></td>
+                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCatModal" ng-click="viewCategoryDetails(categoryItem._id)"> Delete category </button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- View Category Details Modal -->
+    <div class="modal fade" id="catDetailsModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Category details</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><label>Category html id</label></td>
+                                <td><p>{{selectedCategoryItem.categoryId}}</p></tr>
+                            <tr>
+                                <td><label>Category route</label></td>
+                                <td><p>{{selectedCategoryItem.categoryRoute}}</p></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category image path</label></td>
+                                <td><p>{{selectedCategoryItem.categoryImage}}</p></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category title</label></td>
+                                <td><p>{{selectedCategoryItem.categoryTitle}}</p></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category description</label></td>
+                                <td><p>{{selectedCategoryItem.categoryDescription}}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Category Modal -->
+    <div class="modal fade" id="deleteCatModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Are you sure you want to delete the category?</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><label>Category html id</label></td>
+                                <td><p>{{selectedCategoryItem.categoryId}}</p></tr>
+                            <tr>
+                                <td><label>Category route</label></td>
+                                <td><p>{{selectedCategoryItem.categoryRoute}}</p></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category image path</label></td>
+                                <td><p>{{selectedCategoryItem.categoryImage}}</p></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category title</label></td>
+                                <td><p>{{selectedCategoryItem.categoryTitle}}</p></td>
+                            </tr>
+                            <tr>
+                                <td><label>Category description</label></td>
+                                <td><p>{{selectedCategoryItem.categoryDescription}}</p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="removeCat(selectedCategoryItem._id)"> Delete category </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Please list products in a category
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><label>Product image</label></td>
+                    <td><input type="file" name="pic" accept="image/*"></td>
+                </tr>
+                <tr>
+                    <td><label>Product name</label></td>
+                    <td><input type="text" name="productName"></td>
+                </tr>
+                <tr>
+                    <td><label>Product price</label></td>
+                    <td><input type="text" name="productPrice"></td>
+                </tr>
+                <tr>
+                    <td><label>Product description</label></td>
+                    <td><input type="text" name="productDescription"></td>
+                </tr>
+            </tbody>
+        </table> -->
+</div>
