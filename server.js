@@ -4,29 +4,21 @@ var mongojs = require('mongojs');
 var db = mongojs('shoppingCart', ['salads', 'cart']);
 var bodyParser = require('body-parser');
 
-// app.get('/', function(request, response) {
-    // response.send("Hello from the server");
-// });
-
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
-// this method is to get the category data for admin view
+// get category details data from categories table to populate admin page
 app.get('/Admin', function(request, response) {
-    // console.log("This is for the admin");
-
     db.categories.find(function(error, document) {
-        // console.log(document);
         response.json(document);
     });
 });
 
-// this method is to post the category data form the admin view
+// post category details data form admin page
+// sends category data to categories table
+// sends category title to create a new table to have products in them
 app.post('/Admin', function(request, response) {
-    // console.log(request.body);
-
     db.categories.insert(request.body, function(error, document) {
-        // console.log(document);
         response.json(document);
     });
 
@@ -35,27 +27,27 @@ app.post('/Admin', function(request, response) {
     });
 });
 
-// this method is to get the details of a single category by id
+// get single category details from categories table to populate view category details modal
 app.get('/Admin/:id', function(request, response) {
     var id = request.params.id;
-    // console.log(id);
 
     db.categories.find({_id: mongojs.ObjectId(id)}, function(error, document) {
-        // console.log(document);
         response.json(document);
     });
 });
 
-// this method is to delete a single category by id
+// delete single category with category id from delete category modal
 app.delete('/Admin/:id', function(request, response) {
     var id = request.params.id;
-    // console.log("delete " + id);
 
     db.categories.remove({_id: mongojs.ObjectId(id)}, function(error, document) {
-        // console.log(document);
         response.json(document);
     });
 });
+
+
+
+
 
 // this method is to get the category data for home view
 app.get('/Home', function(request, response) {
