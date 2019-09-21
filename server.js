@@ -29,6 +29,10 @@ app.post('/Admin', function(request, response) {
         // console.log(document);
         response.json(document);
     });
+
+    db.createCollection(request.body.categoryTitle, function(error, document) {
+        // null
+    });
 });
 
 // this method is to get the details of a single category by id
