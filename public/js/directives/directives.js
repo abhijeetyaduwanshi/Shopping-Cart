@@ -7,4 +7,8 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/adminAddNewCategoryModal.html'
     };
+}).directive('adminViewCategoryDetails', function() {
+    return {
+        templateUrl: '../../views/adminViewCategoryDetailsModal.html'
+    };
 });

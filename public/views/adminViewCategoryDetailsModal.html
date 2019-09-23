@@ -1,0 +1,42 @@
+<div class="modal fade" id="catDetailsModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">{{selectedCategoryItem.categoryTitle}} category details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Category html id</label></td>
+                            <td><p>{{selectedCategoryItem.categoryId}}</p></tr>
+                        <tr>
+                            <td><label>Category route</label></td>
+                            <td><p>{{selectedCategoryItem.categoryRoute}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><label>Category image path</label></td>
+                            <td><p>{{selectedCategoryItem.categoryImage}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><label>Category title</label></td>
+                            <td><p>{{selectedCategoryItem.categoryTitle}}</p></td>
+                        </tr>
+                        <tr>
+                            <td><label>Category description</label></td>
+                            <td><p>{{selectedCategoryItem.categoryDescription}}</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
