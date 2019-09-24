@@ -11,4 +11,8 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/adminViewCategoryDetailsModal.html'
     };
+}).directive('adminDeleteCategory', function() {
+    return {
+        templateUrl: '../../views/adminDeleteCategoryModal.html'
+    };
 });
