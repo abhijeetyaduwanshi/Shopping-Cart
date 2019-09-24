@@ -8,21 +8,27 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Category name</th>
-                <th>Category description</th>
-                <th>Action view</th>
-                <th>Action delete</th>
+                <th>Category</th>
+                <th>Add products</th>
+                <th>View products</th>
+                <th>View details</th>
+                <th>Delete category</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="categoryItem in categoryItemsList">
                 <td>{{categoryItem.categoryTitle}}</td>
-                <td>{{categoryItem.categoryDescription}}</td>
-                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#catDetailsModal" ng-click="viewCategoryDetails(categoryItem._id)"> View details </button></td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductsModal"> Add products </button></td>
+                <td><button type="button" class="btn btn-info"> View products details </button></td>
+                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#catDetailsModal" ng-click="viewCategoryDetails(categoryItem._id)"> View category details </button></td>
                 <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCatModal" ng-click="viewCategoryDetails(categoryItem._id)"> Delete category </button></td>
             </tr>
         </tbody>
     </table>
+
+    <div id="adminAddProductsModal">
+        <div admin-Add-Products></div>
+    </div>
 
     <div id="viewCategoryDetailsModal">
         <div admin-View-Category-Details></div>
