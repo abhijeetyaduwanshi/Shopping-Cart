@@ -8,59 +8,58 @@
             </div>
 
             <div class="modal-body">
-                <p>Here is going to be the form to add products</p>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-<!-- <div class="modal fade" id="deleteCatModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <h4 class="modal-title">Are you sure you want to delete "{{selectedCategoryItem.categoryTitle}}" category?</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <div class="modal-body">
                 <table class="table">
                     <tbody>
                         <tr>
-                            <td><label>Category html id</label></td>
-                            <td><p>{{selectedCategoryItem.categoryId}}</p></tr>
-                        <tr>
-                            <td><label>Category route</label></td>
-                            <td><p>{{selectedCategoryItem.categoryRoute}}</p></td>
+                            <td><label>Product image (should be disabled and auto prepare based on title)</label></td>
+                            <td><input class="form-control" type="text" name="productItem.productImage" ng-model="productItem.productImage"></td>
                         </tr>
                         <tr>
-                            <td><label>Category image path</label></td>
-                            <td><p>{{selectedCategoryItem.categoryImage}}</p></td>
+                            <td><label>Product title</label></td>
+                            <td><input class="form-control" type="text" name="productItem.productTitle" ng-model="productItem.productTitle"></td>
                         </tr>
                         <tr>
-                            <td><label>Category title</label></td>
-                            <td><p>{{selectedCategoryItem.categoryTitle}}</p></td>
+                            <td><label>Product description</label></td>
+                            <td><input class="form-control" type="text" name="productItem.productDescription" ng-model="productItem.productDescription"></td>
                         </tr>
                         <tr>
-                            <td><label>Category description</label></td>
-                            <td><p>{{selectedCategoryItem.categoryDescription}}</p></td>
+                            <td><label>Product price</label></td>
+                            <td><input class="form-control" type="text" name="productItem.productPrice" ng-model="productItem.productPrice"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Is vegetarian?</label></td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="productItem.productIsVegetarian" ng-model="productItem.productIsVegetarianYes">Yes
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="productItem.productIsVegetarian" ng-model="productItem.productIsVegetarianYes">No
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Is spicy?</label></td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Mild</option>
+                                    <option>Medium</option>
+                                    <option>Hot</option>
+                                </select>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="removeCat(selectedCategoryItem._id)"> Delete category </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"> Add products </button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
 
         </div>
     </div>
-</div> -->
+</div>
