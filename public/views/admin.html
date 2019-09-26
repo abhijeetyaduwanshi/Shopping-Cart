@@ -18,10 +18,10 @@
         <tbody>
             <tr ng-repeat="categoryItem in categoryItemsList">
                 <td>{{categoryItem.categoryTitle}}</td>
-                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductsModal"> Add products </button></td>
-                <td><button type="button" class="btn btn-info"> View products details </button></td>
-                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#catDetailsModal" ng-click="viewCategoryDetails(categoryItem._id)"> View category details </button></td>
-                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCatModal" ng-click="viewCategoryDetails(categoryItem._id)"> Delete category </button></td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductsModal" ng-click="viewCategoryDetails(categoryItem._id)">Add products</button></td>
+                <td><button type="button" class="btn btn-info">View products details</button></td>
+                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#catDetailsModal" ng-click="viewCategoryDetails(categoryItem._id)">View category details</button></td>
+                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCatModal" ng-click="viewCategoryDetails(categoryItem._id)">Delete category</button></td>
             </tr>
         </tbody>
     </table>

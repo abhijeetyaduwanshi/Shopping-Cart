@@ -27,6 +27,16 @@ app.post('/Admin', function(request, response) {
     });
 });
 
+// post products data from admin page
+// sends products data to category table
+app.post('/AdminAddProduct/:tableName', function(request, response) {
+    var tableName = request.params.tableName;
+
+    db.collection(tableName).insert(request.body, function(error, document) {
+        response.json(document);
+    });
+});
+
 // get single category details from categories table to populate view category details modal
 app.get('/Admin/:id', function(request, response) {
     var id = request.params.id;

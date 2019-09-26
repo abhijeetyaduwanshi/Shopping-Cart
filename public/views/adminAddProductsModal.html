@@ -31,12 +31,12 @@
                             <td>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="productItem.productIsVegetarian" ng-model="productItem.productIsVegetarianYes">Yes
+                                        <input class="form-check-input" type="radio" name="productItem.productIsVegetarian" ng-model="productItem.productIsVegetarian" value="true">Yes
                                     </label>
                                 </div>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="productItem.productIsVegetarian" ng-model="productItem.productIsVegetarianYes">No
+                                        <input class="form-check-input" type="radio" name="productItem.productIsVegetarian" ng-model="productItem.productIsVegetarian" value="false">No
                                     </label>
                                 </div>
                             </td>
@@ -44,10 +44,10 @@
                         <tr>
                             <td><label>Is spicy?</label></td>
                             <td>
-                                <select class="form-control">
-                                    <option>Mild</option>
-                                    <option>Medium</option>
-                                    <option>Hot</option>
+                                <select class="form-control" name="productItem.productIsSpicy" ng-model="productItem.productIsSpicy">
+                                    <option value="mild">Mild</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hot">Hot</option>
                                 </select>
                             </td>
                         </tr>
@@ -56,7 +56,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal"> Add products </button>
+                <button type="button" class="btn btn-primary" ng-click="addProductsToCategory(selectedCategoryItem.categoryTitle)" data-dismiss="modal">Add products</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
 

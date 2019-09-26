@@ -106,6 +106,25 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
         });
     };
 
+    // POST: products data to category table
+    // params: table name, of the category
+    $scope.addProductsToCategory = function(tableName) {
+        var product = $scope.productItem;
+        // console.log(product);
+        // console.log(categoryName);
+
+        $http({
+            method: 'POST',
+            url: '/AdminAddProduct/' + tableName,
+            data: product
+        }).then(function success(response) {
+            // console.log(response);
+            $scope.productItem = {};
+        }, function errorCallback(errorCallback) {
+            // TODO: add error page code here
+        });
+    };
+
     // this function is to view the details of a category item
     // params: id, of the category
     $scope.viewCategoryDetails = function(id) {
