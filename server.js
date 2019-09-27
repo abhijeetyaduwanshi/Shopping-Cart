@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('shoppingCart', ['Breads', 'Salads', 'cart']);
+var db = mongojs('shoppingCart', ['Breads', 'Chicken', 'Salads', 'cart']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
@@ -55,16 +55,23 @@ app.delete('/Admin/:id', function(request, response) {
     });
 });
 
-// get salads data for salads page
-app.get('/Salads', function(request, response) {
-    db.Salads.find(function(error, document) {
+// get breads data for breads page
+app.get('/Breads', function(request, response) {
+    db.Breads.find(function(error, document) {
         response.json(document);
     });
 });
 
-// get breads data for breads page
-app.get('/Breads', function(request, response) {
-    db.Breads.find(function(error, document) {
+// get chicken data for chicken page
+app.get('/Chicken', function(request, response) {
+    db.Chicken.find(function(error, document) {
+        response.json(document);
+    });
+});
+
+// get salads data for salads page
+app.get('/Salads', function(request, response) {
+    db.Salads.find(function(error, document) {
         response.json(document);
     });
 });
