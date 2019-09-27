@@ -35,7 +35,7 @@ myApp.config(function($routeProvider) {
         templateUrl: '../views/productView.html',
         controller: 'chickenCtrl'
     })
-    .when('/Dessert', {
+    .when('/Desserts', {
         templateUrl: '../views/productView.html',
         controller: 'dessertsCtrl'
     })
