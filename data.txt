@@ -1,0 +1,159 @@
+All Categories
+{
+        "_id" : ObjectId("5ccc80123686066058dcdfe7"),
+        "categoryId" : "category-buildYourOwnPizza",
+        "categoryImage" : "images/categoryItems/build-your-own-pizza.png",
+        "categoryTitle" : "Build Your Own Pizza",
+        "categoryDescription" : "Watch the pizza of your wildest dreams come to life."
+}
+{
+        "_id" : ObjectId("5ccc80363686066058dcdfe8"),
+        "categoryId" : "category-specialtyPizza",
+        "categoryRoute" : "#!/SpecialtyPizzas",
+        "categoryImage" : "images/categoryItems/specialty-pizzas.png",
+        "categoryTitle" : "Specialty Pizzas",
+        "categoryDescription" : "Enjoy one of our chef-inspired pizza combinations."
+}
+{
+        "_id" : ObjectId("5ccc80533686066058dcdfe9"),
+        "categoryId" : "category-bread",
+        "categoryRoute" : "#!/Bread",
+        "categoryImage" : "images/categoryItems/breads.png",
+        "categoryTitle" : "Breads",
+        "categoryDescription" : "Experience oven baked goodness with an order of our delicious breads."
+}
+{
+        "_id" : ObjectId("5ccc80733686066058dcdfea"),
+        "categoryId" : "category-chicken",
+        "categoryRoute" : "#!/Chicken",
+        "categoryImage" : "images/categoryItems/chicken.png",
+        "categoryTitle" : "Chicken",
+        "categoryDescription" : "Specialty Chicken, Wings, and Boneless Chicken in a selection of bold flavors."
+}
+{
+        "_id" : ObjectId("5ccc885d3686066058dcdfeb"),
+        "categoryId" : "category-desserts",
+        "categoryRoute" : "#!/Dessert",
+        "categoryImage" : "images/categoryItems/desserts.png",
+        "categoryTitle" : "Desserts",
+        "categoryDescription" : "Satisfy your sweet tooth."
+}
+{
+        "_id" : ObjectId("5ccc887e3686066058dcdfec"),
+        "categoryId" : "category-pasta",
+        "categoryRoute" : "#!/Pasta",
+        "categoryImage" : "images/categoryItems/pasta.png",
+        "categoryTitle" : "Pasta",
+        "categoryDescription" : "Prepared to order and baked to perfection."
+}
+{
+        "_id" : ObjectId("5ccc8b793686066058dcdfee"),
+        "categoryId" : "category-sandwich",
+        "categoryRoute" : "#!/Sandwich",
+        "categoryImage" : "images/categoryItems/oven-baked-sandwiches.png",
+        "categoryTitle" : "Oven Baked Sandwiches",
+        "categoryDescription" : "All on artisan bread with premium ingredients and baked to perfection."
+}
+{
+        "_id" : ObjectId("5ccc8b9d3686066058dcdfef"),
+        "categoryId" : "category-salads",
+        "categoryRoute" : "#!/Salad",
+        "categoryImage" : "images/categoryItems/salads.png",
+        "categoryTitle" : "Salads",
+        "categoryDescription" : "Domino's Salads, the perfect compliment to pizza."
+}
+{
+        "_id" : ObjectId("5ccc8bbc3686066058dcdff0"),
+        "categoryId" : "category-drinks",
+        "categoryRoute" : "#!/AllDrinks",
+        "categoryImage" : "images/categoryItems/drinks.png",
+        "categoryTitle" : "Drinks",
+        "categoryDescription" : "Quench your thirst."
+}
+{
+        "_id" : ObjectId("5ccc8bd73686066058dcdff1"),
+        "categoryId" : "category-extras",
+        "categoryRoute" : "#!/Extras",
+        "categoryImage" : "images/categoryItems/extras.png",
+        "categoryTitle" : "Extras",
+        "categoryDescription" : "Add extra taste to you entree."
+}
+{
+        "_id" : ObjectId("5ccc8bef3686066058dcdff2"),
+        "categoryId" : "category-popularItems",
+        "categoryImage" : "images/categoryItems/popular-items.png",
+        "categoryTitle" : "Popular Items",
+        "categoryDescription" : "No time to waste? Choose a meal and head straight for checkout."
+}
+{
+        "_id" : ObjectId("5ccc8c093686066058dcdff3"),
+        "categoryId" : "category-coupons",
+        "categoryImage" : "images/categoryItems/coupons.png",
+        "categoryTitle" : "Coupons",
+        "categoryDescription" : "Find the perfect hot online deal."
+}
+
+
+Breads
+	bread1 = {
+		productImage: 'images/breads/bread-parmesanBreadTwists.jpg',
+		productTitle: 'Parmesan Bread Twists',
+		productDescription: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.',
+		productPrice: ''
+	};
+
+	bread2 = {
+		productImage: 'images/breads/bread-garlicBreadTwists.jpg',
+		productTitle: 'Garlic Bread Twists',
+		productDescription: 'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.',
+		productPrice: ''
+	};
+
+	bread3 = {
+		productImage: 'images/breads/bread-stuffedCheesyBread.jpg',
+		productTitle: 'Stuffed Cheesy Bread',
+		productDescription: 'Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.',
+		productPrice: ''
+	};
+
+	bread4 = {
+		productImage: 'images/breads/bread-stuffedCheesyBreadWithSpinachAndFeta.jpg',
+		productTitle: 'Stuffed Cheesy Bread with Spinach & Feta',
+		productDescription: 'Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.',
+		productPrice: ''
+	};
+
+	bread5 = {
+		productImage: 'images/breads/bread-stuffedCheesyBreadWithBaconAndJalapeno.jpg',
+		productTitle: 'Stuffed Cheesy Bread with Bacon & Jalapeno',
+		productDescription: 'Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.',
+		productPrice: ''
+	};
+
+	bread6 = {
+		productImage: 'images/breads/bread-parmesanBreadBites.jpg',
+		productTitle: 'Parmesan Bread Bites',
+		productDescription: 'Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.',
+		productPrice: ''
+	};
+
+
+Salads
+{
+        "_id" : ObjectId("5d8d5b56ec40d48fa5b84dda"),
+        "productTitle" : "Classic Garden",
+        "productDescription" : "A crisp and colorful combination of grape tomatoes, red onion, carrots, red cabbage, cheddar cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
+        "productPrice" : "$6.99",
+        "productIsVegetarian" : "true",
+        "productIsSpicy" : "mild",
+        "productImage" : "images/salads/salad-classicGarden.jpg"
+}
+{
+        "_id" : ObjectId("5d8d5b8cec40d48fa5b84ddb"),
+        "productImage" : "images/salads/salad-chickenCaesar.jpg",
+        "productTitle" : "Chicken Caesar",
+        "productDescription" : "The makings of a classic: roasted white meat chicken, Parmesan cheese and brioche garlic croutons, all atop a blend of romaine and iceberg lettuce.",
+        "productPrice" : "$6.99",
+        "productIsVegetarian" : "true",
+        "productIsSpicy" : "mild"
+}

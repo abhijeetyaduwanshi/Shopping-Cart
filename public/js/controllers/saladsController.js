@@ -5,7 +5,7 @@ controller.controller('saladsCtrl', ['$scope', '$http', function($scope, $http) 
     // this method is to get the salads data
     $http({
         method: 'GET',
-        url: '/Salad'
+        url: '/Salads'
     }).then(function success(response) {
         // console.log("I got the data I requested");
         $scope.products = response.data;
@@ -18,14 +18,14 @@ controller.controller('saladsCtrl', ['$scope', '$http', function($scope, $http) 
         // console.log(id);
         var itemDetails = {
             itemId: id,
-            type: "Salad"
+            type: "Salads"
         };
 
         // sending the salad id and type, id will be used to look up the salad item
         // and type will be used to look up collection in mongodb
         $http({
             method: 'POST',
-            url: '/Salad/' + id,
+            url: '/Salads/' + id,
             data: itemDetails
         }).then(function success(response) {
             // console.log(response);

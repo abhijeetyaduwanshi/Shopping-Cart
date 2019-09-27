@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('shoppingCart', ['salads', 'cart']);
+var db = mongojs('shoppingCart', ['Breads', 'Salads', 'cart']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
@@ -55,6 +55,27 @@ app.delete('/Admin/:id', function(request, response) {
     });
 });
 
+// get salads data for salads page
+app.get('/Salads', function(request, response) {
+    db.Salads.find(function(error, document) {
+        response.json(document);
+    });
+});
+
+// get breads data for breads page
+app.get('/Breads', function(request, response) {
+    db.Breads.find(function(error, document) {
+        response.json(document);
+    });
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -69,18 +90,8 @@ app.get('/Home', function(request, response) {
     });
 });
 
-// this method is to get the salads data for salads view
-app.get('/Salad', function(request, response) {
-    // console.log("This is for the salad");
-
-    db.salads.find(function(error, document) {
-        // console.log(document);
-        response.json(document);
-    });
-});
-
 // this method is to post the item to cart collection
-app.post('/Salad/:id', function(request, response) {
+app.post('/Salads/:id', function(request, response) {
     var id = request.params.id;
     // console.log(request.body);
 
@@ -101,11 +112,11 @@ app.get('/Cart', function(request, response) {
 });
 
 // this method is to get the item data for cart view
-app.get('/Salad/:id', function(request, response) {
+app.get('/Salads/:id', function(request, response) {
     var id = request.params.id;
     // console.log(request.body);
 
-    db.salads.findOne({_id: mongojs.ObjectId(id)}, function(error, document) {
+    db.Salads.findOne({_id: mongojs.ObjectId(id)}, function(error, document) {
         // console.log(document);
         response.json(document);
     });
