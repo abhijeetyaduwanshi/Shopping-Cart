@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Category</th>
+                <th>Edit cat</th>
                 <th>Add products</th>
                 <th>View products</th>
                 <th>View details</th>
@@ -18,6 +19,7 @@
         <tbody>
             <tr ng-repeat="categoryItem in categoryItemsList">
                 <td>{{categoryItem.categoryTitle}}</td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editCatModal" ng-click="editCategoryDetails(categoryItem._id)">Edit cat</button></td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductsModal" ng-click="viewCategoryDetails(categoryItem._id)">Add products</button></td>
                 <td><button type="button" class="btn btn-info">View products details</button></td>
                 <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#catDetailsModal" ng-click="viewCategoryDetails(categoryItem._id)">View category details</button></td>
@@ -25,6 +27,10 @@
             </tr>
         </tbody>
     </table>
+
+    <div id="adminEditCategoryModal">
+        <div admin-Edit-Category></div>
+    </div>
 
     <div id="adminAddProductsModal">
         <div admin-Add-Products></div>
