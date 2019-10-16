@@ -25,15 +25,7 @@ myApp.config(function($routeProvider) {
         templateUrl: '../views/specialtyPizzas.html',
         controller: 'specialtyPizzasCtrl'
     })
-    .when('/Breads', {
-        templateUrl: '../views/productView.html',
-        controller: 'catCtrl'
-    })
-    .when('/Chicken', {
-        templateUrl: '../views/productView.html',
-        controller: 'catCtrl'
-    })
-    .when('/Desserts', {
+    .when('/category/:type', {
         templateUrl: '../views/productView.html',
         controller: 'catCtrl'
     })

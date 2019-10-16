@@ -70,21 +70,21 @@ app.delete('/Admin/:id', function(request, response) {
 });
 
 // get breads data for breads page
-app.get('/Breads', function(request, response) {
+app.get('/category/Breads', function(request, response) {
     db.Breads.find(function(error, document) {
         response.json(document);
     });
 });
 
 // get chicken data for chicken page
-app.get('/Chicken', function(request, response) {
+app.get('/category/Chicken', function(request, response) {
     db.Chicken.find(function(error, document) {
         response.json(document);
     });
 });
 
 // get desserts data for desserts page
-app.get('/Desserts', function(request, response) {
+app.get('/category/Desserts', function(request, response) {
     db.Desserts.find(function(error, document) {
         response.json(document);
     });
