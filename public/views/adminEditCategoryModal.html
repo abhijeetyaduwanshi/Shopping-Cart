@@ -10,32 +10,32 @@
             <div class="modal-body">
                 <table class="table">
                     <tbody>
-                        <tr>
+                        <tr id="categoryIdField">
                             <td><label>Category html id (should be disabled and auto prepare based on title)</label></td>
-                            <td><input class="form-control" type="text" name="categoryItem.categoryId" ng-model="categoryItem.categoryId"></td>
+                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryId"></td>
                         </tr>
-                        <tr>
+                        <tr id="categoryRouteField">
                             <td><label>Category route (should be disabled and auto prepare based on title)</label></td>
-                            <td><input class="form-control" type="text" name="categoryItem.categoryRoute" ng-model="categoryItem.categoryRoute"></td>
+                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryRoute"></td>
                         </tr>
-                        <tr>
+                        <tr id="categoryImageField">
                             <td><label>Category image path (should be disabled and auto prepare based on title)</label></td>
-                            <td><input class="form-control" type="text" name="categoryItem.categoryImage" ng-model="categoryItem.categoryImage"></td>
+                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryImage"></td>
                         </tr>
                         <tr>
                             <td><label>Category title</label></td>
-                            <td><input class="form-control" type="text" name="categoryItem.categoryTitle" ng-model="categoryItem.categoryTitle"></td>
+                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryTitle"></td>
                         </tr>
                         <tr>
                             <td><label>Category description</label></td>
-                            <td><input class="form-control" type="text" name="categoryItem.categoryDescription" ng-model="categoryItem.categoryDescription"></td>
+                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryDescription"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" ng-click="editCategoryItem()" data-dismiss="modal">Edit category item</button>
+                <button type="button" class="btn btn-primary" ng-click="editCategoryItem(selectedCategoryItem._id)" data-dismiss="modal">Edit category item</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
 

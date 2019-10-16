@@ -31,7 +31,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 
     // this function is to prepare the categoryRoute from categoryName
     var categoryRouteValueFunction = function(categoryName) {
-        var categoryRouteValue = "#!/";
+        var categoryRouteValue = "#!/category/";
         if (categoryName) {
             var categoryNameWords = categoryName.split(" ");
             for (var i = 0, len = categoryNameWords.length; i < len; i++) {
@@ -150,6 +150,29 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
             url: '/Admin/' + id
         }).then(function success(response) {
             // console.log(response);
+            refresh();
+        }, function errorCallback(error) {
+            // TODO: add error page code here
+        });
+    };
+
+    // this method is to put the category data for a particular category
+    // params: id, of the category
+    $scope.editCategoryItem = function(id) {
+        var catItem = $scope.selectedCategoryItem;
+        catItem.categoryId = categoryIdValueFunction(catItem.categoryTitle);
+        catItem.categoryRoute = categoryRouteValueFunction(catItem.categoryTitle);
+        catItem.categoryImage = categoryImgPathValueFunction(catItem.categoryTitle);
+        catItem.categoryTitle = categoryTitleValueFunction(catItem.categoryTitle);
+        catItem.categoryDescription = categoryDescriptionValueFunction(catItem.categoryDescription);
+        // console.log(catItem);
+        $http({
+            method: 'PUT',
+            url: '/AdminEdit/' + id,
+            data: catItem
+        }).then(function success(response) {
+            // console.log(response);
+            $scope.selectedCategoryItem = {};
             refresh();
         }, function errorCallback(error) {
             // TODO: add error page code here

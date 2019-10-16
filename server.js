@@ -27,6 +27,20 @@ app.post('/Admin', function(request, response) {
     });
 });
 
+// put category details from admin edit category
+// sends category data
+app.put('/AdminEdit/:id', function(request, response) {
+    var id = request.params.id;
+
+    db.categories.findAndModify({
+        query: {_id: mongojs.ObjectId(id)},
+        update: {$set: { categoryTitle: request.body.categoryTitle, categoryDescription: request.body.categoryDescription, categoryId: request.body.categoryId, categoryRoute: request.body.categoryRoute, categoryImage: request.body.categoryImage}},
+        new: true}, function(error, document) {
+            response.json(document);
+        }
+    );
+});
+
 // post products data from admin page
 // sends products data to category table
 app.post('/AdminAddProduct/:tableName', function(request, response) {
