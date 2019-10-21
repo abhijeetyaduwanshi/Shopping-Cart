@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('shoppingCart', ['Breads', 'Chicken', 'Desserts', 'Salads', 'cart']);
+var db = mongojs('shoppingCart', ['Breads', 'Chicken', 'Desserts', 'Salads', 'Drinks', 'cart']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
@@ -86,6 +86,13 @@ app.get('/category/Chicken', function(request, response) {
 // get desserts data for desserts page
 app.get('/category/Desserts', function(request, response) {
     db.Desserts.find(function(error, document) {
+        response.json(document);
+    });
+});
+
+// get drinks data for drinks page
+app.get('/category/Drinks', function(request, response) {
+    db.Drinks.find(function(error, document) {
         response.json(document);
     });
 });
