@@ -158,6 +158,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 
     // this method is to put the category data for a particular category
     // params: id, of the category
+    // TODO: edit should alter the categories table and also alter the table itself
     $scope.editCategoryItem = function(id) {
         var catItem = $scope.selectedCategoryItem;
         catItem.categoryId = categoryIdValueFunction(catItem.categoryTitle);
