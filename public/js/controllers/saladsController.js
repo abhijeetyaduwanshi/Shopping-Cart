@@ -32,5 +32,7 @@ controller.controller('saladsCtrl', ['$scope', '$http', function($scope, $http) 
         }, function errorCallback(error) {
             // TODO: add error page code here
         });
+
+        window.location = "#!/Cart";
     };
 }]);
