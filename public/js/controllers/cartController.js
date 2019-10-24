@@ -21,7 +21,7 @@ controller.controller('cartCtrl', ['$scope', '$http', function($scope, $http) {
             }).then(function success(response) {
                 // console.log(response.data);
                 $scope.products.push(response.data);
-                $scope.productFinalPrice += response.data.productPrice;
+                $scope.productFinalPrice += parseFloat(response.data.productPrice);
                 // console.log($scope.products);
             }, function errorCallback(error) {
                 // TODO: add error page code here
