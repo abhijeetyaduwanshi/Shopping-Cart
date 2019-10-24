@@ -172,7 +172,7 @@ app.get('/Salads/:id', function(request, response) {
     var id = request.params.id;
     // console.log(request.body);
 
-    db.Salads.findOne({_id: mongojs.ObjectId(id)}, function(error, document) {
+    db.Salads.findOne({_id: mongojs.ObjectId(id)}, {productTitle: 1, productPrice: 1}, function(error, document) {
         // console.log(document);
         response.json(document);
     });
