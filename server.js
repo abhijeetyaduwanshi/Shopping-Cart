@@ -119,7 +119,7 @@ app.get('/category/Extras', function(request, response) {
 });
 
 // get salads data for salads page
-app.get('/Salads', function(request, response) {
+app.get('/category/Salads', function(request, response) {
     db.Salads.find(function(error, document) {
         response.json(document);
     });
