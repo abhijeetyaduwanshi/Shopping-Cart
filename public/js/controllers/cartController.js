@@ -17,7 +17,7 @@ controller.controller('cartCtrl', ['$scope', '$http', function($scope, $http) {
 
             $http({
                 method: 'GET',
-                url: type + '/' + id
+                url: '/lookProduct/' + id + '/' + type
             }).then(function success(response) {
                 // console.log(response.data);
                 $scope.products.push(response.data);

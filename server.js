@@ -172,11 +172,11 @@ app.get('/Cart', function(request, response) {
 });
 
 // this method is to get the item data for cart view
-app.get('/Salads/:id', function(request, response) {
+app.get('/lookProduct/:id/:type', function(request, response) {
     var id = request.params.id;
-    // console.log(request.body);
+    var type = request.params.type;
 
-    db.Salads.findOne({_id: mongojs.ObjectId(id)}, {productTitle: 1, productPrice: 1}, function(error, document) {
+    db.collection(type).findOne({_id: mongojs.ObjectId(id)}, {productTitle: 1, productPrice: 1}, function(error, document) {
         // console.log(document);
         response.json(document);
     });
