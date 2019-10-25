@@ -18,14 +18,15 @@ controller.controller('saladsCtrl', ['$scope', '$http', function($scope, $http) 
         // console.log(id);
         var itemDetails = {
             itemId: id,
-            type: "Salads"
+            type: "Salads",
+            count: 1
         };
 
         // sending the salad id and type, id will be used to look up the salad item
         // and type will be used to look up collection in mongodb
         $http({
             method: 'POST',
-            url: '/Salads/' + id,
+            url: '/AddToCart',
             data: itemDetails
         }).then(function success(response) {
             // console.log(response);
