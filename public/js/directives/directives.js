@@ -11,6 +11,10 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/adminEditCategoryModal.html'
     };
+}).directive('adminViewProductDetails', function() {
+    return {
+        templateUrl: '../../views/adminViewProductDetailsModal.html'
+    };
 }).directive('adminViewCategoryDetails', function() {
     return {
         templateUrl: '../../views/adminViewCategoryDetailsModal.html'
@@ -19,8 +23,8 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/adminDeleteCategoryModal.html'
     };
-}).directive('adminAddProducts', function() {
+}).directive('adminAddNewProduct', function() {
     return {
-        templateUrl: '../../views/adminAddProductsModal.html'
+        templateUrl: '../../views/adminAddNewProductModal.html'
     };
 });

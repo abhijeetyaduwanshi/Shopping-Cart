@@ -60,6 +60,15 @@ app.get('/Admin/:id', function(request, response) {
     });
 });
 
+// get products details for a category on admin page
+app.get('/AdminGetTitle/:title', function(request, response) {
+    var title = request.params.title;
+
+    db.collection(title).find({}, {productTitle: 1}, function(error, document) {
+        response.json(document);
+    });
+});
+
 // delete single category with category id from delete category modal
 app.delete('/Admin/:id', function(request, response) {
     var id = request.params.id;

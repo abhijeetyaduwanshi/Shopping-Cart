@@ -141,6 +141,19 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
         });
     };
 
+    // GET: products list in a category
+    // params: title, of the category
+    $scope.viewProductsDetails = function(title) {
+        $http({
+            method: 'GET',
+            url: '/AdminGetTitle/' + title
+        }).then(function success(response) {
+            $scope.productsList = response.data;
+        }, function errorCallback(error) {
+            // TODO: add error page code here
+        });
+    };
+
     // this function is to delete category item
     // params: id, of the category
     $scope.removeCat = function(id) {
