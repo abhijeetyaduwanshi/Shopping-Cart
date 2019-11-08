@@ -18,6 +18,12 @@
     color:#ffffff
 }
 
+#cartItemsCount {
+    top: -1.5em;
+    vertical-align: sub;
+    font-size: medium;
+}
+
 @media (min-width:320px) and (max-width:480px) {
     #brandLogo {
         margin: auto;
