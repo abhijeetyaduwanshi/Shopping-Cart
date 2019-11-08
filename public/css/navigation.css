@@ -12,3 +12,35 @@
 #mainNav {
     margin-bottom: 10px;
 }
+
+@media (min-width:320px) and (max-width:480px) {
+    #brandLogo {
+        margin: auto;
+    }
+
+    #hamburger {
+        position: absolute;
+        float: left;
+    }
+
+    #brandName {
+        display: none;
+    }
+}
+
+@media (min-width:481px) and (max-width:599px) {
+    #brandLogo {
+        margin: auto;
+    }
+
+    #hamburger {
+        position: absolute;
+        float: left;
+    }
+}
+
+@media (min-width:600px) and (max-width:801px) {
+    #brandLogo {
+        margin: auto;
+    }
+}
