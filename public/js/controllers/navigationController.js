@@ -9,7 +9,17 @@ controller.controller('navigationCtrl',['$scope', '$http', function($scope, $htt
     }).then(function success(response) {
         // console.log("I got the data I requested");
         $scope.navigationItems = response.data;
-        console.log(response.data)
+    }, function errorCallback(error) {
+        // TODO: add error page code here
+    });
+
+    // this method is to get the item count from cart for navigation cart
+    $http({
+        method: 'GET',
+        url: '/Navigation/CartCount'
+    }).then(function success(response) {
+        // console.log("I got the data I requested");
+        $scope.itemsCount = response.data;
     }, function errorCallback(error) {
         // TODO: add error page code here
     });
