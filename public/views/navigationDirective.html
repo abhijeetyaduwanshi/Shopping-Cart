@@ -11,18 +11,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="navigationCtrl">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="#!">ALL</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/AllPizzas">PIZZA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Breads">BREADS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Chicken">CHICKEN</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Desserts">DESSERTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Pasta">PASTA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Sandwiches">SANDWICHES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Salads">SALADS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Drinks">DRINKS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/category/Extras">EXTRAS</a></li>
+                    <li class="nav-item" ng-repeat="navigation in navigationItems"><a class="nav-link" ng-href="{{navigation.categoryRoute}}">{{navigation.categoryTitle}}</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!/Cart"><i id="cartIcon" class="fa fa-shopping-cart"><sup id="cartItemsCount">1</sup></i></a></li>
                 </ul>
             </div>

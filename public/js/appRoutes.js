@@ -1,5 +1,6 @@
 var myApp = angular.module('shoppingCartApp', [
     'ngRoute',
+    'shoppingCartApp.navigationController',
     'shoppingCartApp.myCustomDirectives',
     'shoppingCartApp.categoriesListController',
     'shoppingCartApp.specialtyPizzasController',

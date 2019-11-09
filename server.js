@@ -180,6 +180,14 @@ app.get('/Cart', function(request, response) {
     });
 });
 
+// this method is to get the category title data for navigation
+app.get('/Navigation', function(request, response) {
+    db.categories.find({}, {categoryTitle: 1, categoryRoute: 1}, function(error, document) {
+        // console.log(document);
+        response.json(document);
+    });
+});
+
 // this method is to get the item data for cart view
 app.get('/lookProduct/:id/:type', function(request, response) {
     var id = request.params.id;
