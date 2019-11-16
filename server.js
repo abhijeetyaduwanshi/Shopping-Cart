@@ -191,7 +191,7 @@ app.get('/Navigation', function(request, response) {
 // this method is to get the item count from cart for navigation cart
 app.get('/Navigation/CartCount', function(request, response) {
     db.cart.count(function(error, document) {
-        console.log(document);
+        // console.log(document);
         response.json(document);
     });
 });

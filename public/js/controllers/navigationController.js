@@ -14,13 +14,18 @@ controller.controller('navigationCtrl',['$scope', '$http', function($scope, $htt
     });
 
     // this method is to get the item count from cart for navigation cart
-    $http({
-        method: 'GET',
-        url: '/Navigation/CartCount'
-    }).then(function success(response) {
-        // console.log("I got the data I requested");
-        $scope.itemsCount = response.data;
-    }, function errorCallback(error) {
-        // TODO: add error page code here
-    });
+    var getCartCount = function() {
+        $http({
+            method: 'GET',
+            url: '/Navigation/CartCount'
+        }).then(function success(response) {
+            // console.log("I got the data I requested");
+            $scope.itemsCount = response.data;
+        }, function errorCallback(error) {
+            // TODO: add error page code here
+        });
+    };
+
+    getCartCount();
+    $scope.$on("itemAddedToCartCount", getCartCount);
 }]);

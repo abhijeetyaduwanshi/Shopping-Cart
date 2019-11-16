@@ -1,5 +1,5 @@
 var controller = angular.module('shoppingCartApp.catController', []);
-controller.controller('catCtrl',['$scope', '$http', '$location', function($scope, $http, $location) {
+controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
     // console.log("Hello world from the cat controller");
 
     console.log($location.url());
@@ -35,6 +35,7 @@ controller.controller('catCtrl',['$scope', '$http', '$location', function($scope
             data: itemDetails
         }).then(function success(response) {
             // console.log(response);
+            $rootScope.$broadcast("itemAddedToCartCount");
         }, function errorCallback(error) {
             // TODO: add error page code here
         });
