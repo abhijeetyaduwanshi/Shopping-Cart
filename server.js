@@ -196,6 +196,17 @@ app.get('/Navigation/CartCount', function(request, response) {
     });
 });
 
+// this method is to get the cat details for admin page
+app.get('/getThisCatDetails/:onlyCatName', function(request, response) {
+    var catName = request.params.onlyCatName;
+    // console.log(catName);
+
+    db.categories.find({categoryTitle: catName}, function(error, document) {
+        // console.log(document);
+        response.json(document);
+    });
+});
+
 // this method is to get the item data for cart view
 app.get('/lookProduct/:id/:type', function(request, response) {
     var id = request.params.id;

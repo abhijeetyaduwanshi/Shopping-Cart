@@ -125,22 +125,6 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
         });
     };
 
-    // this function is to view the details of a category item
-    // params: id, of the category
-    $scope.viewCategoryDetails = function(id) {
-        // console.log(id);
-        $http({
-            method: 'GET',
-            url: '/Admin/' + id
-        }).then(function success(response) {
-            // console.log(response);
-            $scope.selectedCategoryItem = {};
-            $scope.selectedCategoryItem = response.data[0];
-        }, function errorCallback(error) {
-            // TODO: add error page code here
-        });
-    };
-
     // GET: products list in a category
     // params: title, of the category
     $scope.viewProductsDetails = function(title) {
