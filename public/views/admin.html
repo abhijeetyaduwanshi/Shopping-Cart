@@ -9,17 +9,21 @@
         <thead>
             <tr>
                 <th>Categories</th>
-                <th>Options</th>
+                <th>Edit category</th>
+                <th>Add new product</th>
+                <th>View product details</th>
+                <th>View category details</th>
+                <th>Delete category</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="categoryItem in categoryItemsList">
                 <td>{{categoryItem.categoryTitle}}</td>
-                <td>
-                    <a ng-href="#!/Admin/catDetails/{{categoryItem.categoryTitle}}">
-                        Category details
-                    </a>
-                </td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editCategory" ng-click="viewCategoryDetails(categoryItem._id)">Edit category</button></td>
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addNewProduct" ng-click="viewCategoryDetails(categoryItem._id)">Add new product</button></td>
+                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#viewProductDetails" ng-click="viewProductsDetails(categoryItem.categoryTitle)">View product details</button></td>
+                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#viewCategoryDetails" ng-click="viewCategoryDetails(categoryItem._id)">View category details</button></td>
+                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCategory" ng-click="viewCategoryDetails(categoryItem._id)">Delete category</button></td>
             </tr>
         </tbody>
     </table>
