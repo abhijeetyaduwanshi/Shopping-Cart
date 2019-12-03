@@ -192,9 +192,4 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
             // TODO: add error page code here
         });
     };
-
-    $scope.isActive = "viewProducts";
-    $scope.activeButton = function(tabName) {
-        $scope.isActive = tabName;
-    } ;
 }]);
