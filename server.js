@@ -32,13 +32,21 @@ app.post('/Admin', function(request, response) {
 app.put('/AdminEdit/:id', function(request, response) {
     var id = request.params.id;
 
-    db.categories.findAndModify({
-        query: {_id: mongojs.ObjectId(id)},
-        update: {$set: { categoryTitle: request.body.categoryTitle, categoryDescription: request.body.categoryDescription, categoryId: request.body.categoryId, categoryRoute: request.body.categoryRoute, categoryImage: request.body.categoryImage}},
-        new: true}, function(error, document) {
-            response.json(document);
+    db.categories.find({_id: mongojs.ObjectId(id)}, {categoryTitle: 1}, function(error, document) {
+        var tableToEdit = document[0].categoryTitle;
+
+        if (document) {
+            db.categories.findAndModify({
+                query: {_id: mongojs.ObjectId(id)},
+                update: {$set: { categoryTitle: request.body.categoryTitle, categoryDescription: request.body.categoryDescription, categoryId: request.body.categoryId, categoryRoute: request.body.categoryRoute, categoryImage: request.body.categoryImage}},
+                new: true}, function(error, document) {
+                    response.json(document);
+                }
+            );
+
+            db.collection(tableToEdit).rename(request.body.categoryTitle);
         }
-    );
+    });
 });
 
 // post products data from admin page

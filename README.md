@@ -70,6 +70,8 @@ In the inserted document, if we don't specify the `_id` parameter, then MongoDB 
 * JavaScript
 
 # TO DO:
+* Admin - Check when adding category adds details to categories table and also creates a table of its own
+* Admin - Delete category only removes entry from categories table, should also drop its own collection from the db
 * All pages - Make the navigation fixed on the top of the page
 * All pages - Style the navigation bar
 * Category list page (home page) - get the categories images from dominos and put them in the category tabs
