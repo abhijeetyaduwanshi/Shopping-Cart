@@ -6,6 +6,7 @@ var myApp = angular.module('shoppingCartApp', [
     'shoppingCartApp.specialtyPizzasController',
     'shoppingCartApp.catController',
     'shoppingCartApp.adminController',
+    'shoppingCartApp.adminViewProductDetailsController',
     'shoppingCartApp.cartController'
     ]);
 
@@ -28,6 +29,10 @@ myApp.config(function($routeProvider) {
     .when('/Admin', {
         templateUrl: '../views/admin.html',
         controller: 'adminCtrl'
+    })
+    .when('/Admin/productDetails/:type', {
+        templateUrl: '../views/adminViewProductDetails.html',
+        controller: 'adminViewProductDetailsCtrl'
     })
     .when('/Cart', {
         templateUrl: '../views/cartView.html',

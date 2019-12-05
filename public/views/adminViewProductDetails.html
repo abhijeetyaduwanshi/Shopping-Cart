@@ -1,0 +1,26 @@
+<div>
+    <h4>View product details {{catName}}</h4>
+
+    <table class="table">
+        <tbody>
+            <tr ng-repeat="products in productsList">
+                <td>
+                    {{products.productTitle}}
+                    <br />
+                    {{products.productDescription}}
+                    <br />
+                    {{products.productPrice}}
+                    <br />
+                    {{products.productIsVegetarian}}
+                    <br />
+                    {{products.productIsSpicy}}
+                    <br />
+                    {{products.productImage}}
+                    <br />
+                    <button type="button" class="btn btn-warning" ng-click="edit-To-Emplement(products._id)">Edit product</button>
+                    <button type="button" class="btn btn-danger" ng-click="delete-To-Emplement(products._id)">Detele product</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

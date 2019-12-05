@@ -72,7 +72,7 @@ app.get('/Admin/:id', function(request, response) {
 app.get('/AdminGetTitle/:title', function(request, response) {
     var title = request.params.title;
 
-    db.collection(title).find({}, {productTitle: 1}, function(error, document) {
+    db.collection(title).find(function(error, document) {
         response.json(document);
     });
 });
