@@ -180,6 +180,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
         });
     };
 
+    // this is for the tab view for the admin category options
     $scope.isActive = "editCategory";
     $scope.activeButton = function(tabName) {
         $scope.isActive = tabName;
