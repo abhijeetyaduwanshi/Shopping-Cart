@@ -1,23 +1,34 @@
-<div>
-    <h4>View product details {{catName}}</h4>
+<div class="productDetailsPage">
 
+    <div id="adminAddNewProductModal">
+        <div admin-Add-New-Product></div>
+    </div>
+
+    <h4 id="categoryListHeader">View product details {{catName}}<button id="addNewCategoriesBtn" type="button" class="btn btn-success" data-toggle="modal" data-target="#addNewProduct" ng-click="viewCategoryDetails(categoryItem._id)">Add new product</button></h4>
     <table class="table">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Product description</th>
+                <th>Product image</th>
+                <th>Product price</th>
+                <th>Is vegetarian?</th>
+                <th>Is spicy?</th>
+                <th colspan="2">Product edit</th>
+            </tr>
+        </thead>
         <tbody>
             <tr ng-repeat="products in productsList">
+                <td>{{products.productTitle}}</td>
+                <td>{{products.productDescription}}</td>
+                <td>{{products.productImage}}</td>
+                <td>{{products.productPrice}}</td>
+                <td>{{products.productIsVegetarian}}</td>
+                <td>{{products.productIsSpicy}}</td>
                 <td>
-                    {{products.productTitle}}
-                    <br />
-                    {{products.productDescription}}
-                    <br />
-                    {{products.productPrice}}
-                    <br />
-                    {{products.productIsVegetarian}}
-                    <br />
-                    {{products.productIsSpicy}}
-                    <br />
-                    {{products.productImage}}
-                    <br />
                     <button type="button" class="btn btn-warning" ng-click="edit-To-Emplement(products._id)">Edit product</button>
+                </td>
+                <td>
                     <button type="button" class="btn btn-danger" ng-click="delete-To-Emplement(products._id)">Detele product</button>
                 </td>
             </tr>

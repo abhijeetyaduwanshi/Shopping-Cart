@@ -10,7 +10,6 @@
             <tr>
                 <th>Categories</th>
                 <th>Category options</th>
-                <th>Add new product</th>
                 <th>View product details</th>
             </tr>
         </thead>
@@ -18,7 +17,6 @@
             <tr ng-repeat="categoryItem in categoryItemsList">
                 <td>{{categoryItem.categoryTitle}}</td>
                 <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editCategory" ng-click="viewCategoryDetails(categoryItem._id)">Category options</button></td>
-                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addNewProduct" ng-click="viewCategoryDetails(categoryItem._id)">Add new product</button></td>
                 <td><a ng-href="#!/Admin/productDetails/{{categoryItem.categoryTitle}}"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#viewProductDetails" ng-click="viewProductsDetails(categoryItem.categoryTitle)">View product details</button></a></td>
             </tr>
         </tbody>
@@ -26,10 +24,6 @@
 
     <div id="adminEditCategoryModal">
         <div admin-Edit-Category></div>
-    </div>
-
-    <div id="adminAddNewProductModal">
-        <div admin-Add-New-Product></div>
     </div>
 
     <!-- Please list products in a category
