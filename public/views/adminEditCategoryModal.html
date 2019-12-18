@@ -2,41 +2,82 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
-        <div class="modal-header">
-            <h4 class="modal-title">Edit category</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <!-- Tab buttons -->
+            <div role="tabpanel">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active': isActive === 'editCategory'}" ng-click="activeButton('editCategory')">Edit category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active': isActive === 'viewCategoryDetails'}" ng-click="activeButton('viewCategoryDetails')">View category details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active': isActive === 'deleteCategory'}" ng-click="activeButton('deleteCategory')">Delete category</a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="modal-body">
-                <table class="table">
-                    <tbody>
-                        <tr id="categoryIdField">
-                            <td><label>Category html id (should be disabled and auto prepare based on title)</label></td>
-                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryId"></td>
-                        </tr>
-                        <tr id="categoryRouteField">
-                            <td><label>Category route (should be disabled and auto prepare based on title)</label></td>
-                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryRoute"></td>
-                        </tr>
-                        <tr id="categoryImageField">
-                            <td><label>Category image path (should be disabled and auto prepare based on title)</label></td>
-                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryImage"></td>
-                        </tr>
-                        <tr>
-                            <td><label>Category title</label></td>
-                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryTitle"></td>
-                        </tr>
-                        <tr>
-                            <td><label>Category description</label></td>
-                            <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryDescription"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <!-- All tab content -->
+            <div class="tab-content">
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" ng-click="editCategoryItem(selectedCategoryItem._id)" data-dismiss="modal">Edit category item</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <!-- 1st tab -->
+                <div class="tab-pane" ng-class="{'active': isActive === 'editCategory'}">
+                    <!-- 1st tab header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit category</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- 1st tab body -->
+                    <div class="modal-body">
+                        <table class="table">
+                            <tbody>
+                                <tr id="categoryIdField">
+                                    <td><label>Category html id (should be disabled and auto prepare based on title)</label></td>
+                                    <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryId"></td>
+                                </tr>
+                                <tr id="categoryRouteField">
+                                    <td><label>Category route (should be disabled and auto prepare based on title)</label></td>
+                                    <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryRoute"></td>
+                                </tr>
+                                <tr id="categoryImageField">
+                                    <td><label>Category image path (should be disabled and auto prepare based on title)</label></td>
+                                    <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryImage"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Category title</label></td>
+                                    <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryTitle"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Category description</label></td>
+                                    <td><input class="form-control" type="text" ng-model="selectedCategoryItem.categoryDescription"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 1st tab footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" ng-click="editCategoryItem(selectedCategoryItem._id)" data-dismiss="modal">Edit category item</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+                <!-- 2nd tab -->
+                <div class="tab-pane" ng-class="{'active': isActive === 'viewCategoryDetails'}">
+                    <!-- 2nd tab header -->
+                    <div id="adminViewCategoryDetailsModal">
+                        <div admin-View-Category-Details></div>
+                    </div>
+                </div>
+
+                <!-- 3rd tab -->
+                <div class="tab-pane" ng-class="{'active': isActive === 'deleteCategory'}">
+                    <!-- 3rd tab content -->
+                    <div id="adminDeleteCategoryModal">
+                        <div admin-Delete-Category></div>
+                    </div>
+                </div>
             </div>
 
         </div>
