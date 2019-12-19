@@ -26,7 +26,7 @@
                 <td>{{products.productIsVegetarian}}</td>
                 <td>{{products.productIsSpicy}}</td>
                 <td>
-                    <button type="button" class="btn btn-warning" ng-click="edit-To-Emplement(products._id)">Edit product</button>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editProduct" ng-click="viewProductDetails(products._id)">Edit product</button>
                 </td>
                 <td>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteProduct" ng-click="viewProductDetails(products._id)">Detele product</button>
@@ -34,6 +34,10 @@
             </tr>
         </tbody>
     </table>
+</div>
+
+<div id="adminEditProductModal">
+    <div admin-Edit-Product></div>
 </div>
 
 <div id="adminDeleteProductModal">

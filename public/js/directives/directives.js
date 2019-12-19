@@ -31,4 +31,8 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/adminDeleteProductModal.html'
     };
+}).directive('adminEditProduct', function() {
+    return {
+        templateUrl: '../../views/adminEditProductModal.html'
+    };
 });

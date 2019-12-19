@@ -58,4 +58,11 @@ controller.controller('adminViewProductDetailsCtrl', ['$scope', '$http', functio
         console.log(productId);
         console.log(productTitle);
     };
+
+    // this method is to put the product data
+    // params: id, of the product
+    $scope.updateProduct = function(id, productTitle) {
+        console.log(id);
+        console.log(productTitle);
+    };
 }]);
