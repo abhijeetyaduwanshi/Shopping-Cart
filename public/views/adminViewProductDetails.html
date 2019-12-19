@@ -29,9 +29,13 @@
                     <button type="button" class="btn btn-warning" ng-click="edit-To-Emplement(products._id)">Edit product</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-danger" ng-click="delete-To-Emplement(products._id)">Detele product</button>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteProduct" ng-click="viewProductDetails(products._id)">Detele product</button>
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
+
+<div id="adminDeleteProductModal">
+    <div admin-Delete-Product></div>
 </div>

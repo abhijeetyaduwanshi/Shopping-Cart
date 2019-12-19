@@ -68,6 +68,16 @@ app.get('/Admin/:id', function(request, response) {
     });
 });
 
+// get single product details from respective category table to populate view product details modal
+app.get('/Admin/ViewProductDetails/:id/:tableName', function(request, response) {
+    var id = request.params.id;
+    var tableName = request.params.tableName;
+
+    db.collection(tableName).find({_id: mongojs.ObjectId(id)}, function(error, document) {
+        response.json(document);
+    });
+});
+
 // get products details for a category on admin page
 app.get('/AdminGetTitle/:title', function(request, response) {
     var title = request.params.title;

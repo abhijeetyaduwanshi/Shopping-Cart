@@ -35,4 +35,27 @@ controller.controller('adminViewProductDetailsCtrl', ['$scope', '$http', functio
             // TODO: add error page code here
         });
     };
+
+    // this function is to view the details of a product item
+    // params: id, of the product
+    $scope.viewProductDetails = function(productId) {
+        // console.log(productId);
+        $http({
+            method: 'GET',
+            url: '/Admin/ViewProductDetails/' + productId + "/" + onlyCatName
+        }).then(function success(response) {
+            // console.log(response);
+            $scope.selectedProductItem = {};
+            $scope.selectedProductItem = response.data[0];
+        }, function errorCallback(error) {
+            // TODO: add error page code here
+        });
+    };
+
+    // this function is to delete product item
+    // params: id and name, of the product
+    $scope.deleteProduct = function(productId, productTitle) {
+        console.log(productId);
+        console.log(productTitle);
+    };
 }]);
