@@ -49,6 +49,21 @@ app.put('/AdminEdit/:id', function(request, response) {
     });
 });
 
+// put product details from admin edit product
+// sends product data
+app.put('/Admin/EditProduct/:id/:catName', function(request, response) {
+    var id = request.params.id;
+    var table = request.params.catName;
+
+    db.collection(table).findAndModify({
+        query: {_id: mongojs.ObjectId(id)},
+        update: {$set: { productTitle: request.body.productTitle, productDescription: request.body.productDescription, productImage: request.body.productImage, productPrice: request.body.productPrice, productIsVegetarian: request.body.productIsVegetarian, productIsSpicy: request.body.productIsSpicy}},
+        new: true}, function(error, document) {
+            response.json(document);
+        }
+    );
+});
+
 // post products data from admin page
 // sends products data to category table
 app.post('/AdminAddProduct/:tableName', function(request, response) {

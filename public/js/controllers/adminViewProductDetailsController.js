@@ -42,7 +42,7 @@ controller.controller('adminViewProductDetailsCtrl', ['$scope', '$http', functio
         // console.log(productId);
         $http({
             method: 'GET',
-            url: '/Admin/ViewProductDetails/' + productId + "/" + onlyCatName
+            url: '/Admin/ViewProductDetails/' + productId + '/' + onlyCatName
         }).then(function success(response) {
             // console.log(response);
             $scope.selectedProductItem = {};
@@ -61,8 +61,19 @@ controller.controller('adminViewProductDetailsCtrl', ['$scope', '$http', functio
 
     // this method is to put the product data
     // params: id, of the product
-    $scope.updateProduct = function(id, productTitle) {
-        console.log(id);
-        console.log(productTitle);
+    $scope.updateProduct = function(id) {
+        var productItem = $scope.selectedProductItem;
+        // console.log(productItem);
+        $http({
+            method: 'PUT',
+            url: '/Admin/EditProduct/' + id + '/' + onlyCatName,
+            data: productItem
+        }).then(function success(response) {
+            // console.log(response);
+            $scope.selectedProductItem = {};
+            refresh();
+        }, function errorCallback(error) {
+            // TODO: add error page code here
+        });
     };
 }]);
