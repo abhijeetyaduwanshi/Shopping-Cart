@@ -1,4 +1,4 @@
-<header id="mainNav">
+<header id="mainNav" ng-controller="navigationCtrl">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
@@ -11,12 +11,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="navigationCtrl">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item" ng-repeat="navigation in navigationItems"><a class="nav-link" ng-href="{{navigation.categoryRoute}}">{{navigation.categoryTitle}}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!/Cart"><i id="cartIcon" class="fa fa-shopping-cart"><sup id="cartItemsCount">{{itemsCount}}</sup></i></a></li>
                 </ul>
             </div>
+            <a class="nav-link" href="#!/Cart"><i id="cartIcon" class="fa fa-shopping-cart"><sup id="cartItemsCount">{{itemsCount}}</sup></i></a>
 
         </div>
     </nav>
