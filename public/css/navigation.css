@@ -34,6 +34,11 @@
         float: left;
     }
 
+    #cartIconLink {
+        position: absolute;
+        right: 0;
+    }
+
     #brandName {
         display: none;
     }
