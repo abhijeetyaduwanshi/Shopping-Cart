@@ -44,7 +44,7 @@
     }
 }
 
-@media (min-width:481px) and (max-width:599px) {
+@media (min-width:481px) and (max-width:575px) {
     #brandLogo {
         margin: auto;
     }
@@ -52,6 +52,11 @@
     #hamburger {
         position: absolute;
         float: left;
+    }
+
+    #cartIconLink {
+        position: absolute;
+        right: 0;
     }
 }
 
