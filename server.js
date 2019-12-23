@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('shoppingCart', ['Breads', 'Chicken', 'Desserts', 'Salads', 'Sandwiches', 'Drinks', 'Pasta' ,'Extras', 'cart']);
+var db = mongojs("mongodb+srv://admin:admin@shoppingcart-xqhw1.mongodb.net/test?retryWrites=true&w=majority");
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
