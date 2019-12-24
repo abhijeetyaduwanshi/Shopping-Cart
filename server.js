@@ -6,6 +6,7 @@ var mongojs = require('mongojs');
 // prod
 var db = mongojs("mongodb+srv://admin:admin@shoppingcart-xqhw1.mongodb.net/test?retryWrites=true&w=majority");
 var bodyParser = require('body-parser');
+var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
@@ -243,8 +244,8 @@ app.get('/lookProduct/:id/:type', function(request, response) {
     });
 });
 
-app.listen(3000);
-console.log("Server running on port 3000");
+app.listen(port);
+console.log("Server running on port " + port);
 
 // app.get('/customerList', function(request, response) {
 //     console.log("I received a GET response");
