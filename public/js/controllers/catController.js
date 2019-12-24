@@ -40,6 +40,6 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
             // TODO: add error page code here
         });
 
-        window.location = "/Cart";
+        window.location = "#!/Cart";
     };
 }]);

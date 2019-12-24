@@ -31,7 +31,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 
     // this function is to prepare the categoryRoute from categoryName
     var categoryRouteValueFunction = function(categoryName) {
-        var categoryRouteValue = "/category/";
+        var categoryRouteValue = "#!/category/";
         if (categoryName) {
             var categoryNameWords = categoryName.split(" ");
             for (var i = 0, len = categoryNameWords.length; i < len; i++) {
