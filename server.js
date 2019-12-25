@@ -115,9 +115,9 @@ app.delete('/Admin/:id', function(request, response) {
     });
 });
 
-// get Specialty pizzas data for Specialty pizzas page
-app.get('/category/SpecialtyPizzas', function(request, response) {
-    db.collection("Specialty Pizzas").find(function(error, document) {
+// get pizzas data for pizzas page
+app.get('/category/Pizzas', function(request, response) {
+    db.Pizzas.find(function(error, document) {
         response.json(document);
     });
 });
