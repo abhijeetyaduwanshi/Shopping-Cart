@@ -3,7 +3,6 @@ var myApp = angular.module('shoppingCartApp', [
     'shoppingCartApp.navigationController',
     'shoppingCartApp.myCustomDirectives',
     'shoppingCartApp.categoriesListController',
-    'shoppingCartApp.specialtyPizzasController',
     'shoppingCartApp.catController',
     'shoppingCartApp.adminController',
     'shoppingCartApp.adminViewProductDetailsController',
@@ -17,10 +16,6 @@ myApp.config(function($routeProvider) {
     .when('/', {
         templateUrl: '../views/home.html',
         controller: 'categoriesListCtrl'
-    })
-    .when('/SpecialtyPizzas', {
-        templateUrl: '../views/specialtyPizzas.html',
-        controller: 'specialtyPizzasCtrl'
     })
     .when('/category/:type', {
         templateUrl: '../views/productView.html',

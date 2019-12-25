@@ -115,6 +115,13 @@ app.delete('/Admin/:id', function(request, response) {
     });
 });
 
+// get Specialty pizzas data for Specialty pizzas page
+app.get('/category/SpecialtyPizzas', function(request, response) {
+    db.collection("Specialty Pizzas").find(function(error, document) {
+        response.json(document);
+    });
+});
+
 // get breads data for breads page
 app.get('/category/Breads', function(request, response) {
     db.Breads.find(function(error, document) {
