@@ -217,14 +217,6 @@ app.get('/Navigation', function(request, response) {
     });
 });
 
-// this method is to get the item count from cart for navigation cart
-app.get('/Navigation/CartCount', function(request, response) {
-    db.cart.count(function(error, document) {
-        // console.log(document);
-        response.json(document);
-    });
-});
-
 // this method is to get the item data for cart view
 app.get('/lookProduct/:id/:type', function(request, response) {
     var id = request.params.id;

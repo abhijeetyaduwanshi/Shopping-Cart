@@ -51,6 +51,7 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
             localStorage.setItem("cartedItems", JSON.stringify(cartedItems));
         }
 
+        $rootScope.$broadcast("itemAddedToCartCount");
         window.location = "#!/Cart";
     };
 }]);

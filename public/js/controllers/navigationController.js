@@ -13,17 +13,15 @@ controller.controller('navigationCtrl',['$scope', '$http', function($scope, $htt
         // TODO: add error page code here
     });
 
-    // this method is to get the item count from cart for navigation cart
+    // this method is to get the carted item count from local storage
     var getCartCount = function() {
-        $http({
-            method: 'GET',
-            url: '/Navigation/CartCount'
-        }).then(function success(response) {
-            // console.log("I got the data I requested");
-            $scope.itemsCount = response.data;
-        }, function errorCallback(error) {
-            // TODO: add error page code here
-        });
+        $scope.itemsCount = 0;
+        var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
+        if (cartedItems !== null && cartedItems.length !== 0) {
+            for (var i = 0; i < cartedItems.length; i++) {
+                $scope.itemsCount += cartedItems[i].count++;
+            }
+        }
     };
 
     getCartCount();
