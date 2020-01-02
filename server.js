@@ -199,21 +199,6 @@ app.get('/Home', function(request, response) {
     });
 });
 
-// this method is to post the item to cart collection
-app.post('/AddToCart', function(request, response) {
-    var item = request.body.itemId;
-    var type = request.body.type;
-
-    db.cart.findAndModify({
-        query: {itemId: item, type: type},
-        update: {$inc: { count: 1 }},
-        upsert: true,
-        new: true}, function(error, document) {
-            response.json(document);
-        }
-    );
-});
-
 // this method is to get the cart data for cart view
 app.get('/Cart', function(request, response) {
     // console.log("This is for the cart");
