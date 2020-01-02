@@ -18,27 +18,35 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
         // TODO: add error page code here
     });
 
-    // this method is to add the onlyCatName items to cart
+    // this method is to add the onlyCatName item to local storage for cart
     $scope.addToCart = function(id) {
         // console.log(id);
+        var returningItem = false;
+
         var itemDetails = {
             itemId: id,
             type: onlyCatName,
             count: 1
         };
 
-        // sending the onlyCatName id and type, id will be used to look up the onlyCatName item
-        // and type will be used to look up collection in mongodb
-        $http({
-            method: 'POST',
-            url: '/AddToCart',
-            data: itemDetails
-        }).then(function success(response) {
-            // console.log(response);
-            $rootScope.$broadcast("itemAddedToCartCount");
-        }, function errorCallback(error) {
-            // TODO: add error page code here
-        });
+        if (JSON.parse(localStorage.getItem("cartedItems")) == null) {
+            localStorage.setItem("cartedItems", JSON.stringify(itemDetails));
+        } else {
+            var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
+            for (var i = 0; i < cartedItems.length; i++) {
+                if (cartedItems[i].itemId == itemDetails.itemId) {
+                    cartedItems[i].count++;
+                    returningItem = true;
+                    break;
+                }
+            }
+
+            if (!returningItem) {
+                cartedItems.push(itemDetails);
+            }
+
+            localStorage.setItem("cartedItems", JSON.stringify(cartedItems));
+        }
 
         window.location = "#!/Cart";
     };
