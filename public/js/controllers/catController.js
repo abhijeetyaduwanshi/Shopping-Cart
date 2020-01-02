@@ -46,6 +46,7 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
             }
 
             localStorage.setItem("cartedItems", JSON.stringify(cartedItems));
+            itemDetails = {};
         }
 
         window.location = "#!/Cart";
