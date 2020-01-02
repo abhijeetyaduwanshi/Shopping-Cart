@@ -21,6 +21,7 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
     // this method is to add the onlyCatName item to local storage for cart
     $scope.addToCart = function(id) {
         // console.log(id);
+        var items = [];
         var returningItem = false;
 
         var itemDetails = {
@@ -29,8 +30,10 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
             count: 1
         };
 
+        items.push(itemDetails);
+
         if (JSON.parse(localStorage.getItem("cartedItems")) == null) {
-            localStorage.setItem("cartedItems", JSON.stringify(itemDetails));
+            localStorage.setItem("cartedItems", JSON.stringify(items));
         } else {
             var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
             for (var i = 0; i < cartedItems.length; i++) {
