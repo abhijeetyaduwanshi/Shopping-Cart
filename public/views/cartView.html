@@ -14,18 +14,11 @@
                     <td>{{product.productTitle}}
                         <div style="font-size: 12px">Calories</div>
                     </td>
-                    <td>
-                        <select>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </td>
+                    <td>{{product.productQuantity}} X ${{product.productPrice}}</td>
                     <td><button class="btn btn-danger">
                         Remove
                     </button></td>
-                    <td>${{product.productPrice}}</td>
+                    <td>${{product.productCalculatedPrice}}</td>
                 </tr>
                 <tr>
                     <td>Total</td>
