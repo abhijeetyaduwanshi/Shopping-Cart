@@ -10,7 +10,9 @@
                     <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
                     <p>{{product.productDescription}}</p>
                     <br />
-                    <p>Is veggie: {{product.productIsVegetarian}}<br />Spice level: {{product.productIsSpicy}}</p>
+                    <p>Spice level: {{product.productIsSpicy}}</p>
+                    <div class="letterCircle green" ng-if="product.productIsVegetarian === 'true'">V</div>
+                    <div class="letterCircle red" ng-if="product.productIsVegetarian === 'false'">NV</div>
                 </div>
             </a>
         </div>

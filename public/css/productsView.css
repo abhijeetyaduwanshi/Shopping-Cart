@@ -36,6 +36,27 @@
     margin: auto;
 }
 
+.letterCircle {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+}
+
+.red {
+    color: #fff;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.green {
+    color: #fff;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+}
+
 /* .productContainer {
     width: 200px;
 }
