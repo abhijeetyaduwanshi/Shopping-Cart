@@ -15,8 +15,8 @@
                         <div style="font-size: 12px">Calories</div>
                     </td>
                     <td>{{product.productQuantity}} X ${{product.productPrice}}</td>
-                    <td><button class="btn btn-danger">
-                        Remove
+                    <td><button class="btn btn-danger" ng-click="removeFromCart(product._id)">
+                        <i class="fa fa-trash-o"></i>
                     </button></td>
                     <td>${{product.productCalculatedPrice}}</td>
                 </tr>

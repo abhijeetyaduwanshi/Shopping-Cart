@@ -1,5 +1,5 @@
 var controller = angular.module('shoppingCartApp.cartController', []);
-controller.controller('cartCtrl', ['$scope', '$http', function($scope, $http) {
+controller.controller('cartCtrl', ['$rootScope', '$scope', '$http', function($rootScope, $scope, $http) {
     // console.log("Hello world from the cart controller");
 
     // this method is to populate the cart
@@ -28,4 +28,23 @@ controller.controller('cartCtrl', ['$scope', '$http', function($scope, $http) {
         }
     }
     productLookUp();
+
+    // this method is to remove products from cart
+    // TODO: removing a single item, JS splice is used
+    // which removed the item from array
+    // but the entire cart except for the removed item
+    // is re-written to local storage
+    $scope.removeFromCart = function(productId) {
+        var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
+
+        for (var i = 0; i < cartedItems.length; i++) {
+            if (cartedItems[i].itemId == productId) {
+                cartedItems.splice(i, 1);
+                break;
+            }
+        }
+        localStorage.setItem("cartedItems", JSON.stringify(cartedItems));
+        productLookUp();
+        $rootScope.$broadcast("itemRemovedFromCart");
+    };
 }]);

@@ -26,4 +26,5 @@ controller.controller('navigationCtrl',['$scope', '$http', function($scope, $htt
 
     getCartCount();
     $scope.$on("itemAddedToCartCount", getCartCount);
+    $scope.$on("itemRemovedFromCart", getCartCount);
 }]);
