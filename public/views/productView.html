@@ -11,8 +11,8 @@
                     <p>{{product.productDescription}}</p>
                     <br />
                     <p>Spice level: {{product.productIsSpicy}}</p>
-                    <div class="letterCircle green" ng-if="product.productIsVegetarian === 'true'">V</div>
-                    <div class="letterCircle red" ng-if="product.productIsVegetarian === 'false'">NV</div>
+                    <span class="pills green" ng-if="product.productIsVegetarian === 'true'">Vegetarian</span>
+                    <span class="pills red" ng-if="product.productIsVegetarian === 'false'">Non vegetarian</span>
                 </div>
             </a>
         </div>
