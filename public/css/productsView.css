@@ -58,6 +58,12 @@
     border: 1px solid #28a745;
 }
 
+.sweet {
+    color: #fff;
+    background-color: hotpink;
+    border: 1px solid hotpink;
+}
+
 .spiceMild {
     color: #fff;
     background-color: yellowgreen;
