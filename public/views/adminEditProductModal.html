@@ -38,12 +38,18 @@
                                         <input class="form-check-input" type="radio" ng-model="selectedProductItem.productIsVegetarian" value="false">No
                                     </label>
                                 </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" ng-model="selectedProductItem.productIsVegetarian" value="">Not applicable
+                                    </label>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td><label>Is spicy?</label></td>
                             <td>
                                 <select class="form-control" ng-model="selectedProductItem.productIsSpicy">
+                                    <option value="">Not applicable</option>
                                     <option value="mild">Mild</option>
                                     <option value="medium">Medium</option>
                                     <option value="hot">Hot</option>
