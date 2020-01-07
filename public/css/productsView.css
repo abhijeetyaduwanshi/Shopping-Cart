@@ -58,6 +58,24 @@
     border: 1px solid #28a745;
 }
 
+.spiceMild {
+    color: #fff;
+    background-color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+
+.spiceMedium {
+    color: #fff;
+    background-color: darkorange;
+    border: 1px solid darkorange;
+}
+
+.spiceHot {
+    color: #fff;
+    background-color: darkred;
+    border: 1px solid darkred;
+}
+
 /* .productContainer {
     width: 200px;
 }
