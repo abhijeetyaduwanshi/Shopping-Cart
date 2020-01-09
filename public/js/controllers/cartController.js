@@ -21,7 +21,7 @@ controller.controller('cartCtrl', ['$rootScope', '$scope', '$http', function($ro
     var productLookUp = function() {
         $scope.products = [];
         $scope.productFinalPrice = 0;
-        var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
+        var cartedItems = JSON.parse(localStorage.getItem("cartedItems")) || [];
 
         for (var i = 0; i < cartedItems.length; i++) {
             populateCart(cartedItems[i]);
