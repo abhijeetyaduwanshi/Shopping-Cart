@@ -1,6 +1,13 @@
 <div class="cartPage container">
     <div ng-if="cartIsEmpty" class="emptyCartContainer">
         <h2>Your shopping cart is currently empty</h2>
+        <div class="emptyCartSection">
+            <i id="cartIconOnCartPage" class="fa fa-shopping-cart"></i>
+            <p>Get Shopping!</p>
+            <p>Discover all the deliciousness.<br />
+                <a href="#!"><button class="btn btn-danger">Shop now</button></a>
+            </p>
+        </div>
     </div>
 
     <div ng-if="!cartIsEmpty" class="cartContainer">
