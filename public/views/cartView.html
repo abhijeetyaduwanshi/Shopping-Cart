@@ -1,5 +1,9 @@
 <div class="cartPage container">
-    <div class="cartContainer">
+    <div ng-if="cartIsEmpty" class="emptyCartContainer">
+        <h2>Your shopping cart is currently empty</h2>
+    </div>
+
+    <div ng-if="!cartIsEmpty" class="cartContainer">
         <table class="table">
             <thead>
                 <tr>

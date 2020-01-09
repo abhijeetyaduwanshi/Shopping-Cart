@@ -2,6 +2,12 @@ var controller = angular.module('shoppingCartApp.cartController', []);
 controller.controller('cartCtrl', ['$rootScope', '$scope', '$http', function($rootScope, $scope, $http) {
     // console.log("Hello world from the cart controller");
 
+    // this method checks if cart is empty or not
+    var isCartEmpty = function(cartedItems) {
+        $scope.cartIsEmpty = cartedItems.length <= 0;
+        return $scope.cartIsEmpty;
+    }
+
     // this method is to populate the cart
     var populateCart = function(cartedItems) {
         $http({
@@ -23,8 +29,10 @@ controller.controller('cartCtrl', ['$rootScope', '$scope', '$http', function($ro
         $scope.productFinalPrice = 0;
         var cartedItems = JSON.parse(localStorage.getItem("cartedItems")) || [];
 
-        for (var i = 0; i < cartedItems.length; i++) {
-            populateCart(cartedItems[i]);
+        if (!isCartEmpty(cartedItems)) {
+            for (var i = 0; i < cartedItems.length; i++) {
+                populateCart(cartedItems[i]);
+            }
         }
     }
     productLookUp();
