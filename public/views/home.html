@@ -1,17 +1,43 @@
-<div id="categoriesList" class="container">
-    <div class="row">
-        <div ng-repeat="categoryItem in categoryItemsList" class="col-5">
-            <div ng-attr-id="{{categoryItem.categoryId}}">
-                <a ng-href="{{categoryItem.categoryRoute}}">
-                    <div class="catImage">
-                        <img ng-src="{{categoryItem.categoryImage}}">
-                    </div>
-                    <div class="catDetails">
-                        <h2>{{categoryItem.categoryTitle}}</h2>
-                        <p>{{categoryItem.categoryDescription}}</p>
-                    </div>
-                </a>
+<div class="mobileHP">
+    <div id="categoriesList" class="container">
+        <div class="row">
+            <div ng-repeat="categoryItem in categoryItemsList" class="col-5">
+                <div ng-attr-id="{{categoryItem.categoryId}}">
+                    <a ng-href="{{categoryItem.categoryRoute}}">
+                        <div class="catImage">
+                            <img ng-src="{{categoryItem.categoryImage}}">
+                        </div>
+                        <div class="catDetails">
+                            <h2>{{categoryItem.categoryTitle}}</h2>
+                            <p>{{categoryItem.categoryDescription}}</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="desktopHP">
+    <div id="categoriesList" class="container">
+        <div class="row">
+            <div ng-repeat="categoryItem in categoryItemsList" class="col-5">
+                <div ng-attr-id="{{categoryItem.categoryId}}">
+                    <a ng-href="{{categoryItem.categoryRoute}}">
+                        <div class="catImage">
+                            <img ng-src="{{categoryItem.categoryImage}}">
+                        </div>
+                        <div class="catDetails">
+                            <h2>{{categoryItem.categoryTitle}}</h2>
+                            <p>{{categoryItem.categoryDescription}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sideCart">
+        <h2>Cart</h2>
     </div>
 </div>

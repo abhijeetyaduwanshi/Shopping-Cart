@@ -1,6 +1,26 @@
-#categoriesList > .row > .col-5 {
+.desktopHP #categoriesList {
+    float:left;
+    width:75%;
+    border-right: 1px solid #f5f5f5;
+}
+
+.desktopHP .sideCart {
+    float:left;
+    width:25%;
+}
+
+.desktopHP .sideCart h2 {
+    font-size: 22px;
+    text-align: center;
+}
+
+#categoriesList .row {
+    margin: 0px auto;
+}
+
+#categoriesList .row .col-5 {
     border: 1px solid #343a40;
-    margin: 12px;
+    margin: 10px auto;
     border-radius: 10px;
     padding: 10px;
 }
@@ -22,4 +42,20 @@
 #categoriesList > .row > .col-5 > div > a {
     text-decoration: none;
     color: #343a40;
+}
+
+@media (min-width:320px) and (max-width:991px) {
+    .desktopHP {
+        display: none;
+    }
+}
+
+@media (min-width:991px) {
+    .mobileHP {
+        display: none;
+    }
+}
+
+footer {
+    clear: both;
 }
