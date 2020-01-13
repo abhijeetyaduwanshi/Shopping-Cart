@@ -7,11 +7,23 @@
 .desktopHP .sideCart {
     float:left;
     width:25%;
+    padding: 0 2%;
 }
 
 .desktopHP .sideCart h2 {
     font-size: 22px;
     text-align: center;
+}
+
+.cartItemsOnNonCartPages {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.cartContainer .cartItemsOnNonCartPages .removeCartItemsOnNonCartPages {
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: red;
 }
 
 #categoriesList .row {

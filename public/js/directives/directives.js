@@ -35,4 +35,8 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/adminEditProductModal.html'
     };
+}).directive('cartOnNonCartPages', function() {
+    return {
+        templateUrl: '../../views/cartOnNonCartPages.html'
+    };
 });
