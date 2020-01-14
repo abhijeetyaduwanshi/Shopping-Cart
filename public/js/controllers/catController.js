@@ -56,4 +56,9 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
             window.location = "#!/Cart";
         }
     };
+
+    // this method is to navigate to cart page
+    $scope.navigateToCart = function() {
+        window.location = "#!/Cart";
+    };
 }]);
