@@ -103,6 +103,14 @@
     border: 1px solid darkred;
 }
 
+.itemAddedToCartName {
+    font-weight: bold;
+}
+
+.itemAddedToCartFeatures {
+    font-size: 12px;
+}
+
 @media (min-width:320px) and (max-width:991px) {
     .desktopCatPage {
         display: none;

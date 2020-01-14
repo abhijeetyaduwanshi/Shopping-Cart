@@ -7,7 +7,18 @@
             </div>
 
             <div class="modal-body">
-                <p>product added to cart</p>
+                <p><span class="itemAddedToCartName">{{itemAddedToCart.productTitle}}</span> added to cart</p>
+                <p class="itemAddedToCartFeatures">
+                    <span ng-if="itemAddedToCart.productIsVegetarian === 'true'">Vegetarian</span>
+                    <span ng-if="itemAddedToCart.productIsVegetarian === 'false'">Non vegetarian</span>
+                    <br />
+                    <span ng-if="itemAddedToCart.productIsSpicy === 'sweet'">Sweet</span>
+                    <span ng-if="itemAddedToCart.productIsSpicy === 'mild'">Mild spicy</span>
+                    <span ng-if="itemAddedToCart.productIsSpicy === 'medium'">Medium spicy</span>
+                    <span ng-if="itemAddedToCart.productIsSpicy === 'hot'">Spicy hot</span>
+                    <br />
+                    Calories count
+                </p>
             </div>
 
             <div class="modal-footer">

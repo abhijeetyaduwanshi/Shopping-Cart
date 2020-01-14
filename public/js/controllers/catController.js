@@ -19,10 +19,11 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
     });
 
     // this method is to add the onlyCatName item to local storage for cart
-    $scope.addToCart = function(id, isDesktopDevice) {
+    $scope.addToCart = function(id, item, isDesktopDevice) {
         // console.log(id);
         var items = [];
         var returningItem = false;
+        $scope.itemAddedToCart = item;
 
         var itemDetails = {
             itemId: id,
