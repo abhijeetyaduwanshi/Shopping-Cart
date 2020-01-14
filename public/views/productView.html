@@ -1,3 +1,7 @@
+<div id="mobileAddToCartModal">
+    <div mobile-Add-To-Cart></div>
+</div>
+
 <div class="mobileCatPage">
     <div id="productsList" class="container">
         <div class="row">
@@ -6,7 +10,7 @@
                     <div class="productImage">
                         <img ng-src="{{product.productImage}}">
                     </div>
-                    <button type="button" class="productAddToCrtBtn" ng-click="addToCart(product._id)">Add to order</button>
+                    <button type="button" class="productAddToCrtBtn" data-toggle="modal" data-target="#mobileCart" ng-click="addToCart(product._id, false)">Add to order</button>
                     <div class="productDetails">
                         <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
                         <p>{{product.productDescription}}</p>
@@ -33,7 +37,7 @@
                     <div class="productImage">
                         <img ng-src="{{product.productImage}}">
                     </div>
-                    <button type="button" class="productAddToCrtBtn" ng-click="addToCart(product._id)">Add to order</button>
+                    <button type="button" class="productAddToCrtBtn" ng-click="addToCart(product._id, true)">Add to order</button>
                     <div class="productDetails">
                         <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
                         <p>{{product.productDescription}}</p>

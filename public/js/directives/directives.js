@@ -39,4 +39,8 @@ myApp.directive('myNavigation', function() {
     return {
         templateUrl: '../../views/cartOnNonCartPages.html'
     };
+}).directive('mobileAddToCart', function() {
+    return {
+        templateUrl: '../../views/productViewMobileAddToCartModal.html'
+    };
 });
