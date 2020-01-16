@@ -10,7 +10,7 @@
                     <div class="productImage">
                         <img ng-src="{{product.productImage}}">
                     </div>
-                    <button type="button" class="productAddToCrtBtn" data-toggle="modal" data-target="#mobileCart" ng-click="addToCart(product._id, product, false)">Add to order</button>
+                    <button type="button" class="productAddToCrtBtn" data-toggle="modal" data-target="#mobileCart" ng-click="addToCart(product, false)">Add to order</button>
                     <div class="productDetails">
                         <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
                         <p>{{product.productDescription}}</p>
@@ -37,7 +37,7 @@
                     <div class="productImage">
                         <img ng-src="{{product.productImage}}">
                     </div>
-                    <button type="button" class="productAddToCrtBtn" ng-click="addToCart(product._id, product, true)">Add to order</button>
+                    <button type="button" class="productAddToCrtBtn" ng-click="addToCart(product, true)">Add to order</button>
                     <div class="productDetails">
                         <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
                         <p>{{product.productDescription}}</p>

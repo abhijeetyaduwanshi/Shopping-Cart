@@ -1,32 +1,37 @@
-var controller = angular.module('shoppingCartApp.catController', []);
+controller = angular.module('shoppingCartApp.catController', []);
 controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
-    // console.log("Hello world from the cat controller");
 
-    console.log($location.url());
-    console.log((window.location.href.substr(window.location.href.lastIndexOf('/') + 1)));
+    /**
+     * local variables
+     */
+    const catName = $location.url();
+    const onlyCatName = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
 
-    var catName = $location.url();
-    var onlyCatName = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-    // this method is to get the cat data
+    /**
+     * get cat data
+     */
     $http({
         method: 'GET',
         url: catName
     }).then(function success(response) {
-        // console.log("I got the data I requested");
         $scope.products = response.data;
     }, function errorCallback(error) {
         // TODO: add error page code here
     });
 
-    // this method is to add the onlyCatName item to local storage for cart
-    $scope.addToCart = function(id, item, isDesktopDevice) {
-        // console.log(id);
-        var items = [];
-        var returningItem = false;
+    /**
+     * adds item to local storage for cart
+     * 
+     * @param  {} item, product added to cart
+     * @param  {} isDesktopDevice, device type: mobile or desktop
+     */
+    $scope.addToCart = (item, isDesktopDevice) => {
+        const items = [];
+        let returningItem = false;
         $scope.itemAddedToCart = item;
 
-        var itemDetails = {
-            itemId: id,
+        const itemDetails = {
+            itemId: item.id,
             type: onlyCatName,
             count: 1
         };
@@ -36,8 +41,8 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
         if (JSON.parse(localStorage.getItem("cartedItems")) == null) {
             localStorage.setItem("cartedItems", JSON.stringify(items));
         } else {
-            var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
-            for (var i = 0; i < cartedItems.length; i++) {
+            const cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
+            for (let i = 0; i < cartedItems.length; i++) {
                 if (cartedItems[i].itemId == itemDetails.itemId) {
                     cartedItems[i].count++;
                     returningItem = true;
@@ -58,8 +63,10 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
         }
     };
 
-    // this method is to navigate to cart page
-    $scope.navigateToCart = function() {
+    /**
+     * navigate to cart page
+     */
+    $scope.navigateToCart = () => {
         window.location = "#!/Cart";
     };
 }]);
