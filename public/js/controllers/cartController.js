@@ -1,18 +1,25 @@
-var controller = angular.module('shoppingCartApp.cartController', []);
+controller = angular.module('shoppingCartApp.cartController', []);
 controller.controller('cartCtrl', ['$rootScope', '$scope', '$http', function($rootScope, $scope, $http) {
-    // console.log("Hello world from the cart controller");
 
-    // this method checks if cart is empty or not
-    var isCartEmpty = function(cartedItems) {
+    /**
+     * checks if cart is empty
+     * 
+     * @param  {} cartedItems, items in cart
+     */
+    const isCartEmpty = (cartedItems) => {
         $scope.cartIsEmpty = cartedItems.length <= 0;
         return $scope.cartIsEmpty;
     }
 
-    // this method is to populate the cart
-    var populateCart = function(cartedItems) {
+    /**
+     * populate the cart
+     * 
+     * @param  {} cartedItems, items in cart
+     */
+    const populateCart = (cartedItems) => {
         $http({
             method: 'GET',
-            url: '/lookProduct/' + cartedItems.itemId + '/' + cartedItems.type
+            url: `/lookProduct/${cartedItems.itemId}/${cartedItems.type}`
         }).then(function success(response) {
             response.data.productCalculatedPrice = response.data.productPrice * cartedItems.count;
             response.data.productQuantity = cartedItems.count;
@@ -23,29 +30,31 @@ controller.controller('cartCtrl', ['$rootScope', '$scope', '$http', function($ro
         });
     };
 
-    // this method is to look up products from local storage
-    var productLookUp = function() {
+    /**
+     * look up products from local storage
+     */
+    const productLookUp = () => {
         $scope.products = [];
         $scope.productFinalPrice = 0;
-        var cartedItems = JSON.parse(localStorage.getItem("cartedItems")) || [];
+        const cartedItems = JSON.parse(localStorage.getItem("cartedItems")) || [];
 
         if (!isCartEmpty(cartedItems)) {
-            for (var i = 0; i < cartedItems.length; i++) {
+            for (let i = 0; i < cartedItems.length; i++) {
                 populateCart(cartedItems[i]);
             }
         }
     }
     productLookUp();
 
-    // this method is to remove products from cart
-    // TODO: removing a single item, JS splice is used
-    // which removed the item from array
-    // but the entire cart except for the removed item
-    // is re-written to local storage
-    $scope.removeFromCart = function(productId) {
-        var cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
+    /**
+     * remove products from cart
+     * 
+     * @param  {} productId, id of the product removed from cart
+     */
+    $scope.removeFromCart = productId => {
+        const cartedItems = JSON.parse(localStorage.getItem("cartedItems"));
 
-        for (var i = 0; i < cartedItems.length; i++) {
+        for (let i = 0; i < cartedItems.length; i++) {
             if (cartedItems[i].itemId == productId) {
                 cartedItems.splice(i, 1);
                 break;
