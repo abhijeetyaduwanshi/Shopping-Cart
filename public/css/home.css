@@ -1,4 +1,4 @@
-.desktopHP #categoriesList {
+.desktopHP .categoriesList {
     float:left;
     width:75%;
     border-right: 1px solid #f5f5f5;
@@ -26,11 +26,11 @@
     color: red;
 }
 
-#categoriesList .row {
+.categoriesList .row {
     margin: 0px auto;
 }
 
-#categoriesList .row .col-5 {
+.categoriesList .row .col-5 {
     border: 1px solid #343a40;
     margin: 10px auto;
     border-radius: 10px;
@@ -51,7 +51,7 @@
     margin: auto;
 }
 
-#categoriesList > .row > .col-5 > div > a {
+.categoriesList > .row > .col-5 > div > a {
     text-decoration: none;
     color: #343a40;
 }
