@@ -31,7 +31,7 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
         $scope.itemAddedToCart = item;
 
         const itemDetails = {
-            itemId: item.id,
+            itemId: item._id,
             type: onlyCatName,
             count: 1
         };
