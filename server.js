@@ -1,49 +1,63 @@
-var express = require('express');
-var app = express();
-var mongojs = require('mongojs');
-// local
-// var db = mongojs('shoppingCart', ['Breads', 'Chicken', 'Desserts', 'Salads', 'Sandwiches', 'Drinks', 'Pasta' ,'Extras', 'cart']);
-// prod
-var db = mongojs("mongodb+srv://admin:admin@shoppingcart-xqhw1.mongodb.net/test?retryWrites=true&w=majority");
-var bodyParser = require('body-parser');
-var port = process.env.PORT || 8080;
+const express = require('express');
+const app = express();
+const mongojs = require('mongojs');
 
-app.use(express.static(__dirname + "/public"));
+// local db
+// const db = mongojs('shoppingCart', ['Breads', 'Chicken', 'Desserts', 'Salads', 'Sandwiches', 'Drinks', 'Pasta' ,'Extras', 'cart']);
+
+// prod db mongodb atlas
+const db = mongojs("mongodb+srv://admin:admin@shoppingcart-xqhw1.mongodb.net/test?retryWrites=true&w=majority");
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 8080;
+
+app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 
-// get category details data from categories table to populate admin page
-app.get('/Admin', function(request, response) {
-    db.categories.find(function(error, document) {
+/**
+ * get category data
+ * 
+ * @param  {} '/Admin', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/Admin', (request, response) => {
+    db.categories.find((error, document) => {
         response.json(document);
     });
 });
 
-// post category details data form admin page
-// sends category data to categories table
-// sends category title to create a new table to have products in them
-app.post('/Admin', function(request, response) {
-    db.categories.insert(request.body, function(error, document) {
+/**
+ * post category data
+ * 
+ * @param  {} '/Admin', url pattern
+ * @param  {} function, callback function
+ */
+app.post('/Admin', (request, response) => {
+    db.categories.insert(request.body, (error, document) => {
         response.json(document);
     });
 
-    db.createCollection(request.body.categoryTitle, function(error, document) {
+    db.createCollection(request.body.categoryTitle, (error, document) => {
         // null
     });
 });
 
-// put category details from admin edit category
-// sends category data
-app.put('/AdminEdit/:id', function(request, response) {
-    var id = request.params.id;
+/**
+ * edit category data
+ * 
+ * @param  {id} '/AdminEdit/', url pattern: id of category
+ * @param  {} function, callback function
+ */
+app.put('/AdminEdit/:id', (request, response) => {
+    const id = request.params.id;
 
-    db.categories.find({_id: mongojs.ObjectId(id)}, {categoryTitle: 1}, function(error, document) {
-        var tableToEdit = document[0].categoryTitle;
+    db.categories.find({_id: mongojs.ObjectId(id)}, {categoryTitle: 1}, (error, document) => {
+        const tableToEdit = document[0].categoryTitle;
 
         if (document) {
             db.categories.findAndModify({
                 query: {_id: mongojs.ObjectId(id)},
                 update: {$set: { categoryTitle: request.body.categoryTitle, categoryDescription: request.body.categoryDescription, categoryId: request.body.categoryId, categoryRoute: request.body.categoryRoute, categoryImage: request.body.categoryImage}},
-                new: true}, function(error, document) {
+                new: true}, (error, document) => {
                     response.json(document);
                 }
             );
@@ -53,173 +67,245 @@ app.put('/AdminEdit/:id', function(request, response) {
     });
 });
 
-// put product details from admin edit product
-// sends product data
-app.put('/Admin/EditProduct/:id/:catName', function(request, response) {
-    var id = request.params.id;
-    var table = request.params.catName;
+/**
+ * edit product data
+ * 
+ * @param  {id/catName} '/Admin/EditProduct/', url pattern: id of product: parent cat of product
+ * @param  {} function, callback function
+ */
+app.put('/Admin/EditProduct/:id/:catName', (request, response) => {
+    const id = request.params.id;
+    const table = request.params.catName;
 
     db.collection(table).findAndModify({
         query: {_id: mongojs.ObjectId(id)},
         update: {$set: { productTitle: request.body.productTitle, productDescription: request.body.productDescription, productImage: request.body.productImage, productPrice: request.body.productPrice, productIsVegetarian: request.body.productIsVegetarian, productIsSpicy: request.body.productIsSpicy}},
-        new: true}, function(error, document) {
+        new: true}, (error, document) => {
             response.json(document);
         }
     );
 });
 
-// post products data from admin page
-// sends products data to category table
-app.post('/AdminAddProduct/:tableName', function(request, response) {
-    var tableName = request.params.tableName;
+/**
+ * post products data
+ * 
+ * @param  {tableName} '/AdminAddProduct/', url pattern: parent cat of product
+ * @param  {} function, callback function
+ */
+app.post('/AdminAddProduct/:tableName', (request, response) => {
+    const tableName = request.params.tableName;
 
-    db.collection(tableName).insert(request.body, function(error, document) {
+    db.collection(tableName).insert(request.body, (error, document) => {
         response.json(document);
     });
 });
 
-// get single category details from categories table to populate view category details modal
-app.get('/Admin/:id', function(request, response) {
-    var id = request.params.id;
+/**
+ * get category data
+ * 
+ * @param  {id} '/Admin/', url pattern: id of category
+ * @param  {} function, callback function
+ */
+app.get('/Admin/:id', (request, response) => {
+    const id = request.params.id;
 
-    db.categories.find({_id: mongojs.ObjectId(id)}, function(error, document) {
+    db.categories.find({_id: mongojs.ObjectId(id)}, (error, document) => {
         response.json(document);
     });
 });
 
-// get single product details from respective category table to populate view product details modal
-app.get('/Admin/ViewProductDetails/:id/:tableName', function(request, response) {
-    var id = request.params.id;
-    var tableName = request.params.tableName;
+/**
+ * get product data
+ * 
+ * @param  {id/:tableName} '/Admin/ViewProductDetails/', url pattern: id of product: parent cat of product
+ * @param  {} function, callback function
+ */
+app.get('/Admin/ViewProductDetails/:id/:tableName', (request, response) => {
+    const id = request.params.id;
+    const tableName = request.params.tableName;
 
-    db.collection(tableName).find({_id: mongojs.ObjectId(id)}, function(error, document) {
+    db.collection(tableName).find({_id: mongojs.ObjectId(id)}, (error, document) => {
         response.json(document);
     });
 });
 
-// get products details for a category on admin page
-app.get('/AdminGetTitle/:title', function(request, response) {
-    var title = request.params.title;
+/**
+ * get products data
+ * 
+ * @param  {title} '/AdminGetTitle/', url pattern: name of the category
+ * @param  {} function, callback function
+ */
+app.get('/AdminGetTitle/:title', (request, response) => {
+    const title = request.params.title;
 
-    db.collection(title).find(function(error, document) {
+    db.collection(title).find((error, document) => {
         response.json(document);
     });
 });
 
-// delete single category with category id from delete category modal
-app.delete('/Admin/:id', function(request, response) {
-    var id = request.params.id;
+/**
+ * delete category
+ * 
+ * @param  {id} '/Admin/', url pattern: id of the category
+ * @param  {} function, callback function
+ */
+app.delete('/Admin/:id', (request, response) => {
+    const id = request.params.id;
 
-    db.categories.remove({_id: mongojs.ObjectId(id)}, function(error, document) {
+    db.categories.remove({_id: mongojs.ObjectId(id)}, (error, document) => {
         response.json(document);
     });
 });
 
-// get pizzas data for pizzas page
-app.get('/category/Pizzas', function(request, response) {
-    db.Pizzas.find(function(error, document) {
+/**
+ * get pizzas data
+ * 
+ * @param  {} '/category/Pizzas', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Pizzas', (request, response) => {
+    db.Pizzas.find((error, document) => {
         response.json(document);
     });
 });
 
-// get breads data for breads page
-app.get('/category/Breads', function(request, response) {
-    db.Breads.find(function(error, document) {
+/**
+ * get breads data
+ * 
+ * @param  {} '/category/Breads', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Breads', (request, response) => {
+    db.Breads.find((error, document) => {
         response.json(document);
     });
 });
 
-// get chicken data for chicken page
-app.get('/category/Chicken', function(request, response) {
-    db.Chicken.find(function(error, document) {
+/**
+ * get chicken data
+ * 
+ * @param  {} '/category/Chicken', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Chicken', (request, response) => {
+    db.Chicken.find((error, document) => {
         response.json(document);
     });
 });
 
-// get sandwiches data for sandwiches page
-app.get('/category/Sandwiches', function(request, response) {
-    db.Sandwiches.find(function(error, document) {
+/**
+ * get sandwiches data
+ * 
+ * @param  {} '/category/Sandwiches', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Sandwiches', (request, response) => {
+    db.Sandwiches.find((error, document) => {
         response.json(document);
     });
 });
 
-// get desserts data for desserts page
-app.get('/category/Desserts', function(request, response) {
-    db.Desserts.find(function(error, document) {
+/**
+ * get desserts data
+ * 
+ * @param  {} '/category/Desserts', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Desserts', (request, response) => {
+    db.Desserts.find((error, document) => {
         response.json(document);
     });
 });
 
-// get drinks data for drinks page
-app.get('/category/Drinks', function(request, response) {
-    db.Drinks.find(function(error, document) {
+/**
+ * get drinks data
+ * 
+ * @param  {} '/category/Drinks', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Drinks', (request, response) => {
+    db.Drinks.find((error, document) => {
         response.json(document);
     });
 });
 
-// get pasta data for pasta page
-app.get('/category/Pasta', function(request, response) {
-    db.Pasta.find(function(error, document) {
+/**
+ * get pasta data
+ * 
+ * @param  {} '/category/Pasta', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Pasta', (request, response) => {
+    db.Pasta.find((error, document) => {
         response.json(document);
     });
 });
 
-// get extras data for extras page
-app.get('/category/Extras', function(request, response) {
-    db.Extras.find(function(error, document) {
+/**
+ * get extras data
+ * 
+ * @param  {} '/category/Extras', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Extras', (request, response) => {
+    db.Extras.find((error, document) => {
         response.json(document);
     });
 });
 
-// get salads data for salads page
-app.get('/category/Salads', function(request, response) {
-    db.Salads.find(function(error, document) {
+/**
+ * get salads data
+ * 
+ * @param  {} '/category/Salads', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/category/Salads', (request, response) => {
+    db.Salads.find((error, document) => {
         response.json(document);
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-// this method is to get the category data for home view
-app.get('/Home', function(request, response) {
-    // console.log("This is for the admin");
-
-    db.categories.find(function(error, document) {
-        // console.log(document);
+/**
+ * get category data
+ * 
+ * @param  {} '/Home', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/Home', (request, response) => {
+    db.categories.find((error, document) => {
         response.json(document);
     });
 });
 
-// this method is to get the category title data for navigation
-app.get('/Navigation', function(request, response) {
-    db.categories.find({}, {categoryTitle: 1, categoryRoute: 1}, function(error, document) {
-        // console.log(document);
+/**
+ * get navigation data
+ * 
+ * @param  {} '/Navigation', url pattern
+ * @param  {} function, callback function
+ */
+app.get('/Navigation', (request, response) => {
+    db.categories.find({}, {categoryTitle: 1, categoryRoute: 1}, (error, document) => {
         response.json(document);
     });
 });
 
-// this method is to get the item data for cart view
-app.get('/lookProduct/:id/:type', function(request, response) {
-    var id = request.params.id;
-    var type = request.params.type;
+/**
+ * get item data for cart view
+ * 
+ * @param  {id/:type} '/lookProduct/', url pattern: item id: item parent cat
+ * @param  {} function, callback function
+ */
+app.get('/lookProduct/:id/:type', (request, response) => {
+    const id = request.params.id;
+    const type = request.params.type;
 
-    db.collection(type).findOne({_id: mongojs.ObjectId(id)}, {productTitle: 1, productPrice: 1}, function(error, document) {
-        // console.log(document);
+    db.collection(type).findOne({_id: mongojs.ObjectId(id)}, {productTitle: 1, productPrice: 1}, (error, document) => {
         response.json(document);
     });
 });
 
 app.listen(port);
-console.log("Server running on port " + port);
+console.log(`Server running on port ${port}`);
 
 // app.get('/customerList', function(request, response) {
 //     console.log("I received a GET response");
