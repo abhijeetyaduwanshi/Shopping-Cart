@@ -1,45 +1,45 @@
-var myApp = angular.module('shoppingCartApp.myCustomDirectives', []);
-myApp.directive('myNavigation', function() {
+myApp = angular.module('shoppingCartApp.myCustomDirectives', []);
+myApp.directive('myNavigation', () => {
     return {
         templateUrl: '../../views/navigationDirective.html'
     };
-}).directive('adminAddNewCategory', function() {
+}).directive('adminAddNewCategory', () => {
     return {
         templateUrl: '../../views/adminAddNewCategoryModal.html'
     };
-}).directive('adminEditCategory', function() {
+}).directive('adminEditCategory', () => {
     return {
         templateUrl: '../../views/adminEditCategoryModal.html'
     };
-}).directive('adminViewProductDetails', function() {
+}).directive('adminViewProductDetails', () => {
     return {
         templateUrl: '../../views/adminViewProductDetailsModal.html'
     };
-}).directive('adminViewCategoryDetails', function() {
+}).directive('adminViewCategoryDetails', () => {
     return {
         templateUrl: '../../views/adminViewCategoryDetailsModal.html'
     };
-}).directive('adminDeleteCategory', function() {
+}).directive('adminDeleteCategory', () => {
     return {
         templateUrl: '../../views/adminDeleteCategoryModal.html'
     };
-}).directive('adminAddNewProduct', function() {
+}).directive('adminAddNewProduct', () => {
     return {
         templateUrl: '../../views/adminAddNewProductModal.html'
     };
-}).directive('adminDeleteProduct', function() {
+}).directive('adminDeleteProduct', () => {
     return {
         templateUrl: '../../views/adminDeleteProductModal.html'
     };
-}).directive('adminEditProduct', function() {
+}).directive('adminEditProduct', () => {
     return {
         templateUrl: '../../views/adminEditProductModal.html'
     };
-}).directive('cartOnNonCartPages', function() {
+}).directive('cartOnNonCartPages', () => {
     return {
         templateUrl: '../../views/cartOnNonCartPages.html'
     };
-}).directive('mobileAddToCart', function() {
+}).directive('mobileAddToCart', () => {
     return {
         templateUrl: '../../views/productViewMobileAddToCartModal.html'
     };
