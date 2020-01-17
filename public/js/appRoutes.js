@@ -1,4 +1,4 @@
-var myApp = angular.module('shoppingCartApp', [
+myApp = angular.module('shoppingCartApp', [
     'ngRoute',
     'shoppingCartApp.navigationController',
     'shoppingCartApp.myCustomDirectives',
@@ -9,8 +9,7 @@ var myApp = angular.module('shoppingCartApp', [
     'shoppingCartApp.cartController'
     ]);
 
-myApp.config(function($routeProvider) {
-    // console.log("Hello world from the route provider");
+myApp.config(($routeProvider) => {
 
     $routeProvider
     .when('/', {
