@@ -68,17 +68,20 @@ Shopping cart app is built in MEAN stack(MongoDB, ExpressJS, AngularJS upgrated 
 * List all the collections: `show collections`
 * DROP COLLECTION: `db.mycollection.drop()`
 * Insert document(data) into a collection
-```db.mycollection.insert({
+```
+db.mycollection.insert({
     name: 'MongoDB Overview',
     description: 'MongoDB is no sql database',
     tags: ['mongodb', 'database', 'NoSQL'],
     likes: 100
-})```
+})
+```
 where `mycollection` is our collection name, if the collection doesn't exist in the database, then MongoDB will create this collection and then insert a document into it
 * Do not give id parameter in the document
 * In the inserted document, if we don't specify the `_id` parameter, then MongoDB assigns a unique ObjectId for this document
 * Insert multiple document(data) into a collection just pass array of documents in insert() command
-```db.mycollection.insert([
+```
+db.mycollection.insert([
     {
         name: 'MongoDB Overview',
         description: 'MongoDB is no sql database',
@@ -99,7 +102,8 @@ where `mycollection` is our collection name, if the collection doesn't exist in 
             }
         ]
     }
-])```
+])
+```
 * Select * from collection or a database itself: `db.mycollection.find()` `db.testDatabase.find()`
 * Make pretty output for Select * from: `db.mycollection.find().pretty()` `db.testDatabase.find().pretty()` this will display our data in a more manageable way
 
