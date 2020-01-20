@@ -1,11 +1,17 @@
-<div class="catPage">
-    <div *ngFor="let cat of cats">
-        <div class="{{cat.categoryClass}}">
-            <a href="{{cat.categoryRoute}}">
-                <img alt="{{cat.categoryImageAlternateText}}" src="{{cat.categoryImage}}">
-                <h2>{{cat.categoryTitle}}</h2>
-                <p>{{cat.categoryDescription}}</p>
-            </a>
+<div class="catPage container">
+    <div class="row">
+        <div *ngFor="let cat of cats" class="col-5">
+            <div class="{{cat.categoryClass}}">
+                <a href="{{cat.categoryRoute}}">
+                    <div class="catImageContainer">
+                        <img alt="{{cat.categoryImageAlternateText}}" src="{{cat.categoryImage}}">
+                    </div>
+                    <div class="catDetailsContainer">
+                        <h2>{{cat.categoryTitle}}</h2>
+                        <p>{{cat.categoryDescription}}</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
