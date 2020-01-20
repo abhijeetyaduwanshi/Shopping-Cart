@@ -1,1 +1,11 @@
-<h1>This is the {{ pageName }}.</h1>
+<div class="catPage">
+    <div *ngFor="let cat of cats">
+        <div class="{{cat.categoryClass}}">
+            <a href="{{cat.categoryRoute}}">
+                <img alt="{{cat.categoryImageAlternateText}}" src="{{cat.categoryImage}}">
+                <h2>{{cat.categoryTitle}}</h2>
+                <p>{{cat.categoryDescription}}</p>
+            </a>
+        </div>
+    </div>
+</div>

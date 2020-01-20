@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CATS } from './mock-cats';
 
 @Component({
     selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 
 export class CatComponent {
-    pageName = 'Cat page';
+    cats = CATS;
 }
