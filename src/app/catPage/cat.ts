@@ -1,8 +1,8 @@
 export class Cat {
-    categoryClass: string;
+    categoryClass: String;
     categoryRoute: String;
-    categoryImage: string;
-    categoryImageAlternateText: string;
-    categoryTitle: string;
-    categoryDescription: string;
+    categoryImage: String;
+    categoryImageAlternateText: String;
+    categoryTitle: String;
+    categoryDescription: String;
 }
