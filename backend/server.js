@@ -1,21 +1,20 @@
 let express = require('express'),
     path = require('path'),
-    MongoClient = require('mongodb').MongoClient,
+    mongoose = require('mongoose'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
     dataBaseConfig = require('./database/db');
 
-const url = dataBaseConfig.url;
-const dbName = dataBaseConfig.db;
-const client = new MongoClient(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-client.connect(err => {
-    console.log("Connected successfully to server");
-    const db = client.db(dbName);
-    client.close();
-});
+mongoose.Promise = global.Promise;
+mongoose.connect(dataBaseConfig.db, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(() => {
+        console.log('Database connected sucessfully ')
+    }, error => {
+        console.log('Could not connected to database : ' + error)
+    }
+)
 
 const catRoute = require('./routes/cat.route');
 const app = express();
@@ -33,9 +32,9 @@ const server = app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 })
 
-// app.use((req, res, next) => {
-//     next(createError(404));
-// });
+app.use((req, res, next) => {
+    next(createError(404));
+});
 
 app.use(function (err, req, res, next) {
     console.error(err.message);
