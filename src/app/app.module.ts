@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CatComponent } from './components/cat/cat.component';
 import { ApiService } from './shared/api.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './material.module';
 
 @NgModule({
     declarations: [
@@ -13,7 +15,9 @@ import { ApiService } from './shared/api.service';
     ],
     imports: [
         BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule,
+        AngularMaterialModule
     ],
     providers: [ApiService],
     bootstrap: [CatComponent]
