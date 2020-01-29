@@ -20,7 +20,7 @@ import { AngularMaterialModule } from './material.module';
         AngularMaterialModule
     ],
     providers: [ApiService],
-    bootstrap: [CatComponent]
+    bootstrap: [AppComponent]
 })
 
 export class AppModule { }

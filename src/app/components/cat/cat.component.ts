@@ -3,7 +3,7 @@ import { Cat } from './../../shared/cat';
 import { ApiService } from './../../shared/api.service';
 
 @Component({
-    selector: 'app-root',
+    selector: 'cat-root',
     templateUrl: './cat.component.html',
     styleUrls: ['./cat.component.css']
 })
