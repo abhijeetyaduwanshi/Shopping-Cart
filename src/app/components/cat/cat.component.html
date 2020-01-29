@@ -1,7 +1,7 @@
 <mat-card *ngFor="let cat of CatData">
-    <a href="{{cat.categoryRoute}}">
-        <div class="{{cat.categoryClass}}">
-            <img alt="{{cat.categoryImageAlternateText}}" src="{{cat.categoryImage}}">
+    <a [href]="cat.categoryRoute">
+        <div [class]="cat.categoryClass">
+            <img [alt]="cat.categoryImageAlternateText" [src]="cat.categoryImage">
             <mat-card-title>{{cat.categoryTitle}}</mat-card-title>
             <mat-card-subtitle>{{cat.categoryDescription}}</mat-card-subtitle>
         </div>

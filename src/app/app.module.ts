@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CatComponent } from './components/cat/cat.component';
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { ApiService } from './shared/api.service';
+import { NavigationService } from './shared/navigation.service';
 import { AngularMaterialModule } from './material.module';
 
 @NgModule({
@@ -21,7 +22,10 @@ import { AngularMaterialModule } from './material.module';
         BrowserAnimationsModule,
         AngularMaterialModule
     ],
-    providers: [ApiService],
+    providers: [
+        ApiService,
+        NavigationService
+    ],
     bootstrap: [AppComponent]
 })
 
