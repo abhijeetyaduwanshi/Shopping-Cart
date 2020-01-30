@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cat } from './../../shared/cat';
-import { ApiService } from './../../shared/api.service';
+import { Cat } from './../../services/catService/cat';
+import { CatService } from './../../services/catService/cat.service';
 
 @Component({
     selector: 'app-cat',
@@ -11,7 +11,7 @@ import { ApiService } from './../../shared/api.service';
 export class CatComponent implements OnInit {
     CatData: any = [];
 
-    constructor(private catApi: ApiService) {
+    constructor(private catApi: CatService) {
         this.catApi.GetCats().subscribe(data => {
             this.CatData = data;
         })

@@ -9,7 +9,7 @@ import { Cat } from './cat';
     providedIn: 'root'
 })
 
-export class ApiService {
+export class CatService {
     endpoint: string = 'http://localhost:8080/api';
     headers = new HttpHeaders().set('Content-Type', 'application/json');
 

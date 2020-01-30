@@ -5,16 +5,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CatComponent } from './components/cat/cat.component';
-import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
-import { ApiService } from './shared/api.service';
-import { NavigationService } from './shared/navigation.service';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { CatService } from './services/catService/cat.service';
+import { NavigationService } from './services/navigationService/navigation.service';
 import { AngularMaterialModule } from './material.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         CatComponent,
-        TopNavigationComponent
+        NavigationComponent
     ],
     imports: [
         BrowserModule,
@@ -23,7 +23,7 @@ import { AngularMaterialModule } from './material.module';
         AngularMaterialModule
     ],
     providers: [
-        ApiService,
+        CatService,
         NavigationService
     ],
     bootstrap: [AppComponent]
