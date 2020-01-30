@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let TopNavigation = new Schema({
+let Navigation = new Schema({
     categoryTitle: {
         type: String
     }
@@ -9,4 +9,4 @@ let TopNavigation = new Schema({
     collection: 'categories'
 })
 
-module.exports = mongoose.model('TopNavigation', TopNavigation)
+module.exports = mongoose.model('Navigation', Navigation)

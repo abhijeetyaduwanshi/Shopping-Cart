@@ -17,7 +17,7 @@ mongoose.connect(dataBaseConfig.db, {
 )
 
 const catRoute = require('./routes/cat.route');
-const topNavigationRoute = require('./routes/topNavigation.route');
+const navigationRoute = require('./routes/navigation.route');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/', express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/api', catRoute)
-app.use('/api', topNavigationRoute)
+app.use('/api', navigationRoute)
 
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
