@@ -1,4 +1,9 @@
-<div *ngFor="let navigation of NavigationData">
-    <p>{{navigation.categoryTitle}}</p>
-    <!-- <a>{{navigation.categoryRoute}}</a> -->
+<div class="navSection">
+    <span *ngFor="let navigation of NavigationData">
+        <a [href]="navigation.categoryRoute">
+            <button mat-button>
+                {{navigation.categoryTitle}}
+            </button>
+        </a>
+    </span>
 </div>
