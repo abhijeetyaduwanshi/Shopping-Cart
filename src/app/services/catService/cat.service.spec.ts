@@ -4,23 +4,25 @@ import { TestBed } from '@angular/core/testing';
 import { CatService } from './cat.service';
 
 describe('CatService', () => {
-    beforeEach(() => TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [CatService]
-    }));
+    let service: CatService;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule],
+            providers: [CatService]
+        });
+        service = TestBed.get(CatService);
+    });
 
     it('should be created', () => {
-        const service: CatService = TestBed.get(CatService);
         expect(service).toBeTruthy();
     });
 
     it('should have getCats function', () => {
-        const service: CatService = TestBed.get(CatService);
         expect(service.getCats).toBeTruthy();
     });
 
     it('getCats should return cat list', () => {
-        const service: CatService = TestBed.get(CatService);
         const http = TestBed.get(HttpTestingController);
 
         const expectedCat = [{

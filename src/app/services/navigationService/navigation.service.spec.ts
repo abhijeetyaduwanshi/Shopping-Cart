@@ -4,23 +4,25 @@ import { TestBed } from '@angular/core/testing';
 import { NavigationService } from './navigation.service';
 
 describe('NavigationService', () => {
-    beforeEach(() => TestBed.configureTestingModule({
-        imports: [HttpClientTestingModule],
-        providers: [NavigationService]
-    }));
+    let service: NavigationService;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule],
+            providers: [NavigationService]
+        });
+        service = TestBed.get(NavigationService);
+    });
 
     it('should be created', () => {
-        const service: NavigationService = TestBed.get(NavigationService);
         expect(service).toBeTruthy();
     });
 
     it('should have getNavigation function', () => {
-        const service: NavigationService = TestBed.get(NavigationService);
         expect(service.getNavigation).toBeTruthy();
     });
 
     it('getNavigation should return navigation list', () => {
-        const service: NavigationService = TestBed.get(NavigationService);
         const http = TestBed.get(HttpTestingController);
 
         const expectedNavigation = [{
