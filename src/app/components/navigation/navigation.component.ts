@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Navigation } from './../../services/navigationService/navigation';
 import { NavigationService } from './../../services/navigationService/navigation.service';
 
@@ -9,13 +10,17 @@ import { NavigationService } from './../../services/navigationService/navigation
 })
 
 export class NavigationComponent implements OnInit {
-    NavigationData: any = [];
+    navigationData: any = [];
 
-    constructor(private navigationApi: NavigationService) {
-        this.navigationApi.GetNavigation().subscribe(data => {
-            this.NavigationData = data;
-        })
+    constructor(private navigationApi: NavigationService) { }
+
+    ngOnInit() {
+        this.getNavigation();
     }
 
-    ngOnInit() { }
+    private getNavigation = () => {
+        this.navigationApi.getNavigation().subscribe(data => {
+            this.navigationData = data;
+        })
+    }
 }

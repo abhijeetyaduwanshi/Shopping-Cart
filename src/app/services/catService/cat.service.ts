@@ -15,7 +15,7 @@ export class CatService {
 
     constructor(private http: HttpClient) { }
 
-    GetCats() {
+    getCats() {
         return this.http.get(`${this.endpoint}`);
     }
 }

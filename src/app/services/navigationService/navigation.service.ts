@@ -15,7 +15,7 @@ export class NavigationService {
 
     constructor(private http: HttpClient) { }
 
-    GetNavigation() {
+    getNavigation() {
         return this.http.get(`${this.endpoint}`);
     }
 }

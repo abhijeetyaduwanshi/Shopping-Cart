@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Cat } from './../../services/catService/cat';
 import { CatService } from './../../services/catService/cat.service';
 
@@ -9,13 +10,17 @@ import { CatService } from './../../services/catService/cat.service';
 })
 
 export class CatComponent implements OnInit {
-    CatData: any = [];
+    catData: any = [];
 
-    constructor(private catApi: CatService) {
-        this.catApi.GetCats().subscribe(data => {
-            this.CatData = data;
-        })
+    constructor(private catApi: CatService) { }
+
+    ngOnInit() {
+        this.getCats();
     }
 
-    ngOnInit() { }
+    private getCats = () => {
+        this.catApi.getCats().subscribe(data => {
+            this.catData = data;
+        })
+    }
 }
