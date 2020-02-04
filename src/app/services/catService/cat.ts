@@ -1,10 +1,11 @@
-export class Cat {
+export interface Cat {
+    _id: String;
+    categoryTitle: String;
+    categoryDescription: String;
     categoryClass: String;
     categoryRoute: String;
     categoryImage: String;
     categoryImageAlternateText: String;
-    categoryTitle: String;
-    categoryDescription: String;
 }
 
 // this is the dummy data that is pulled from the db
