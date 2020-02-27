@@ -40,6 +40,31 @@ module.exports = class Admin {
     }
 
     /**
+     * edit category based on id
+     */
+    editCategoryBasedOnId() {
+        this.app.put('/AdminEdit/:id', (request, response) => {
+            const id = request.params.id;
+
+            this.db.categories.find({_id: this.mongojs.ObjectId(id)}, {categoryTitle: 1}, (error, document) => {
+                const tableToEdit = document[0].categoryTitle;
+
+                if (document) {
+                    this.db.categories.findAndModify({
+                        query: {_id: this.mongojs.ObjectId(id)},
+                        update: {$set: { categoryTitle: request.body.categoryTitle, categoryDescription: request.body.categoryDescription, categoryId: request.body.categoryId, categoryRoute: request.body.categoryRoute, categoryImage: request.body.categoryImage}},
+                        new: true}, (error, document) => {
+                            response.json(document);
+                        }
+                    );
+
+                    this.db.collection(tableToEdit).rename(request.body.categoryTitle);
+                }
+            });
+        });
+    }
+
+    /**
      * delete category based on id
      */
     deleteCategoryBasedOnId() {
