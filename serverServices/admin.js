@@ -5,10 +5,12 @@ module.exports = class Admin {
      * 
      * @param  {} app, express app
      * @param  {} db, database
+     * @param  {} mongojs, mongodb object
      */
-    constructor(app, db) {
+    constructor(app, db, mongojs) {
         this.app = app;
         this.db = db;
+        this.mongojs = mongojs;
     }
 
     /**
@@ -34,6 +36,21 @@ module.exports = class Admin {
             this.db.createCollection(request.body.categoryTitle, (error, document) => {
                 // null
             });
+        });
+    }
+
+    /**
+     * delete category based on id
+     */
+    deleteCategoryBasedOnId() {
+        this.app.delete('/Admin/:id', (request, response) => {
+            const id = request.params.id;
+
+            this.db.categories.remove({_id: this.mongojs.ObjectId(id)}, (error, document) => {
+                response.json(document);
+            });
+
+            // implement delete column
         });
     }
 };

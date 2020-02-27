@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 
 const Admin = require('./serverServices/admin');
-const admin = new Admin(app, db);
+const admin = new Admin(app, db, mongojs);
 
 const Home = require('./serverServices/home.js');
 const home = new Home(app, db);
@@ -33,6 +33,11 @@ admin.getAllCategories();
  * post category from admin page
  */
 admin.postCategory();
+
+/**
+ * delete category based on id from admin page
+ */
+admin.deleteCategoryBasedOnId();
 
 /**
  * edit category data
@@ -134,22 +139,6 @@ app.get('/AdminGetTitle/:title', (request, response) => {
     db.collection(title).find((error, document) => {
         response.json(document);
     });
-});
-
-/**
- * delete category
- * 
- * @param  {id} '/Admin/', url pattern: id of the category
- * @param  {} function, callback function
- */
-app.delete('/Admin/:id', (request, response) => {
-    const id = request.params.id;
-
-    db.categories.remove({_id: mongojs.ObjectId(id)}, (error, document) => {
-        response.json(document);
-    });
-
-    // implement delete column
 });
 
 /**
