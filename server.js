@@ -30,20 +30,9 @@ home.getAllCategories();
 admin.getAllCategories();
 
 /**
- * post category data
- * 
- * @param  {} '/Admin', url pattern
- * @param  {} function, callback function
+ * post category from admin page
  */
-app.post('/Admin', (request, response) => {
-    db.categories.insert(request.body, (error, document) => {
-        response.json(document);
-    });
-
-    db.createCollection(request.body.categoryTitle, (error, document) => {
-        // null
-    });
-});
+admin.postCategory();
 
 /**
  * edit category data
@@ -159,6 +148,8 @@ app.delete('/Admin/:id', (request, response) => {
     db.categories.remove({_id: mongojs.ObjectId(id)}, (error, document) => {
         response.json(document);
     });
+
+    // implement delete column
 });
 
 /**

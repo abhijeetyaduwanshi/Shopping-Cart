@@ -10,17 +10,29 @@ module.exports = class Admin {
         this.app = app;
         this.db = db;
     }
+
     /**
      * get all categories
      */
     getAllCategories() {
-        /**
-         * @param  {} '/Admin', url pattern
-         * @param  {} function, callback function
-         */
         this.app.get('/Admin', (request, response) => {
             this.db.categories.find((error, document) => {
                 response.json(document);
+            });
+        });
+    }
+
+    /**
+     * post category
+     */
+    postCategory() {
+        this.app.post('/Admin', (request, response) => {
+            this.db.categories.insert(request.body, (error, document) => {
+                response.json(document);
+            });
+
+            this.db.createCollection(request.body.categoryTitle, (error, document) => {
+                // null
             });
         });
     }

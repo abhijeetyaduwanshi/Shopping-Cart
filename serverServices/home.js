@@ -15,10 +15,6 @@ module.exports = class Home {
      * get all categories
      */
     getAllCategories() {
-        /**
-         * @param  {} '/Home', url pattern
-         * @param  {} function, callback function
-         */
         this.app.get('/Home', (request, response) => {
             this.db.categories.find((error, document) => {
                 response.json(document);
