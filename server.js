@@ -10,20 +10,24 @@ const db = mongojs("mongodb+srv://admin:admin@shoppingcart-xqhw1.mongodb.net/tes
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 
+const Admin = require('./serverServices/admin');
+const admin = new Admin(app, db);
+
+const Home = require('./serverServices/home.js');
+const home = new Home(app, db);
+
 app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 
 /**
- * get category data
- * 
- * @param  {} '/Admin', url pattern
- * @param  {} function, callback function
+ * get all categories for home page
  */
-app.get('/Admin', (request, response) => {
-    db.categories.find((error, document) => {
-        response.json(document);
-    });
-});
+home.getAllCategories();
+
+/**
+ * get all categories for admin page
+ */
+admin.getAllCategories();
 
 /**
  * post category data
@@ -261,18 +265,6 @@ app.get('/category/Extras', (request, response) => {
  */
 app.get('/category/Salads', (request, response) => {
     db.Salads.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get category data
- * 
- * @param  {} '/Home', url pattern
- * @param  {} function, callback function
- */
-app.get('/Home', (request, response) => {
-    db.categories.find((error, document) => {
         response.json(document);
     });
 });
