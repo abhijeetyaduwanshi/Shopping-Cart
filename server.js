@@ -13,6 +13,9 @@ const port = process.env.PORT || 8080;
 const Admin = require('./serverServices/admin');
 const admin = new Admin(app, db, mongojs);
 
+const Category = require('./serverServices/category.js');
+const category = new Category(app, db);
+
 const Home = require('./serverServices/home.js');
 const home = new Home(app, db);
 
@@ -23,6 +26,11 @@ app.use(bodyParser.json());
  * get all categories for home page
  */
 home.getAllCategories();
+
+/**
+ * get category for category pages
+ */
+category.getCategory();
 
 /**
  * get all categories for admin page
@@ -116,114 +124,6 @@ app.get('/AdminGetTitle/:title', (request, response) => {
     const title = request.params.title;
 
     db.collection(title).find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get pizzas data
- * 
- * @param  {} '/category/Pizzas', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Pizzas', (request, response) => {
-    db.Pizzas.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get breads data
- * 
- * @param  {} '/category/Breads', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Breads', (request, response) => {
-    db.Breads.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get chicken data
- * 
- * @param  {} '/category/Chicken', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Chicken', (request, response) => {
-    db.Chicken.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get sandwiches data
- * 
- * @param  {} '/category/Sandwiches', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Sandwiches', (request, response) => {
-    db.Sandwiches.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get desserts data
- * 
- * @param  {} '/category/Desserts', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Desserts', (request, response) => {
-    db.Desserts.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get drinks data
- * 
- * @param  {} '/category/Drinks', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Drinks', (request, response) => {
-    db.Drinks.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get pasta data
- * 
- * @param  {} '/category/Pasta', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Pasta', (request, response) => {
-    db.Pasta.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get extras data
- * 
- * @param  {} '/category/Extras', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Extras', (request, response) => {
-    db.Extras.find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get salads data
- * 
- * @param  {} '/category/Salads', url pattern
- * @param  {} function, callback function
- */
-app.get('/category/Salads', (request, response) => {
-    db.Salads.find((error, document) => {
         response.json(document);
     });
 });

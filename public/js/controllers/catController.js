@@ -4,7 +4,6 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
     /**
      * local variables
      */
-    const catName = $location.url();
     const onlyCatName = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
 
     /**
@@ -12,7 +11,7 @@ controller.controller('catCtrl',['$rootScope', '$scope', '$http', '$location', f
      */
     $http({
         method: 'GET',
-        url: catName
+        url: `/category/${onlyCatName}`
     }).then(function success(response) {
         $scope.products = response.data;
     }, function errorCallback(error) {
