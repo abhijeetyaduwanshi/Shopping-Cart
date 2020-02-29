@@ -1,4 +1,4 @@
-module.exports = class Admin {
+module.exports = class AdminHome {
 
     /**
      * class constructor
@@ -17,7 +17,7 @@ module.exports = class Admin {
      * get all categories
      */
     getAllCategories() {
-        this.app.get('/Admin', (request, response) => {
+        this.app.get('/admin', (request, response) => {
             this.db.categories.find((error, document) => {
                 response.json(document);
             });
@@ -28,7 +28,7 @@ module.exports = class Admin {
      * post category
      */
     postCategory() {
-        this.app.post('/Admin', (request, response) => {
+        this.app.post('/admin', (request, response) => {
             this.db.categories.insert(request.body, (error, document) => {
                 response.json(document);
             });
@@ -43,7 +43,7 @@ module.exports = class Admin {
      * edit category based on id
      */
     editCategoryBasedOnId() {
-        this.app.put('/AdminEdit/:id', (request, response) => {
+        this.app.put('/admin/:id', (request, response) => {
             const id = request.params.id;
 
             this.db.categories.find({_id: this.mongojs.ObjectId(id)}, {categoryTitle: 1}, (error, document) => {
@@ -68,7 +68,7 @@ module.exports = class Admin {
      * delete category based on id
      */
     deleteCategoryBasedOnId() {
-        this.app.delete('/Admin/:id', (request, response) => {
+        this.app.delete('/admin/:id', (request, response) => {
             const id = request.params.id;
 
             this.db.categories.remove({_id: this.mongojs.ObjectId(id)}, (error, document) => {

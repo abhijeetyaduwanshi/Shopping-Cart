@@ -7,7 +7,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
     const refresh = () => {
         $http({
             method: 'GET',
-            url: '/Admin'
+            url: '/admin'
         }).then(function success(response) {
             $scope.categoryItemsList = response.data;
         }, function errorCallback(error) {
@@ -117,7 +117,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 
         $http({
             method: 'POST',
-            url: '/Admin',
+            url: '/admin',
             data: catItem
         }).then(function success(response) {
             refresh();
@@ -152,7 +152,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.removeCat = id => {
         $http({
             method: 'DELETE',
-            url: `/Admin/${id}`
+            url: `/admin/${id}`
         }).then(function success(response) {
             refresh();
         }, function errorCallback(error) {
@@ -175,7 +175,7 @@ controller.controller('adminCtrl', ['$scope', '$http', function($scope, $http) {
 
         $http({
             method: 'PUT',
-            url: `/AdminEdit/${id}`,
+            url: `/admin/${id}`,
             data: catItem
         }).then(function success(response) {
             $scope.selectedCategoryItem = {};

@@ -10,8 +10,8 @@ const db = mongojs("mongodb+srv://admin:admin@shoppingcart-xqhw1.mongodb.net/tes
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 8080;
 
-const Admin = require('./serverServices/admin');
-const admin = new Admin(app, db, mongojs);
+const AdminHome = require('./serverServices/admin/adminHome.js');
+const adminHome = new AdminHome(app, db, mongojs);
 
 const Category = require('./serverServices/category.js');
 const category = new Category(app, db);
@@ -33,24 +33,24 @@ home.getAllCategories();
 category.getCategory();
 
 /**
- * get all categories for admin page
+ * get all categories for admin home page
  */
-admin.getAllCategories();
+adminHome.getAllCategories();
 
 /**
- * post category from admin page
+ * post category from admin home page
  */
-admin.postCategory();
+adminHome.postCategory();
 
 /**
- * edit category based on id from admin page
+ * edit category based on id from home page
  */
-admin.editCategoryBasedOnId();
+adminHome.editCategoryBasedOnId();
 
 /**
- * delete category based on id from admin page
+ * delete category based on id from admin home page
  */
-admin.deleteCategoryBasedOnId();
+adminHome.deleteCategoryBasedOnId();
 
 /**
  * edit product data
