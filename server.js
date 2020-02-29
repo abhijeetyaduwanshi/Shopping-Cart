@@ -19,6 +19,9 @@ const category = new Category(app, db);
 const Home = require('./serverServices/home.js');
 const home = new Home(app, db);
 
+const Navigation = require('./serverServices/navigation.js');
+const navigation = new Navigation(app, db);
+
 app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 
@@ -31,6 +34,11 @@ home.getAllCategories();
  * get category for category pages
  */
 category.getCategory();
+
+/**
+ * get navigation for all pages
+ */
+navigation.getNavigation();
 
 /**
  * get all categories for admin home page
@@ -124,18 +132,6 @@ app.get('/AdminGetTitle/:title', (request, response) => {
     const title = request.params.title;
 
     db.collection(title).find((error, document) => {
-        response.json(document);
-    });
-});
-
-/**
- * get navigation data
- * 
- * @param  {} '/Navigation', url pattern
- * @param  {} function, callback function
- */
-app.get('/Navigation', (request, response) => {
-    db.categories.find({}, {categoryTitle: 1, categoryRoute: 1}, (error, document) => {
         response.json(document);
     });
 });
