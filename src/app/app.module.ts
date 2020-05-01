@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import { BreadsComponent } from './components/breads/breads.component';
 import { CatComponent } from './components/cat/cat.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ProductComponent } from './components/product/product.component';
@@ -15,6 +16,7 @@ import { AngularMaterialModule } from './material.module';
 @NgModule({
     declarations: [
         AppComponent,
+        BreadsComponent,
         CatComponent,
         NavigationComponent,
         ProductComponent
@@ -26,6 +28,7 @@ import { AngularMaterialModule } from './material.module';
         AngularMaterialModule,
         RouterModule.forRoot([
             { path: '', component: CatComponent },
+            { path: 'cat/category-breads', component: BreadsComponent },
             { path: 'cat/:categoryId', component: ProductComponent }
         ])
     ],
