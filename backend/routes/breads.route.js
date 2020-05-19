@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const breadsRoute = express.Router();
 
 let Breads = require('./../models/Breads');

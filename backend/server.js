@@ -19,6 +19,7 @@ mongoose.connect(dataBaseConfig.db, {
 const breadsRoute = require('./routes/breads.route');
 const catRoute = require('./routes/cat.route');
 const navigationRoute = require('./routes/navigation.route');
+const pizzasRoute = require('./routes/pizzas.route');
 const productRoute = require('./routes/product.route');
 
 const app = express();
@@ -29,10 +30,11 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 app.use(express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/', express.static(path.join(`${__dirname}/dist/shoppingCart`)));
+app.use('/api', breadsRoute)
 app.use('/api', catRoute)
 app.use('/api', navigationRoute)
+app.use('/api', pizzasRoute)
 app.use('/api', productRoute)
-app.use('/api', breadsRoute)
 
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {

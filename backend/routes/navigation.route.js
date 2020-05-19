@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const navigationRoute = express.Router();
 
 let Navigation = require('./../models/Navigation');
