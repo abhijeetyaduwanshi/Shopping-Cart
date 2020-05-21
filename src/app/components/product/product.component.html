@@ -1,1 +1,20 @@
-<p>product works!</p>
+<mat-card *ngFor="let product of productData">
+    <a [routerLink]="">
+        <div class="productImage">
+            <img [alt]="product.productImageAlternateText" [src]="product.productImage">
+        </div>
+        <button type="button">Add to order</button>
+        <div [class]="product.productClass">
+            <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
+            <p>{{product.productDescription}}</p>
+            <br />
+            <span class="pills green" ng-if="product.productIsVegetarian === 'true'">Vegetarian</span>
+            <span class="pills red" ng-if="product.productIsVegetarian === 'false'">Non vegetarian</span>
+
+            <span class="pills sweet" ng-if="product.productIsSpicy === 'sweet'">Sweet</span>
+            <span class="pills spiceMild" ng-if="product.productIsSpicy === 'mild'">Mild spicy</span>
+            <span class="pills spiceMedium" ng-if="product.productIsSpicy === 'medium'">Medium spicy</span>
+            <span class="pills spiceHot" ng-if="product.productIsSpicy === 'hot'">Spicy hot</span>
+        </div>
+    </a>
+</mat-card>

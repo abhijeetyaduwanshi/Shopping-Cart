@@ -15,6 +15,7 @@ import { NavigationService } from './services/navigationService/navigation.servi
 import { PizzasComponent } from './components/pizzas/pizzas.component';
 import { PizzasService } from './services/pizzasService/pizzas.service';
 import { ProductComponent } from './components/product/product.component';
+import { ProductService } from './services/productService/product.service';
 
 @NgModule({
     declarations: [
@@ -41,7 +42,8 @@ import { ProductComponent } from './components/product/product.component';
         BreadsService,
         CatService,
         NavigationService,
-        PizzasService
+        PizzasService,
+        ProductService
     ],
     bootstrap: [
         AppComponent
