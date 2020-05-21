@@ -18,7 +18,6 @@ mongoose.connect(dataBaseConfig.db, {
 
 const catRoute = require('./routes/cat.route');
 const navigationRoute = require('./routes/navigation.route');
-const pizzasRoute = require('./routes/pizzas.route');
 const productRoute = require('./routes/product.route');
 
 const app = express();
@@ -31,7 +30,6 @@ app.use(express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/', express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/api', catRoute)
 app.use('/api', navigationRoute)
-app.use('/api', pizzasRoute)
 app.use('/api/get-products', productRoute)
 
 const port = process.env.PORT || 8080;
