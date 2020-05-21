@@ -6,8 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularMaterialModule } from './material.module';
 import { AppComponent } from './app.component';
-import { BreadsComponent } from './components/breads/breads.component';
-import { BreadsService } from './services/breadsService/breads.service';
 import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -20,7 +18,6 @@ import { ProductService } from './services/productService/product.service';
 @NgModule({
     declarations: [
         AppComponent,
-        BreadsComponent,
         CatComponent,
         NavigationComponent,
         PizzasComponent,
@@ -33,13 +30,11 @@ import { ProductService } from './services/productService/product.service';
         AngularMaterialModule,
         RouterModule.forRoot([
             { path: '', component: CatComponent },
-            { path: 'cat/category-breads', component: BreadsComponent },
             { path: 'cat/category-pizzas', component: PizzasComponent },
             { path: 'cat/:categoryId', component: ProductComponent }
         ])
     ],
     providers: [
-        BreadsService,
         CatService,
         NavigationService,
         PizzasService,
