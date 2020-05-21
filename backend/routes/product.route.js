@@ -3,7 +3,8 @@ const productRoute = express.Router();
 
 let Product = require('./../models/Product');
 
-productRoute.route('/product').get((req, res) => {
+productRoute.route('/:category').get((req, res) => {
+    console.log(req.params.category)
     Product.find((error, data) => {
         if (error) {
             return next(error)

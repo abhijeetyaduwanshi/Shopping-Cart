@@ -34,7 +34,7 @@ app.use('/api', breadsRoute)
 app.use('/api', catRoute)
 app.use('/api', navigationRoute)
 app.use('/api', pizzasRoute)
-app.use('/api', productRoute)
+app.use('/api/get-products', productRoute)
 
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
