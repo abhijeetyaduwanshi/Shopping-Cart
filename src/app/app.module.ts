@@ -10,8 +10,6 @@ import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationService } from './services/navigationService/navigation.service';
-import { PizzasComponent } from './components/pizzas/pizzas.component';
-import { PizzasService } from './services/pizzasService/pizzas.service';
 import { ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 
@@ -20,7 +18,6 @@ import { ProductService } from './services/productService/product.service';
         AppComponent,
         CatComponent,
         NavigationComponent,
-        PizzasComponent,
         ProductComponent
     ],
     imports: [
@@ -30,14 +27,12 @@ import { ProductService } from './services/productService/product.service';
         AngularMaterialModule,
         RouterModule.forRoot([
             { path: '', component: CatComponent },
-            { path: 'cat/category-pizzas', component: PizzasComponent },
             { path: 'cat/:categoryId', component: ProductComponent }
         ])
     ],
     providers: [
         CatService,
         NavigationService,
-        PizzasService,
         ProductService
     ],
     bootstrap: [
