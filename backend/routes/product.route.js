@@ -3,6 +3,7 @@ const productRoute = express.Router();
 
 let Breads = require('./../models/Breads');
 let Chicken = require('./../models/Chicken');
+let Desserts = require('./../models/Desserts');
 let Pizzas = require('./../models/Pizzas');
 let Product = require('./../models/Product');
 
@@ -14,6 +15,9 @@ productRoute.route('/:category').get((req, res) => {
             break;
         case 'chicken':
             Model = Chicken;
+            break;
+        case 'desserts':
+            Model = Desserts;
             break;
         case 'pizzas':
             Model = Pizzas;
