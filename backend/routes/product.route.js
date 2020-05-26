@@ -7,6 +7,7 @@ let Desserts = require('./../models/Desserts');
 let Pasta = require('./../models/Pasta');
 let Pizzas = require('./../models/Pizzas');
 let Product = require('./../models/Product');
+let Salads = require('./../models/Salads');
 let Sandwiches = require('./../models/Sandwiches');
 
 productRoute.route('/:category').get((req, res) => {
@@ -26,6 +27,9 @@ productRoute.route('/:category').get((req, res) => {
             break;
         case 'pizzas':
             Model = Pizzas;
+            break;
+        case 'salads':
+            Model = Salads;
             break;
         case 'sandwiches':
             Model = Sandwiches;
