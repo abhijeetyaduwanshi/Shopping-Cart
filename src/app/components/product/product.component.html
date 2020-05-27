@@ -8,13 +8,13 @@
             <h3>{{product.productTitle}} ${{product.productPrice}}</h3>
             <p>{{product.productDescription}}</p>
             <br />
-            <span class="pills green" ng-if="product.productIsVegetarian === 'true'">Vegetarian</span>
-            <span class="pills red" ng-if="product.productIsVegetarian === 'false'">Non vegetarian</span>
+            <span class="pills veg" *ngIf="product.productIsVegetarian === 'true'">Vegetarian</span>
+            <span class="pills nonVeg" *ngIf="product.productIsVegetarian === 'false'">Non vegetarian</span>
 
-            <span class="pills sweet" ng-if="product.productIsSpicy === 'sweet'">Sweet</span>
-            <span class="pills spiceMild" ng-if="product.productIsSpicy === 'mild'">Mild spicy</span>
-            <span class="pills spiceMedium" ng-if="product.productIsSpicy === 'medium'">Medium spicy</span>
-            <span class="pills spiceHot" ng-if="product.productIsSpicy === 'hot'">Spicy hot</span>
+            <span class="pills sweet" *ngIf="product.productIsSpicy === 'sweet'">Sweet</span>
+            <span class="pills spiceMild" *ngIf="product.productIsSpicy === 'mild'">Mild spicy</span>
+            <span class="pills spiceMedium" *ngIf="product.productIsSpicy === 'medium'">Medium spicy</span>
+            <span class="pills spiceHot" *ngIf="product.productIsSpicy === 'hot'">Spicy hot</span>
         </div>
     </a>
 </mat-card>

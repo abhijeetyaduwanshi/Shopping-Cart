@@ -11,3 +11,45 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.pills {
+    font-size: 14px;
+    padding: 5px;
+    margin: 0 5px 0 0;
+}
+
+.veg {
+    color: #fff;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.nonVeg {
+    color: #fff;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.sweet {
+    color: #fff;
+    background-color: hotpink;
+    border: 1px solid hotpink;
+}
+
+.spiceMild {
+    color: #fff;
+    background-color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+
+.spiceMedium {
+    color: #fff;
+    background-color: darkorange;
+    border: 1px solid darkorange;
+}
+
+.spiceHot {
+    color: #fff;
+    background-color: darkred;
+    border: 1px solid darkred;
+}
