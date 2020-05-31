@@ -80,8 +80,8 @@ export interface DialogData {
 
 @Component({
     selector: 'product-added-to-cart-dialog',
-    templateUrl: './product-added-to-cart-dialog.html',
-    styleUrls: ['./product-added-to-cart-dialog.css']
+    templateUrl: './product.added.to.cart.dialog/product-added-to-cart-dialog.html',
+    styleUrls: ['./product.added.to.cart.dialog/product-added-to-cart-dialog.css']
 })
 
 export class ProductAddedToCartDialog {
