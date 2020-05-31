@@ -1,5 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Product } from './../../services/productService/product';
 import { ProductService } from './../../services/productService/product.service';
@@ -13,7 +14,7 @@ import { ProductService } from './../../services/productService/product.service'
 export class ProductComponent implements OnInit {
     productData: any = [];
 
-    constructor(private activeRoute: ActivatedRoute, private productApi: ProductService) { }
+    constructor(private activeRoute: ActivatedRoute, private dialog: MatDialog, private productApi: ProductService) { }
 
     ngOnInit() {
         this.getProduct();
@@ -28,7 +29,6 @@ export class ProductComponent implements OnInit {
     }
 
     private addToCart = (productId) => {
-        alert("Item added to cart");
         const catName = this.activeRoute.snapshot.paramMap.get('categoryId').substr(this.activeRoute.snapshot.paramMap.get('categoryId').lastIndexOf('-') + 1);
         const products = [];
         let returningProduct = false;
@@ -60,4 +60,24 @@ export class ProductComponent implements OnInit {
             localStorage.setItem("cartedProducts", JSON.stringify(cartedProducts));
         }
     }
+
+    private openProductAddedToCartDialog = (product) => {
+        this.dialog.open(ProductAddedToCartDialog, {
+            data: {
+                productTitle: product.productTitle,
+                productIsVegetarian: product.productIsVegetarian,
+                productIsSpicy: product.productIsSpicy
+            }
+        });
+    }
+}
+
+@Component({
+    selector: 'product-added-to-cart-dialog',
+    templateUrl: './product-added-to-cart-dialog.html',
+    styleUrls: ['./product-added-to-cart-dialog.css']
+})
+
+export class ProductAddedToCartDialog {
+    constructor(@Inject(MAT_DIALOG_DATA) private data: DialogData) {}
 }

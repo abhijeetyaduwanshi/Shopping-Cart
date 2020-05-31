@@ -1,0 +1,24 @@
+<div mat-dialog-content>
+    <p>
+        <span class="itemAddedToCartTitle">
+            {{data.productTitle}}
+        </span>
+        added to cart!
+    </p>
+    <p class="itemAddedToCartFeatures">
+        <span *ngIf="data.productIsVegetarian === 'true'">Vegetarian</span>
+        <span *ngIf="data.productIsVegetarian === 'false'">Non vegetarian</span>
+        <br />
+        <span *ngIf="data.productIsSpicy === 'sweet'">Sweet</span>
+        <span *ngIf="data.productIsSpicy === 'mild'">Mild spicy</span>
+        <span *ngIf="data.productIsSpicy === 'medium'">Medium spicy</span>
+        <span *ngIf="data.productIsSpicy === 'hot'">Spicy hot</span>
+        <br />
+        Calories count
+    </p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>View cart (Not working)</button>
+    <button mat-button mat-dialog-close>Continue shopping</button>
+</div>

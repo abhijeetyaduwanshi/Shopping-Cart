@@ -10,13 +10,14 @@ import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationService } from './services/navigationService/navigation.service';
-import { ProductComponent } from './components/product/product.component';
+import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         CatComponent,
+        ProductAddedToCartDialog,
         NavigationComponent,
         ProductComponent
     ],
@@ -37,6 +38,9 @@ import { ProductService } from './services/productService/product.service';
     ],
     bootstrap: [
         AppComponent
+    ],
+    entryComponents: [
+        ProductAddedToCartDialog
     ]
 })
 
