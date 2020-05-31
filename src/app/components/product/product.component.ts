@@ -72,6 +72,12 @@ export class ProductComponent implements OnInit {
     }
 }
 
+export interface DialogData {
+    productTitle: String;
+    productIsVegetarian: String;
+    productIsSpicy: String;
+}
+
 @Component({
     selector: 'product-added-to-cart-dialog',
     templateUrl: './product-added-to-cart-dialog.html',
