@@ -1,4 +1,13 @@
+.categoryContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
 mat-card {
+    background-color: #f1f1f1;
+    width: auto;
+    height: auto;
     margin: 10px;
     padding: 10px;
     border-radius: 0;
@@ -7,4 +16,12 @@ mat-card {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+mat-card-title {
+    color: #000000;
+}
+
+mat-card-subtitle {
+    color: #000000;
 }

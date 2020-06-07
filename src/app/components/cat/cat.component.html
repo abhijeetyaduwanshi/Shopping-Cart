@@ -1,9 +1,11 @@
-<mat-card *ngFor="let cat of catData">
-    <a [routerLink]="['/cat', cat.categoryId]">
-        <div [class]="cat.categoryClass">
-            <img [alt]="cat.categoryImageAlternateText" [src]="cat.categoryImage">
-            <mat-card-title>{{cat.categoryTitle}}</mat-card-title>
-            <mat-card-subtitle>{{cat.categoryDescription}}</mat-card-subtitle>
-        </div>
-    </a>
-</mat-card>
+<div class="categoryContainer">
+    <mat-card *ngFor="let cat of catData">
+        <a [routerLink]="['/cat', cat.categoryId]">
+            <div [class]="cat.categoryClass">
+                <img [alt]="cat.categoryImageAlternateText" [src]="cat.categoryImage">
+                <mat-card-title>{{cat.categoryTitle}}</mat-card-title>
+                <mat-card-subtitle>{{cat.categoryDescription}}</mat-card-subtitle>
+            </div>
+        </a>
+    </mat-card>
+</div>
