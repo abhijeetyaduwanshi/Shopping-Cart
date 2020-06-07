@@ -17,7 +17,9 @@ export class ProductComponent implements OnInit {
     constructor(private activeRoute: ActivatedRoute, private dialog: MatDialog, private productApi: ProductService) { }
 
     ngOnInit() {
-        this.getProduct();
+        this.activeRoute.params.subscribe(routeParams => {
+            this.getProduct();
+        });
     }
 
     private getProduct = () => {

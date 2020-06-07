@@ -29,7 +29,7 @@ app.use(cors());
 app.use(express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/', express.static(path.join(`${__dirname}/dist/shoppingCart`)));
 app.use('/api', catRoute)
-app.use('/api', navigationRoute)
+app.use('/api/navigation', navigationRoute)
 app.use('/api/get-products', productRoute)
 
 const port = process.env.PORT || 8080;

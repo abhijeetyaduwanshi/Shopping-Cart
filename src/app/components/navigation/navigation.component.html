@@ -1,6 +1,6 @@
 <div class="navSection">
     <span *ngFor="let navigation of navigationData">
-        <a [href]="navigation.categoryRoute">
+        <a [routerLink]="['/cat', navigation.categoryId]">
             <button mat-button>
                 {{navigation.categoryTitle}}
             </button>
