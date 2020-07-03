@@ -8,6 +8,7 @@ import { AngularMaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
+import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationService } from './services/navigationService/navigation.service';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
@@ -17,8 +18,9 @@ import { ProductService } from './services/productService/product.service';
     declarations: [
         AppComponent,
         CatComponent,
-        ProductAddedToCartDialog,
+        HomeComponent,
         NavigationComponent,
+        ProductAddedToCartDialog,
         ProductComponent
     ],
     imports: [
