@@ -29,7 +29,8 @@ import { ProductService } from './services/productService/product.service';
         BrowserAnimationsModule,
         AngularMaterialModule,
         RouterModule.forRoot([
-            { path: '', component: CatComponent },
+            { path: '', component: HomeComponent },
+            { path: 'cat', component: CatComponent },
             { path: 'cat/:categoryId', component: ProductComponent }
         ])
     ],
