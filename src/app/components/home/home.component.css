@@ -19,6 +19,7 @@ mat-card-title {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .deliveryImageContainer, .pickupImageContainer {
@@ -26,6 +27,23 @@ mat-card-title {
     margin: 0 50px 0 50px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 img {
     width: 100%;
+}
+
+.browseOurMenuContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.browseOurMenuImageContainer {
+    width: 60%;
+    margin: 0 50px 0 100px;
 }
