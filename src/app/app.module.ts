@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AngularMaterialModule } from './material.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,9 @@ import { ProductAddedToCartDialog, ProductComponent } from './components/product
 import { ProductService } from './services/productService/product.service';
 
 @NgModule({
+    bootstrap: [
+        AppComponent
+    ],
     declarations: [
         AppComponent,
         CatComponent,
@@ -23,11 +26,14 @@ import { ProductService } from './services/productService/product.service';
         ProductAddedToCartDialog,
         ProductComponent
     ],
+    entryComponents: [
+        ProductAddedToCartDialog
+    ],
     imports: [
+        AngularMaterialModule,
+        BrowserAnimationsModule,
         BrowserModule,
         HttpClientModule,
-        BrowserAnimationsModule,
-        AngularMaterialModule,
         RouterModule.forRoot([
             { path: '', component: HomeComponent },
             { path: 'cat', component: CatComponent },
@@ -38,12 +44,6 @@ import { ProductService } from './services/productService/product.service';
         CatService,
         NavigationService,
         ProductService
-    ],
-    bootstrap: [
-        AppComponent
-    ],
-    entryComponents: [
-        ProductAddedToCartDialog
     ]
 })
 
