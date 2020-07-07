@@ -14,12 +14,20 @@ export class HomeComponent implements OnInit {
     ngOnInit(): void { }
 
     private email = new FormControl('', [Validators.required, Validators.email]);
-    private hide = true;
 
-    private getErrorMessage = () => {
+    private getEmailErrorMessage = () => {
         if (this.email.hasError('required')) {
             return 'You must enter a value';
         }
         return this.email.hasError('email') ? 'Not a valid email' : '';
+    }
+
+    private password = new FormControl('', [Validators.required]);
+    private hide = true;
+
+    private getPasswordErrorMessage = () => {
+        if (this.password.hasError('required')) {
+            return 'You must enter a value';
+        }
     }
 }
