@@ -49,14 +49,25 @@ img {
 }
 
 .signInOrCreateNewAccount {
-    min-height: 300px;
+    min-height: 450px;
 }
 
 .signInOrCreateNewAccountBox {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 16px;
     padding: 16px;
-    height: 300px;
+    height: 450px;
+}
+
+.signInAccountField {
+    width: 40%;
+}
+
+.signInAccountButton {
+    width: 40%;
+    padding: 12px;
+    font-size: 16px;
 }
