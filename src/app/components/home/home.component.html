@@ -50,16 +50,16 @@
                         <div class="signInOrCreateNewAccountBox mat-elevation-z4">
                             <mat-form-field class="signInAccountField" appearance="fill">
                                 <mat-label>Enter your email</mat-label>
-                                <input matInput placeholder="abhijeet@example.com" [formControl]="email" required>
-                                <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+                                <input matInput placeholder="abhijeet@example.com" [formControl]="signInEmail" required>
+                                <mat-error *ngIf="signInEmail.invalid">{{getSignInEmailErrorMessage()}}</mat-error>
                             </mat-form-field>
                             <mat-form-field class="signInAccountField" appearance="fill">
                                 <mat-label>Enter your password</mat-label>
-                                <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
-                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                <input matInput [type]="hideSignInPassword ? 'password' : 'text'" [formControl]="signInPassword" required>
+                                <button mat-icon-button matSuffix (click)="hideSignInPassword = !hideSignInPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hideSignInPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
-                                <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                                <mat-error *ngIf="signInPassword.invalid">{{getSignInPasswordErrorMessage()}}</mat-error>
                             </mat-form-field>
                             <button class="signInAccountButton" mat-raised-button color="primary">
                                 Sign In To My Pizza Profile
