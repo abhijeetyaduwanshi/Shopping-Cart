@@ -90,3 +90,7 @@ img {
     padding: 12px;
     font-size: 16px;
 }
+
+.orderAgain {
+    min-height: 400px;
+}
