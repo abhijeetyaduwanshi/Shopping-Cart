@@ -92,5 +92,11 @@ img {
 }
 
 .orderAgain {
-    min-height: 400px;
+    min-height: 200px;
+}
+
+.popularAmongYourNeighborsItemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
