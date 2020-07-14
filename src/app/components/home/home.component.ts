@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector: 'app-home',
@@ -9,7 +10,7 @@ import { FormControl, Validators } from '@angular/forms';
 
 export class HomeComponent implements OnInit {
 
-    constructor() { }
+    constructor(private dialog: MatDialog) { }
 
     ngOnInit(): void { }
 
@@ -74,4 +75,16 @@ export class HomeComponent implements OnInit {
             return 'You must enter a value';
         }
     }
+
+    private openDeliveryDialog = () => {
+        this.dialog.open(TemporaryDeliveryDialog);
+      }
 }
+
+@Component({
+    selector: 'temporary-delivery-dialog',
+    templateUrl: './temporary.delivery.dialog/temporary-delivery-dialog.html',
+    styleUrls: ['./temporary.delivery.dialog/temporary-delivery-dialog.css']
+})
+
+export class TemporaryDeliveryDialog {}
