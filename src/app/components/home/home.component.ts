@@ -83,8 +83,8 @@ export class HomeComponent implements OnInit {
 
 @Component({
     selector: 'temporary-delivery-dialog',
-    templateUrl: './temporary.delivery.dialog/temporary-delivery-dialog.html',
-    styleUrls: ['./temporary.delivery.dialog/temporary-delivery-dialog.css']
+    templateUrl: './delivery.pickup.dialogs/temporary.delivery.dialog/temporary-delivery-dialog.html',
+    styleUrls: ['./delivery.pickup.dialogs/temporary.delivery.dialog/temporary-delivery-dialog.css']
 })
 
 export class TemporaryDeliveryDialog {}
