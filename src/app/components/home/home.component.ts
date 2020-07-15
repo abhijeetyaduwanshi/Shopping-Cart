@@ -79,6 +79,10 @@ export class HomeComponent implements OnInit {
     private openDeliveryDialog = () => {
         this.dialog.open(TemporaryDeliveryDialog);
       }
+
+    private openPickupDialog = () => {
+        this.dialog.open(PickupDialog);
+    }
 }
 
 @Component({
@@ -88,3 +92,44 @@ export class HomeComponent implements OnInit {
 })
 
 export class TemporaryDeliveryDialog {}
+
+@Component({
+    selector: 'pickup-dialog',
+    templateUrl: './delivery.pickup.dialogs/pickup.dialog/pickup-dialog.html',
+    styleUrls: ['./delivery.pickup.dialogs/pickup.dialog/pickup-dialog.css']
+})
+
+export class PickupDialog {
+    constructor() { }
+
+    ngOnInit(): void { }
+
+    private pickupDetailsFirstName = new FormControl('', [Validators.required]);
+    private getPickupDetailsFirstNameErrorMessage = () => {
+        if (this.pickupDetailsFirstName.hasError('required')) {
+            return 'You must enter a value';
+        }
+    }
+
+    private pickupDetailsLastName = new FormControl('', [Validators.required]);
+    private getPickupDetailsLastNameErrorMessage = () => {
+        if (this.pickupDetailsLastName.hasError('required')) {
+            return 'You must enter a value';
+        }
+    }
+
+    private pickupDetailsEmail = new FormControl('', [Validators.required, Validators.email]);
+    private getPickupDetailsEmailErrorMessage = () => {
+        if (this.pickupDetailsEmail.hasError('required')) {
+            return 'You must enter a value';
+        }
+        return this.pickupDetailsEmail.hasError('email') ? 'Not a valid email' : '';
+    }
+
+    private pickupDetailsPhone = new FormControl('', [Validators.required]);
+    private getPickupDetailsPhoneErrorMessage = () => {
+        if (this.pickupDetailsPhone.hasError('required')) {
+            return 'You must enter a value';
+        }
+    }
+}

@@ -9,7 +9,7 @@ import { AngularMaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
-import { HomeComponent, TemporaryDeliveryDialog } from './components/home/home.component';
+import { HomeComponent, PickupDialog, TemporaryDeliveryDialog } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationService } from './services/navigationService/navigation.service';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
@@ -24,11 +24,13 @@ import { ProductService } from './services/productService/product.service';
         CatComponent,
         HomeComponent,
         NavigationComponent,
+        PickupDialog,
         ProductAddedToCartDialog,
         ProductComponent,
         TemporaryDeliveryDialog
     ],
     entryComponents: [
+        PickupDialog,
         ProductAddedToCartDialog,
         TemporaryDeliveryDialog
     ],
