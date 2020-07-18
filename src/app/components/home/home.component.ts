@@ -116,8 +116,8 @@ export class HomeComponent implements OnInit {
 
 @Component({
     selector: 'temporary-delivery-dialog',
-    templateUrl: './delivery.pickup.dialogs/temporary.delivery.dialog/temporary-delivery-dialog.html',
-    styleUrls: ['./delivery.pickup.dialogs/temporary.delivery.dialog/temporary-delivery-dialog.css']
+    templateUrl: './dialogs/temporary.delivery.dialog/temporary-delivery-dialog.html',
+    styleUrls: ['./dialogs/temporary.delivery.dialog/temporary-delivery-dialog.css']
 })
 
 /**
@@ -128,8 +128,8 @@ export class TemporaryDeliveryDialog {}
 
 @Component({
     selector: 'pickup-dialog',
-    templateUrl: './delivery.pickup.dialogs/pickup.dialog/pickup-dialog.html',
-    styleUrls: ['./delivery.pickup.dialogs/pickup.dialog/pickup-dialog.css']
+    templateUrl: './dialogs/pickup.dialog/pickup-dialog.html',
+    styleUrls: ['./dialogs/pickup.dialog/pickup-dialog.css']
 })
 
 /**
