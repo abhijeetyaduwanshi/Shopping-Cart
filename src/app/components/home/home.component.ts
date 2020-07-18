@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
         // TODO: Use EventEmitter with form value
         // TODO: Impliment the form
         console.log(this.signInForm.value);
-      }
+    }
 
     /**
      * home page create account forms fields

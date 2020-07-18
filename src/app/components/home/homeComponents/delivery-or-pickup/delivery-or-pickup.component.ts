@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -58,30 +58,37 @@ export class TemporaryDeliveryDialog {}
  */
 export class PickupDialog {
 
+    // pickup details form variables
+    private pickupDetailsForm: FormGroup;
+    private pickupDetailsFirstName = new FormControl('', [Validators.required]);
+    private pickupDetailsLastName = new FormControl('', [Validators.required]);
+    private pickupDetailsEmail = new FormControl('', [Validators.required, Validators.email]);
+    private pickupDetailsPhone = new FormControl('', [Validators.required]);
+
     // pickup dialog constructor
-    constructor() { }
+    constructor(private formBuilder: FormBuilder) {
+        this.pickupDetailsForm = formBuilder.group({
+            pickupDetailsFirstName: this.pickupDetailsFirstName,
+            pickupDetailsLastName: this.pickupDetailsLastName,
+            pickupDetailsEmail: this.pickupDetailsEmail,
+            pickupDetailsPhone: this.pickupDetailsPhone
+        });
+    }
 
     // pickup dialog ngOnInit
     ngOnInit(): void { }
 
-    /**
-     * pickup dialog details forms fields
-     */
-
-    // pickup details first name
-    private pickupDetailsFirstName = new FormControl('', [Validators.required]);
+    // pickup details first name error
     private getPickupDetailsFirstNameErrorMessage = () => {
         return this.pickupDetailsFirstName.hasError('required') ? 'You must enter your first name' : '';
     }
 
-    // pickup details last name
-    private pickupDetailsLastName = new FormControl('', [Validators.required]);
+    // pickup details last name error
     private getPickupDetailsLastNameErrorMessage = () => {
         return this.pickupDetailsLastName.hasError('required') ? 'You must enter your last name' : '';
     }
 
-    // pickup details email
-    private pickupDetailsEmail = new FormControl('', [Validators.required, Validators.email]);
+    // pickup details email error
     private getPickupDetailsEmailErrorMessage = () => {
         if (this.pickupDetailsEmail.hasError('required')) {
             return 'You must enter your email';
@@ -89,9 +96,15 @@ export class PickupDialog {
         return this.pickupDetailsEmail.hasError('email') ? 'Not a valid email' : '';
     }
 
-    // pickup details phone
-    private pickupDetailsPhone = new FormControl('', [Validators.required]);
+    // pickup details phone error
     private getPickupDetailsPhoneErrorMessage = () => {
         return this.pickupDetailsPhone.hasError('required') ? 'You must enter your phone number' : '';
+    }
+
+    // sign in form on submit
+    private onPickupDetailsFormSubmit = () => {
+        // TODO: Use EventEmitter with form value
+        // TODO: Impliment the form
+        console.log(this.pickupDetailsForm.value);
     }
 }
