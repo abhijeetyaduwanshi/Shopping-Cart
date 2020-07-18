@@ -28,37 +28,6 @@ img {
     min-height: 450px;
 }
 
-/*  */
-.signInOrCreateNewAccountBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 16px;
-    padding: 16px;
-    height: 450px;
-}
-/*  */
-
-.createAccountField {
-    width: 100%;
-}
-
-.createNewAccountTable {
-    width: 80%;
-    margin: 0px auto;
-}
-
-.createAccountButtonTableData {
-    text-align: center;
-}
-
-.createAccountButton {
-    width: 50%;
-    padding: 12px;
-    font-size: 16px;
-}
-
 .orderAgain {
     min-height: 200px;
 }

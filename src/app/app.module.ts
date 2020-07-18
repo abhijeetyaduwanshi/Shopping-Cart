@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { BrowseOurMenuComponent } from './components/home/homeComponents/browse-our-menu/browse-our-menu.component';
 import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
+import { CreateYourProfileComponent } from './components/home/homeComponents/create-your-profile/create-your-profile.component';
 import { DeliveryOrPickupComponent, PickupDialog, TemporaryDeliveryDialog } from './components/home/homeComponents/delivery-or-pickup/delivery-or-pickup.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -26,6 +27,7 @@ import { SignInToYourProfileComponent } from './components/home/homeComponents/s
         AppComponent,
         BrowseOurMenuComponent,
         CatComponent,
+        CreateYourProfileComponent,
         DeliveryOrPickupComponent,
         HomeComponent,
         NavigationComponent,

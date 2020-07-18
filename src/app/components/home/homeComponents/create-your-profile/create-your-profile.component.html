@@ -1,0 +1,68 @@
+<div class="signInOrCreateNewAccountBox mat-elevation-z4">
+    <form [formGroup]="createAccountForm" (ngSubmit)="onCreateAccountFormSubmit()">
+        <table class="createNewAccountTable">
+            <tr>
+                <td>
+                    <mat-form-field class="createAccountField" appearance="fill">
+                        <mat-label>Enter your first name</mat-label>
+                        <input matInput placeholder="Abhijeet" [formControl]="createAccountFirstName" required>
+                        <mat-error *ngIf="createAccountFirstName.invalid">{{getCreateAccountFirstNameErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="createAccountField" appearance="fill">
+                        <mat-label>Enter your last name</mat-label>
+                        <input matInput placeholder="Yaduwanshi" [formControl]="createAccountLastName" required>
+                        <mat-error *ngIf="createAccountLastName.invalid">{{getCreateAccountLastNameErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="createAccountField" appearance="fill">
+                        <mat-label>Enter your email</mat-label>
+                        <input matInput placeholder="abhijeet@example.com" [formControl]="createAccountEmail" required>
+                        <mat-error *ngIf="createAccountEmail.invalid">{{getCreateAccountEmailErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="createAccountField" appearance="fill">
+                        <mat-label>Confirm your email</mat-label>
+                        <input matInput placeholder="abhijeet@example.com" [formControl]="createAccountConfirmEmail" required>
+                        <mat-error *ngIf="createAccountConfirmEmail.invalid">{{getCreateAccountConfirmEmailErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field class="createAccountField" appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hideCreateAccountPassword ? 'password' : 'text'" [formControl]="createAccountPassword" required>
+                        <button mat-icon-button matSuffix (click)="hideCreateAccountPassword = !hideCreateAccountPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hideCreateAccountPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="createAccountPassword.invalid">{{getCreateAccountPasswordErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="createAccountField" appearance="fill">
+                        <mat-label>Confirm your password</mat-label>
+                        <input matInput [type]="hideCreateAccountConfirmPassword ? 'password' : 'text'" [formControl]="createAccountConfirmPassword" required>
+                        <button mat-icon-button matSuffix (click)="hideCreateAccountConfirmPassword = !hideCreateAccountConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hideCreateAccountConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="createAccountConfirmPassword.invalid">{{getCreateAccountConfirmPasswordErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="createAccountButtonTableData">
+                    <button class="createAccountButton" mat-raised-button color="warn" [disabled]="!createAccountForm.valid">
+                        Create My Pizza Profile
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <p>This is not connected to the backend (work in progress).</p>
+    </form>
+</div>
