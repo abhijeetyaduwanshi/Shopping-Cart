@@ -16,6 +16,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { NavigationService } from './services/navigationService/navigation.service';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
+import { SignInToYourProfileComponent } from './components/home/homeComponents/sign-in-to-your-profile/sign-in-to-your-profile.component';
 
 @NgModule({
     bootstrap: [
@@ -31,6 +32,7 @@ import { ProductService } from './services/productService/product.service';
         PickupDialog,
         ProductAddedToCartDialog,
         ProductComponent,
+        SignInToYourProfileComponent,
         TemporaryDeliveryDialog
     ],
     entryComponents: [

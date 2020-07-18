@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-home',
@@ -12,42 +12,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
  */
 export class HomeComponent implements OnInit {
 
-    // sign in form variables
-    private signInForm: FormGroup;
-    private signInEmail = new FormControl('', [Validators.required, Validators.email]);
-    private signInPassword = new FormControl('', [Validators.required]);
-
     // home page constructor
-    constructor(private formBuilder: FormBuilder) {
-        this.signInForm = formBuilder.group({
-            signInEmail: this.signInEmail,
-            signInPassword: this.signInPassword
-        });
-    }
+    constructor() { }
 
     // home page ngOnInit
     ngOnInit(): void { }
-
-    // sign in email error
-    private getSignInEmailErrorMessage = () => {
-        if (this.signInEmail.hasError('required')) {
-            return 'You must enter your email';
-        }
-        return this.signInEmail.hasError('email') ? 'Not a valid email' : '';
-    }
-
-    // sign in password error
-    private hideSignInPassword = true;
-    private getSignInPasswordErrorMessage = () => {
-        return this.signInPassword.hasError('required') ? 'You must enter your password' : '';
-    }
-
-    // sign in form on submit
-    private onSignInFormSubmit = () => {
-        // TODO: Use EventEmitter with form value
-        // TODO: Impliment the form
-        console.log(this.signInForm.value);
-    }
 
     /**
      * home page create account forms fields

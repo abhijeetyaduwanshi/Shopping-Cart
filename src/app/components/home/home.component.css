@@ -28,6 +28,7 @@ img {
     min-height: 450px;
 }
 
+/*  */
 .signInOrCreateNewAccountBox {
     display: flex;
     align-items: center;
@@ -37,16 +38,7 @@ img {
     padding: 16px;
     height: 450px;
 }
-
-.signInAccountField {
-    width: 40%;
-}
-
-.signInAccountButton {
-    width: 40%;
-    padding: 12px;
-    font-size: 16px;
-}
+/*  */
 
 .createAccountField {
     width: 100%;
