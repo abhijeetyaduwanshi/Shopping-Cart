@@ -1,24 +1,5 @@
 <div class="homePage">
-    <div class="deliveryOrPickup">
-        <mat-card>
-            <div class="message">
-                <mat-card-title>How Do You Want Your Domino's Today?<br>All Deliveries Are Contactless.</mat-card-title>
-            </div>
-            <div class="deliveryOrPickupContainer">
-                <div class="deliveryImageContainer">
-                    <img class="deliveryOptionImage" alt="deliveryOptionImage" src="assets/images/home/delivery.png" (click)="openDeliveryDialog()">
-                    <p>Clicking the image will take the use to maps view and if the customer is in within 20 miles (test) radius the delivery option will be active or else pickup option will be suggested (work in progress).</p>
-                </div>
-                <div>
-                    <mat-card-title>OR</mat-card-title>
-                </div>
-                <div class="pickupImageContainer">
-                    <img class="pickupOptionImage" alt="pickupOptionImage" src="assets/images/home/pickup.png" (click)="openPickupDialog()">
-                    <p>Clicking the image will take the use to forms page were the customer will be asked to enter there details like name phone number and asked to enter there credit card details for safety reasons (work in progress).</p>
-                </div>
-            </div>
-        </mat-card>
-    </div>
+    <app-delivery-or-pickup></app-delivery-or-pickup>
 
     <hr>
 

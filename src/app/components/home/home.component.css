@@ -15,22 +15,6 @@ mat-card-title {
     color: #000000;
 }
 
-.deliveryOrPickupContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.deliveryImageContainer, .pickupImageContainer {
-    width: 40%;
-    margin: 0 50px 0 50px;
-}
-
-.deliveryOptionImage , .pickupOptionImage {
-    cursor: pointer;
-}
-
 a {
     text-decoration: none;
     color: inherit;

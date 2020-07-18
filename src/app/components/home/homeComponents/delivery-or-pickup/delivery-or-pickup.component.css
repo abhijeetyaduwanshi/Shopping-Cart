@@ -1,0 +1,36 @@
+mat-card {
+    background-color: #f1f1f1;
+    width: auto;
+    height: auto;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 0;
+}
+
+.message {
+    text-align: center;
+}
+
+mat-card-title {
+    color: #000000;
+}
+
+.deliveryOrPickupContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.deliveryImageContainer, .pickupImageContainer {
+    width: 40%;
+    margin: 0 50px 0 50px;
+}
+
+.deliveryOptionImage , .pickupOptionImage {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
