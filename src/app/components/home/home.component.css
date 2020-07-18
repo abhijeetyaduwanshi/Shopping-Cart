@@ -24,18 +24,6 @@ img {
     width: 100%;
 }
 
-.browseOurMenuContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.browseOurMenuImageContainer {
-    width: 60%;
-    margin: 0 50px 0 100px;
-}
-
 .signInOrCreateNewAccount {
     min-height: 450px;
 }

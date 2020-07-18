@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 
 import { AngularMaterialModule } from './material.module';
 import { AppComponent } from './app.component';
+import { BrowseOurMenuComponent } from './components/home/homeComponents/browse-our-menu/browse-our-menu.component';
 import { CatComponent } from './components/cat/cat.component';
 import { CatService } from './services/catService/cat.service';
 import { DeliveryOrPickupComponent, PickupDialog, TemporaryDeliveryDialog } from './components/home/homeComponents/delivery-or-pickup/delivery-or-pickup.component';
@@ -22,6 +23,7 @@ import { ProductService } from './services/productService/product.service';
     ],
     declarations: [
         AppComponent,
+        BrowseOurMenuComponent,
         CatComponent,
         DeliveryOrPickupComponent,
         HomeComponent,
