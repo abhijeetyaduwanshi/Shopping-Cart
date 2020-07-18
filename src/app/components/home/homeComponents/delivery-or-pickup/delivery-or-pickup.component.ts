@@ -63,7 +63,7 @@ export class PickupDialog {
     private pickupDetailsFirstName = new FormControl('', [Validators.required]);
     private pickupDetailsLastName = new FormControl('', [Validators.required]);
     private pickupDetailsEmail = new FormControl('', [Validators.required, Validators.email]);
-    private pickupDetailsPhone = new FormControl('', [Validators.required]);
+    private pickupDetailsPhone = new FormControl('', [Validators.required, Validators.pattern("[0-9]{10}")]);
 
     // pickup dialog constructor
     constructor(private formBuilder: FormBuilder) {
@@ -98,7 +98,10 @@ export class PickupDialog {
 
     // pickup details phone error
     private getPickupDetailsPhoneErrorMessage = () => {
-        return this.pickupDetailsPhone.hasError('required') ? 'You must enter your phone number' : '';
+        if (this.pickupDetailsPhone.hasError('required')) {
+            return 'You must enter your phone number';
+        }
+        return this.pickupDetailsPhone.hasError('pattern') ? 'Not a valid phone' : '';
     }
 
     // sign in form on submit
