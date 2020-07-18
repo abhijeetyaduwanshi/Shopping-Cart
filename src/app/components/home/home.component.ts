@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -13,18 +13,23 @@ import { MatDialog } from '@angular/material/dialog';
  */
 export class HomeComponent implements OnInit {
 
+    // sign in form variables
+    private signInForm: FormGroup;
+    private signInEmail = new FormControl('', [Validators.required, Validators.email]);
+    private signInPassword = new FormControl('', [Validators.required]);
+
     // home page constructor
-    constructor(private dialog: MatDialog) { }
+    constructor(private dialog: MatDialog, formBuilder: FormBuilder) {
+        this.signInForm = formBuilder.group({
+            signInEmail: this.signInEmail,
+            signInPassword: this.signInPassword
+        });
+    }
 
     // home page ngOnInit
     ngOnInit(): void { }
 
-    /**
-     * home page sign in forms fields
-     */
-
-    // sign in email
-    private signInEmail = new FormControl('', [Validators.required, Validators.email]);
+    // sign in email error
     private getSignInEmailErrorMessage = () => {
         if (this.signInEmail.hasError('required')) {
             return 'You must enter your email';
@@ -32,12 +37,18 @@ export class HomeComponent implements OnInit {
         return this.signInEmail.hasError('email') ? 'Not a valid email' : '';
     }
 
-    // sign in password
-    private signInPassword = new FormControl('', [Validators.required]);
+    // sign in password error
     private hideSignInPassword = true;
     private getSignInPasswordErrorMessage = () => {
         return this.signInPassword.hasError('required') ? 'You must enter your password' : '';
     }
+
+    // sign in form on submit
+    private onSignInFormSubmit = () => {
+        // TODO: Use EventEmitter with form value
+        // TODO: Impliment the form
+        console.log(this.signInForm.value);
+      }
 
     /**
      * home page create account forms fields
