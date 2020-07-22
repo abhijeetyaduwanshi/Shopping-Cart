@@ -15,6 +15,7 @@ import { DeliveryOrPickupComponent, PickupDialog, TemporaryDeliveryDialog } from
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NavigationService } from './services/navigationService/navigation.service';
+import { PopularAmongYourNeighborsComponent } from './components/home/homeComponents/popular-among-your-neighbors/popular-among-your-neighbors.component';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 import { SignInToYourProfileComponent } from './components/home/homeComponents/sign-in-to-your-profile/sign-in-to-your-profile.component';
@@ -32,6 +33,7 @@ import { SignInToYourProfileComponent } from './components/home/homeComponents/s
         HomeComponent,
         NavigationComponent,
         PickupDialog,
+        PopularAmongYourNeighborsComponent,
         ProductAddedToCartDialog,
         ProductComponent,
         SignInToYourProfileComponent,

@@ -15,19 +15,8 @@ mat-card-title {
     color: #000000;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    width: 100%;
-}
-
-.signInOrCreateNewAccount {
-    min-height: 450px;
-}
-
-.orderAgain {
-    min-height: 200px;
+.popularAmongYourNeighborsItemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
