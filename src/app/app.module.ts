@@ -19,6 +19,7 @@ import { PopularAmongYourNeighborsComponent } from './components/home/homeCompon
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 import { SignInToYourProfileComponent } from './components/home/homeComponents/sign-in-to-your-profile/sign-in-to-your-profile.component';
+import { OrderAgainComponent } from './components/home/homeComponents/order-again/order-again.component';
 
 @NgModule({
     bootstrap: [
@@ -37,7 +38,8 @@ import { SignInToYourProfileComponent } from './components/home/homeComponents/s
         ProductAddedToCartDialog,
         ProductComponent,
         SignInToYourProfileComponent,
-        TemporaryDeliveryDialog
+        TemporaryDeliveryDialog,
+        OrderAgainComponent
     ],
     entryComponents: [
         PickupDialog,
