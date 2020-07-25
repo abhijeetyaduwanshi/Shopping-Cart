@@ -12,42 +12,15 @@ let Product = require('./../models/Product');
 let Salads = require('./../models/Salads');
 let Sandwiches = require('./../models/Sandwiches');
 
+/**
+ * get the list of products in a category
+ * 
+ * @param  {category} name of the category
+ */
 productRoute.route('/:category').get((req, res) => {
-    let Model;
-    switch (req.params.category) {
-        case 'breads':
-            Model = Breads;
-            break;
-        case 'chicken':
-            Model = Chicken;
-            break;
-        case 'desserts':
-            Model = Desserts;
-            break;
-        case 'drinks':
-            Model = Drinks;
-            break;
-        case 'extras':
-            Model = Extras;
-            break;
-        case 'pasta':
-            Model = Pasta;
-            break;
-        case 'pizzas':
-            Model = Pizzas;
-            break;
-        case 'salads':
-            Model = Salads;
-            break;
-        case 'sandwiches':
-            Model = Sandwiches;
-            break;
-        default:
-            Model = Product;
-            break;
-    }
+    let model = modelFinder(req.params.category);
 
-    Model.find((error, data) => {
+    model.find((error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -55,5 +28,53 @@ productRoute.route('/:category').get((req, res) => {
         }
     })
 })
+
+/**
+ * get an individual products in a category based on its id
+ * 
+ * @param  {id} id of the product
+ * @param  {category} name of the category
+ */
+productRoute.route('/:id/:category').get((req, res) => {
+    let model = modelFinder(req.params.category);
+
+    model.findById(req.params.id, (error, data) => {
+        if(error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+})
+
+/**
+ * finds the model based on the url parameter
+ * 
+ * @param  {model} name of the model
+ */
+function modelFinder(model) {
+    switch (model) {
+        case 'breads':
+            return Breads;
+        case 'chicken':
+            return Chicken;
+        case 'desserts':
+            return Desserts;
+        case 'drinks':
+            return Drinks;
+        case 'extras':
+            return Extras;
+        case 'pasta':
+            return Pasta;
+        case 'pizzas':
+            return Pizzas;
+        case 'salads':
+            return Salads;
+        case 'sandwiches':
+            return Sandwiches;
+        default:
+            return Product;
+    }
+}
 
 module.exports = productRoute;
