@@ -1,2 +1,11 @@
-<p>cart works!</p>
-<p>open console window!</p>
+<div class="cartContainer">
+    <div *ngFor="let cartedProduct of cartedProductData">
+        <p>{{cartedProduct.productTitle}}</p>
+        <p>{{cartedProduct.productDescription}}</p>
+        <img [src]="cartedProduct.productImage">
+        <p>{{cartedProduct.productIsSpicy}}</p>
+        <p>{{cartedProduct.productIsVegetarian}}</p>
+        <p>{{cartedProduct.productPrice}}</p>
+        <hr>
+    </div>
+</div>

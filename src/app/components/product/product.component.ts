@@ -2,7 +2,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Product } from './../../services/productService/product';
 import { ProductService } from './../../services/productService/product.service';
 
 @Component({
@@ -11,25 +10,38 @@ import { ProductService } from './../../services/productService/product.service'
     styleUrls: ['./product.component.css']
 })
 
+/**
+ * product component
+ */
 export class ProductComponent implements OnInit {
     productData: any = [];
 
+    // product constructor
     constructor(private activeRoute: ActivatedRoute, private dialog: MatDialog, private productApi: ProductService) { }
 
+    // product ngOnInit
     ngOnInit() {
         this.activeRoute.params.subscribe(routeParams => {
-            this.getProduct();
+            this.getProducts();
         });
     }
 
-    private getProduct = () => {
+    /**
+     * gets the products data from the service for a category
+     */
+    private getProducts = () => {
         const catName = this.activeRoute.snapshot.paramMap.get('categoryId').substr(this.activeRoute.snapshot.paramMap.get('categoryId').lastIndexOf('-') + 1);
 
-        this.productApi.getProduct(catName).subscribe(data => {
+        this.productApi.getProducts(catName).subscribe(data => {
             this.productData = data;
         })
     }
 
+    /**
+     * product on the products page can added to cart
+     * 
+     * @param  {productId} id of the product added to the cart
+     */
     private addToCart = (productId) => {
         const catName = this.activeRoute.snapshot.paramMap.get('categoryId').substr(this.activeRoute.snapshot.paramMap.get('categoryId').lastIndexOf('-') + 1);
         const products = [];
@@ -63,6 +75,11 @@ export class ProductComponent implements OnInit {
         }
     }
 
+    /**
+     * product added to the cart, modal is displayed with product details
+     * 
+     * @param  {product} product added to the cart
+     */
     private openProductAddedToCartDialog = (product) => {
         this.dialog.open(ProductAddedToCartDialog, {
             data: {
@@ -86,6 +103,9 @@ export interface DialogData {
     styleUrls: ['./product.added.to.cart.dialog/product-added-to-cart-dialog.css']
 })
 
+/**
+ * product added to cart dialog
+ */
 export class ProductAddedToCartDialog {
     constructor(@Inject(MAT_DIALOG_DATA) private data: DialogData) {}
 }
