@@ -1,11 +1,44 @@
 <div class="cartContainer">
-    <div *ngFor="let cartedProduct of cartedProductData">
-        <p>{{cartedProduct.productTitle}}</p>
-        <p>{{cartedProduct.productDescription}}</p>
-        <img [src]="cartedProduct.productImage">
-        <p>{{cartedProduct.productIsSpicy}}</p>
-        <p>{{cartedProduct.productIsVegetarian}}</p>
-        <p>{{cartedProduct.productPrice}}</p>
-        <hr>
-    </div>
+    <mat-card>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>
+                        <mat-card-title>
+                            Product
+                        </mat-card-title>
+                    </td>
+                    <td>
+                        <mat-card-title>
+                            Quantity
+                        </mat-card-title>
+                    </td>
+                    <td>
+                        <mat-card-title>
+                            Edit
+                        </mat-card-title>
+                    </td>
+                    <td>
+                        <mat-card-title>
+                            Price
+                        </mat-card-title>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartedProduct of cartedProductData">
+                    <td>{{cartedProduct.productTitle}}</td>
+                    <td>This will be quantity</td>
+                    <td>Edit button</td>
+                    <td>Final price</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>Total price, decimal 2 places</td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
 </div>
