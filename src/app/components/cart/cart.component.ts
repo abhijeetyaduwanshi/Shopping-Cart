@@ -12,7 +12,10 @@ import { ProductService } from './../../services/productService/product.service'
  * cart component
  */
 export class CartComponent implements OnInit {
-    cartedProductData: any = [];
+
+    // cart page variables
+    private cartedProductData: any = [];
+    private cartTotal: number = 0;
 
     // cart constructor
     constructor(private productApi: ProductService) { }
@@ -31,7 +34,7 @@ export class CartComponent implements OnInit {
 
         if (cartedProducts.length > 0) {
             for (let i = 0; i < cartedProducts.length; i++) {
-                this.populateCart(cartedProducts[i])
+                this.populateCart(cartedProducts[i]);
             }
         }
     }
@@ -44,8 +47,14 @@ export class CartComponent implements OnInit {
      * @param  {cartedProduct} product carted by the customers
      */
     private populateCart = (cartedProduct) => {
+        let productCalculatedPrice: number;
+        let productQuantity: number;
+
         this.productApi.getProduct(cartedProduct.productId, cartedProduct.type).subscribe(data => {
+            data.productCalculatedPrice = data.productPrice * cartedProduct.count;
+            data.productQuantity = cartedProduct.count;
             this.cartedProductData.push(data);
+            this.cartTotal += parseFloat(data.productCalculatedPrice);
         })
     }
 }
