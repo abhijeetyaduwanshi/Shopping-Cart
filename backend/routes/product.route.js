@@ -31,18 +31,23 @@ productRoute.route('/:category').get((req, res) => {
 
 /**
  * get an individual products in a category based on its id
+ * and returns only product title, product image and product price
  * 
  * @param  {id} id of the product
  * @param  {category} name of the category
  */
 productRoute.route('/:id/:category').get((req, res) => {
     let model = modelFinder(req.params.category);
+    let returningData = {};
 
     model.findById(req.params.id, (error, data) => {
         if(error) {
             return next(error)
         } else {
-            res.json(data)
+            returningData.productTitle = data.productTitle
+            returningData.productPrice = data.productPrice
+            returningData.productImage = data.productImage
+            res.json(returningData)
         }
     })
 })
