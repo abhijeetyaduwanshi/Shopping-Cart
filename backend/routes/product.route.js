@@ -44,6 +44,7 @@ productRoute.route('/:id/:category').get((req, res) => {
         if(error) {
             return next(error)
         } else {
+            returningData._id = data._id
             returningData.productTitle = data.productTitle
             returningData.productPrice = data.productPrice
             returningData.productImage = data.productImage
