@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
      * 
      * @param  {cartedProduct} product carted by the customers
      */
-    private populateCart = (cartedProduct: string) => {
+    private populateCart = (cartedProduct) => {
         let returningData: any = [];
 
         this.productApi.getProduct(cartedProduct.productId, cartedProduct.type).subscribe(data => {
@@ -68,7 +68,14 @@ export class CartComponent implements OnInit {
      * 
      * @param  {string} productId, id of the product to be removed from cart
      */
-    private removeFromCart = (productId: string) => {
-        console.log(productId);
+    private removeFromCart = (cartedProduct) => {
+        let cartedProducts = JSON.parse(localStorage.getItem("cartedProducts")) || [];
+        let index = this.cartedProductData.indexOf(cartedProduct);
+
+        if (index >= 0) {
+            this.cartedProductData.splice(index, 1);
+            cartedProducts.splice(index, 1);
+        }
+        localStorage.setItem("cartedProducts", JSON.stringify(cartedProducts));
     }
 }
