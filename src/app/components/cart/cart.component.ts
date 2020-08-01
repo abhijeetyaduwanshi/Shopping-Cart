@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
 
     // cart page variables
     private cartedProductData: any = [];
+    private cartData: any = [];
     private cartTotal: number = 0;
 
     // cart constructor
@@ -47,14 +48,18 @@ export class CartComponent implements OnInit {
      * @param  {cartedProduct} product carted by the customers
      */
     private populateCart = (cartedProduct) => {
-        let productCalculatedPrice: number;
-        let productQuantity: number;
+        let returningData: any = [];
 
         this.productApi.getProduct(cartedProduct.productId, cartedProduct.type).subscribe(data => {
-            data.productCalculatedPrice = data.productPrice * cartedProduct.count;
-            data.productQuantity = cartedProduct.count;
-            this.cartedProductData.push(data);
-            this.cartTotal += parseFloat(data.productCalculatedPrice);
+            this.cartData = data;
+            returningData._id = this.cartData._id;
+            returningData.productTitle = this.cartData.productTitle;
+            returningData.productImage = this.cartData.productImage;
+            returningData.productPrice = this.cartData.productPrice;
+            returningData.productQuantity = cartedProduct.count;
+            returningData.productCalculatedPrice = this.cartData.productPrice * cartedProduct.count;
+            this.cartedProductData.push(returningData);
+            this.cartTotal += parseFloat(returningData.productCalculatedPrice);
         })
     }
 }
