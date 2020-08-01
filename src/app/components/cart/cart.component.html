@@ -27,16 +27,26 @@
             </thead>
             <tbody>
                 <tr *ngFor="let cartedProduct of cartedProductData">
-                    <td>{{cartedProduct.productTitle}}</td>
-                    <td>This will be quantity</td>
+                    <td class="productImageAndTitle">
+                        <span class="productImageContainer">
+                            <img [src]="cartedProduct.productImage">
+                        </span>
+                        <span class="productTitle">
+                            {{cartedProduct.productTitle}}
+                            <div class="productCalorieCount">
+                                Calories: calorie count
+                            </div>
+                        </span>
+                    </td>
+                    <td>{{cartedProduct.productQuantity}} X ${{cartedProduct.productPrice}}</td>
                     <td>Edit button</td>
-                    <td>Final price</td>
+                    <td>${{cartedProduct.productCalculatedPrice}}</td>
                 </tr>
                 <tr>
                     <td>Total</td>
                     <td></td>
                     <td></td>
-                    <td>Total price, decimal 2 places</td>
+                    <td>${{cartTotal | number:'1.2-2'}}</td>
                 </tr>
             </tbody>
         </table>
