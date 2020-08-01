@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
      * 
      * @param  {cartedProduct} product carted by the customers
      */
-    private populateCart = (cartedProduct) => {
+    private populateCart = (cartedProduct: string) => {
         let returningData: any = [];
 
         this.productApi.getProduct(cartedProduct.productId, cartedProduct.type).subscribe(data => {
@@ -61,5 +61,14 @@ export class CartComponent implements OnInit {
             this.cartedProductData.push(returningData);
             this.cartTotal += parseFloat(returningData.productCalculatedPrice);
         })
+    }
+
+    /**
+     * remove product from cart
+     * 
+     * @param  {string} productId, id of the product to be removed from cart
+     */
+    private removeFromCart = (productId: string) => {
+        console.log(productId);
     }
 }
