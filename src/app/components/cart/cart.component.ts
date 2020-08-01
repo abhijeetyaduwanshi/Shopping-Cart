@@ -76,6 +76,7 @@ export class CartComponent implements OnInit {
             this.cartedProductData.splice(index, 1);
             cartedProducts.splice(index, 1);
         }
+        this.cartTotal -= parseFloat(cartedProduct.productCalculatedPrice);
         localStorage.setItem("cartedProducts", JSON.stringify(cartedProducts));
     }
 }
