@@ -7,6 +7,18 @@ mat-card {
     border-radius: 0;
 }
 
+.emptyCartContainer {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.cartIcon {
+    font-size: 200px;
+    position: relative;
+    right: 90px
+}
+
 .table {
     width: 60%;
     margin-left: auto;

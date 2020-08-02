@@ -1,5 +1,19 @@
 <div class="cartContainer">
-    <mat-card>
+    <mat-card *ngIf="cartedProductData.length === 0">
+        <div class="emptyCartContainer">
+            <mat-card-title>Your shopping cart is currently empty</mat-card-title>
+            <mat-icon class="cartIcon">shopping_cart</mat-icon>
+            <mat-card-subtitle>Get Shopping!</mat-card-subtitle>
+            <mat-card-subtitle>Discover all the deliciousness.</mat-card-subtitle>
+            <a routerLink="/cat">
+                <button mat-raised-button color="warn">
+                    Shop Now
+                </button>
+            </a>
+        </div>
+    </mat-card>
+
+    <mat-card *ngIf="cartedProductData.length > 0">
         <table class="table">
             <thead>
                 <tr>
