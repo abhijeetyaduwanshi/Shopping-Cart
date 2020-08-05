@@ -1,9 +1,35 @@
-div {
-    background: #ffffff;
-    padding: 10px;
+.navigationItems {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-a {
+li {
+    float: left;
+}
+
+.logo a, li a {
+    display: block;
+    padding: 14px 10px;
+    text-align: center;
     color: inherit;
     text-decoration: none;
+}
+
+.hamburger, .logo {
+    display: block;
+}
+
+.navigationLinksContainer {
+    display: none;
+}
+
+@media (min-width: 1070px) {
+    .hamburger, .logo {
+        display: none;
+    }
+
+    .navigationLinksContainer {
+        display: block;
+    }
 }

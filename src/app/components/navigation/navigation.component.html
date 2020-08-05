@@ -1,9 +1,21 @@
-<div class="navSection">
-    <span *ngFor="let navigation of navigationData">
-        <a [routerLink]="['/cat', navigation.categoryId]">
-            <button mat-button>
-                {{navigation.categoryTitle}}
+<div class="navigationContainer">
+    <mat-toolbar>
+        <div class="hamburger">
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
             </button>
-        </a>
-    </span>
+        </div>
+        <div class="logo">
+            <a routerLink="/cat">Pizza</a>
+        </div>
+        <div class="navigationLinksContainer">
+            <ul class="navigationItems">
+                <li *ngFor="let navigation of navigationData">
+                    <a [routerLink]="['/cat', navigation.categoryId]">
+                        {{navigation.categoryTitle}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar>
 </div>

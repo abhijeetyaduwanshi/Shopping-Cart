@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NgModule } from '@angular/core';
         MatInputModule,
         MatMenuModule,
         MatSidenavModule,
-        MatTabsModule
+        MatTabsModule,
+        MatToolbarModule
     ]
 })
 

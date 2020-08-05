@@ -4,7 +4,7 @@
 
         </mat-sidenav>
         <mat-sidenav-content>
-            <app-navigation></app-navigation>
+            <app-navigation (sidenavToggle)="sidenav.toggle()"></app-navigation>
             <main>
                 <router-outlet></router-outlet>
             </main>

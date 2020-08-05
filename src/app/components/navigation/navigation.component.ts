@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-import { Navigation } from './../../services/navigationService/navigation';
 import { NavigationService } from './../../services/navigationService/navigation.service';
 
 @Component({
@@ -10,7 +9,10 @@ import { NavigationService } from './../../services/navigationService/navigation
 })
 
 export class NavigationComponent implements OnInit {
-    navigationData: any = [];
+
+    @Output() private sidenavToggle = new EventEmitter();
+
+    private navigationData: any = [];
 
     constructor(private navigationApi: NavigationService) { }
 
@@ -22,5 +24,9 @@ export class NavigationComponent implements OnInit {
         this.navigationApi.getNavigation().subscribe(data => {
             this.navigationData = data;
         })
+    }
+
+    private onToggleSidenav = () => {
+        this.sidenavToggle.emit();
     }
 }
