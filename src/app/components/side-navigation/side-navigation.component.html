@@ -1,0 +1,9 @@
+<div class="sideNavigationContainer">
+    <mat-nav-list>
+        <a mat-list-item *ngFor="let navigation of navigationData" [routerLink]="['/cat', navigation.categoryId]" (click)="onSidenavClose()">
+            <span class="sideNavigationItemCaption">
+                {{navigation.categoryTitle}}
+            </span>
+        </a>
+    </mat-nav-list>
+</div>

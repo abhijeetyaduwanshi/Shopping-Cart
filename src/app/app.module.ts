@@ -19,6 +19,7 @@ import { NavigationService } from './services/navigationService/navigation.servi
 import { PopularAmongYourNeighborsComponent } from './components/home/homeComponents/popular-among-your-neighbors/popular-among-your-neighbors.component';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
+import { SideNavigationComponent } from './components/side-navigation/side-navigation.component';
 import { SignInToYourProfileComponent } from './components/home/homeComponents/sign-in-to-your-profile/sign-in-to-your-profile.component';
 import { OrderAgainComponent } from './components/home/homeComponents/order-again/order-again.component';
 
@@ -39,6 +40,7 @@ import { OrderAgainComponent } from './components/home/homeComponents/order-agai
         PopularAmongYourNeighborsComponent,
         ProductAddedToCartDialog,
         ProductComponent,
+        SideNavigationComponent,
         SignInToYourProfileComponent,
         TemporaryDeliveryDialog,
         OrderAgainComponent
