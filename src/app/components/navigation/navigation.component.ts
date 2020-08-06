@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
     @Output() private sidenavToggle = new EventEmitter();
 
-    private navigationData: any = [];
+    public navigationData: any = [];
 
     constructor(private navigationApi: NavigationService) { }
 
