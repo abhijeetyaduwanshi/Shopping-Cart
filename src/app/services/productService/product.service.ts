@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
 })
 
 export class ProductService {
-    endpoint: string = 'http://localhost:8080/api';
+    endpoint = 'http://localhost:8080/api';
     headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     // product service constructor
