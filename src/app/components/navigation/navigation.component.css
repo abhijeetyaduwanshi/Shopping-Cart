@@ -8,8 +8,12 @@ li {
     float: left;
 }
 
-li a.homeIconLink {
-    padding-top: 16px;
+li a.homeIconLink, li a.cartIconLink {
+    padding-top: 14px;
+}
+
+li a.homeIconLink mat-icon, li a.cartIconLink mat-icon {
+    font-size: 30px;
 }
 
 .logo a, li a {
@@ -28,7 +32,7 @@ li a.homeIconLink {
     display: none;
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1155px) {
     .hamburger, .logo {
         display: none;
     }
