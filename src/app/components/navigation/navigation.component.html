@@ -10,6 +10,11 @@
         </div>
         <div class="navigationLinksContainer">
             <ul class="navigationItems">
+                <li>
+                    <a routerLink="/cat" class="homeIconLink">
+                        <mat-icon #tooltip="matTooltip" matTooltip="All categories" matTooltipPosition="below">home</mat-icon>
+                    </a>
+                </li>
                 <li *ngFor="let navigation of navigationData">
                     <a [routerLink]="['/cat', navigation.categoryId]">
                         {{navigation.categoryTitle}}

@@ -8,6 +8,10 @@ li {
     float: left;
 }
 
+li a.homeIconLink {
+    padding-top: 16px;
+}
+
 .logo a, li a {
     display: block;
     padding: 14px 10px;
@@ -24,7 +28,7 @@ li {
     display: none;
 }
 
-@media (min-width: 1070px) {
+@media (min-width: 1120px) {
     .hamburger, .logo {
         display: none;
     }
