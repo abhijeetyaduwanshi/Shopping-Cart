@@ -1,7 +1,7 @@
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { Observable, Subject, throwError } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +10,7 @@ import { throwError } from 'rxjs';
 export class ProductService {
     endpoint = 'http://localhost:8080/api';
     headers = new HttpHeaders().set('Content-Type', 'application/json');
+    cartCount = new Subject();
 
     // product service constructor
     constructor(private http: HttpClient) { }
@@ -56,5 +57,13 @@ export class ProductService {
         }
         console.log(errorMessage);
         return throwError(errorMessage);
+    }
+
+    public addCartCount(count) {
+        this.cartCount.next(count);
+    }
+
+    public getAddedCartCount(): Observable<any> {
+        return this.cartCount.asObservable();
     }
 }
