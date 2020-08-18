@@ -59,7 +59,7 @@ export class ProductService {
         return throwError(errorMessage);
     }
 
-    public addCartCount(count) {
+    public editCartCount(count) {
         this.cartCount.next(count);
     }
 

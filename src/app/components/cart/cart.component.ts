@@ -71,6 +71,7 @@ export class CartComponent implements OnInit {
     private removeFromCart = (cartedProduct) => {
         let cartedProducts = JSON.parse(localStorage.getItem("cartedProducts")) || [];
         let index = this.cartedProductData.indexOf(cartedProduct);
+        let removedProductQuantity = cartedProduct.productQuantity;
 
         if (index >= 0) {
             this.cartedProductData.splice(index, 1);
@@ -78,5 +79,6 @@ export class CartComponent implements OnInit {
         }
         this.cartTotal -= parseFloat(cartedProduct.productCalculatedPrice);
         localStorage.setItem("cartedProducts", JSON.stringify(cartedProducts));
+        this.productApi.editCartCount(-Math.abs(removedProductQuantity));
     }
 }
