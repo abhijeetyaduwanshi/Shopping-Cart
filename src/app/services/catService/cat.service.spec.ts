@@ -1,45 +1,25 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
-
+import { asyncData } from 'src/async-observable-helpers';
 import { CatService } from './cat.service';
+import { getTestCats } from './testing/test-cats'
 
-describe('CatService', () => {
+describe('CatService (with spies)', () => {
+    let httpClientSpy: { get: jasmine.Spy };
     let service: CatService;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [CatService]
-        });
-        service = TestBed.get(CatService);
+        httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+        service = new CatService(httpClientSpy as any);
     });
 
-    it('should be created', () => {
-        expect(service).toBeTruthy();
-    });
+    it('should return expected cats (HttpClient called once)', () => {
+        const expectedCat = getTestCats();
 
-    it('should have getCats function', () => {
-        expect(service.getCats).toBeTruthy();
-    });
+        httpClientSpy.get.and.returnValue(asyncData(expectedCat));
 
-    it('getCats should return cat list', () => {
-        const http = TestBed.get(HttpTestingController);
-
-        const expectedCat = [{
-            "_id": "abcd12345",
-            "categoryTitle": "Some name",
-            "categoryDescription": "Some Description.",
-            "categoryId": "some-id",
-            "categoryRoute": "some/route",
-            "categoryImage": "images/some/image.png"
-        }];
-        let actualCat: any = [];
-
-        service.getCats().subscribe(data => {
-            actualCat = data;
-        });
-
-        http.expectOne('http://localhost:8080/api').flush(expectedCat);
-        expect(actualCat).toEqual(expectedCat);
+        service.getCats().subscribe(
+            cats => expect(cats).toEqual(expectedCat, 'expected cats'),
+            fail
+        );
+        expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
     });
 });
