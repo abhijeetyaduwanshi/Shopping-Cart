@@ -4,19 +4,19 @@
     margin: 0;
 }
 
-li {
+.navigationItems li {
     float: left;
 }
 
-li a.homeIconLink, li a.cartIconLink {
+.navigationItems li a.homeIconLink, .navigationItems li a.cartIconLink {
     padding-top: 14px;
 }
 
-li a.homeIconLink mat-icon, li a.cartIconLink mat-icon {
+.navigationItems li a.homeIconLink mat-icon, .navigationItems li a.cartIconLink mat-icon {
     font-size: 30px;
 }
 
-.logo a, li a {
+.logo a, .navigationItems li a {
     display: block;
     padding: 14px 10px;
     text-align: center;
