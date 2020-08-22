@@ -1,42 +1,25 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
-
+import { asyncData } from 'src/async-observable-helpers';
 import { NavigationService } from './navigation.service';
+import { getTestNavigation } from './testing/test-navigation';
 
-describe('NavigationService', () => {
+describe('NavigationService (with spies)', () => {
+    let httpClientSpy: { get: jasmine.Spy };
     let service: NavigationService;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [NavigationService]
-        });
-        service = TestBed.get(NavigationService);
+        httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+        service = new NavigationService(httpClientSpy as any);
     });
 
-    it('should be created', () => {
-        expect(service).toBeTruthy();
-    });
+    it('should return expected navigation (HttpClient called once)', () => {
+        const expectedNavigation = getTestNavigation();
 
-    it('should have getNavigation function', () => {
-        expect(service.getNavigation).toBeTruthy();
-    });
+        httpClientSpy.get.and.returnValue(asyncData(expectedNavigation));
 
-    it('getNavigation should return navigation list', () => {
-        const http = TestBed.get(HttpTestingController);
-
-        const expectedNavigation = [{
-            "_id": "abcd12345",
-            "categoryTitle": "Some name",
-            "categoryRoute": "some/route"
-        }];
-        let actualNavigation: any = [];
-
-        service.getNavigation().subscribe(data => {
-            actualNavigation = data;
-        });
-
-        http.expectOne('http://localhost:8080/api/navigation').flush(expectedNavigation);
-        expect(actualNavigation).toEqual(expectedNavigation);
+        service.getNavigation().subscribe(
+            navigation => expect(navigation).toEqual(expectedNavigation, 'expected navigation'),
+            fail
+        );
+        expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
     });
 });
