@@ -1,12 +1,21 @@
 <div class="navigationContainer">
     <mat-toolbar>
-        <div class="hamburger">
-            <button mat-icon-button (click)="onToggleSidenav()">
-                <mat-icon>menu</mat-icon>
-            </button>
-        </div>
-        <div class="logo">
-            <a routerLink="/cat">Pizza</a>
+        <div class="navigationHeaderContainer">
+            <div class="navigationHeaderItems">
+                <div class="hamburger">
+                    <button mat-icon-button (click)="onToggleSidenav()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </div>
+                <div class="logo">
+                    <a routerLink="/cat">Pizza</a>
+                </div>
+                <div class="headerCartIcon">
+                    <a routerLink="/cart">
+                        <mat-icon [matBadge]="cartCount" #tooltip="matTooltip" matTooltip="Cart" matTooltipPosition="below">shopping_cart</mat-icon>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="navigationLinksContainer">
             <ul class="navigationItems">
