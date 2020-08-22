@@ -1,62 +1,67 @@
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, throwError } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+
+import { Product } from './product';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class ProductService {
-    endpoint = 'http://localhost:8080/api';
-    headers = new HttpHeaders().set('Content-Type', 'application/json');
+    readonly endpoint = 'http://localhost:8080/api';
     cartCount = new Subject();
 
-    // product service constructor
     constructor(private http: HttpClient) { }
 
     /**
-     * passes the products data for a category
+     * GET products from the server
      * 
      * @param  {catName} category name
      */
-    public getProducts(catName) {
-        let api = `${this.endpoint}/get-products/${catName}`;
-        return this.http.get(api);
+    getProducts(catName) {
+        const api = `${this.endpoint}/get-products/${catName}`;
+        return this.http.get(api)
+        .pipe(
+            catchError(this.handleError('getProducts'))
+        ) as Observable<Product[]>;
     }
 
     /**
-     * passes the product data for a category based on the product id
+     * GET product by id for a category from the server, `undefined` when not found
      * 
      * @param  {id} product id
      * @param  {catName} category name
      */
-    public getProduct(id, catName) {
-        let api = `${this.endpoint}/get-product/${id}/${catName}`;
-        return this.http.get(api, { headers: this.headers })
-            .pipe(map((res: Response) => {
-                return res || {}
-            }),
-        catchError(this.errors)
-        )
+    getProduct(id, catName) {
+        const api = `${this.endpoint}/get-product/${id}/${catName}`;
+        return this.http.get(api)
+            .pipe(map(product => product || {}),
+            catchError(this.handleError<Product>(`getProduct id=${id}`))
+        );
     }
 
     /**
-     * error handling for the service
+     * Returns a function that handles Http operation failures
+     * This error handler lets the app continue to run as if no error occurred
      * 
-     * @param  {HttpErrorResponse} error response
+     * @param  {operation='operation'} name of the operation that failed
      */
-    private errors(error: HttpErrorResponse) {
-        let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
-            // get client-side error
-            errorMessage = error.error.message;
-        } else {
-            // get server-side error
-            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-        }
-        console.log(errorMessage);
-        return throwError(errorMessage);
+    private handleError<T>(operation = 'operation') {
+        return (error: HttpErrorResponse): Observable<T> => {
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+
+            const message = (error.error instanceof ErrorEvent) ? error.error.message : `server returned code ${error.status} with body "${error.error}"`;
+
+            // TODO: better job of transforming error for user consumption
+            throw new Error(`${operation} failed: ${message}`);
+        };
     }
 
     public editCartCount(count) {
