@@ -1,6 +1,6 @@
 import { asyncData } from 'src/async-observable-helpers';
 import { CatService } from './cat.service';
-import { getTestCats } from './testing/test-cats'
+import { getTestCats } from './testing/test-cats';
 
 describe('CatService (with spies)', () => {
     let httpClientSpy: { get: jasmine.Spy };
