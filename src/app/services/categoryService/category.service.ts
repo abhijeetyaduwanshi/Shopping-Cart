@@ -16,7 +16,7 @@ export class CategoryService {
   /**
    * GET all categories
    */
-  getCategories() {
+  getCategories = () => {
     return this.http.get(`${this.corsAnywhere + this.endpoint}`);
   }
 }

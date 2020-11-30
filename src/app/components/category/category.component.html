@@ -1,12 +1,12 @@
 <div class="categoryContainer">
-    <mat-card class="categoryCard">
-        <a class="categoryLink" routerLink="#">
+    <mat-card class="categoryCard" *ngFor="let category of categoryData">
+        <a class="categoryLink" [routerLink]="['/category', category.categoryTitle]">
             <div class="categoryImage">
-                <img alt="testCategory" src="assets/images/categoryImages/Pizzas.png">
+                <img [alt]="category.categoryTitle" src="assets/images/categoryImages/{{category.categoryTitle}}.png">
             </div>
             <div class="categoryDetails">
-                <mat-card-title class="categoryTitle">Test Category Name</mat-card-title>
-                <mat-card-subtitle class="categoryDescription">Test Category Description</mat-card-subtitle>
+                <mat-card-title class="categoryTitle">{{category.categoryTitle}}</mat-card-title>
+                <mat-card-subtitle class="categoryDescription">{{category.categoryDescription}}</mat-card-subtitle>
             </div>
         </a>
     </mat-card>
