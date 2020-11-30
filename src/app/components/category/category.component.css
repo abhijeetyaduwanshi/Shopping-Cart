@@ -1,0 +1,21 @@
+.categoryContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.categoryCard {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+}
+
+.categoryLink {
+    text-decoration: none;
+    color: inherit;
+}
+
+.categoryImage {
+    float: left;
+}
