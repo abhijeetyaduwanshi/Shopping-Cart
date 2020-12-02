@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   bootstrap: [
@@ -15,7 +16,8 @@ import { CategoryService } from './services/categoryService/category.service';
   ],
   declarations: [
     AppComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProductComponent
   ],
   imports: [
     AngularMaterialModule,
