@@ -11,6 +11,7 @@ import { ProductService } from './../../services/productService/product.service'
 
 export class ProductComponent implements OnInit {
   productData: any = [];
+  categoryTitle = "";
 
   constructor(private activatedRoute: ActivatedRoute, private productApi: ProductService) { }
 
@@ -27,6 +28,7 @@ export class ProductComponent implements OnInit {
    * @param  {any} categoryTitle
    */
   getProducts = (categoryTitle: any) => {
+    this.categoryTitle = categoryTitle;
     this.productApi.getProducts(categoryTitle).subscribe(data => {
       this.productData = data;
     })

@@ -1,1 +1,19 @@
-<p>product works!</p>
+<div class="productContainer">
+    <mat-card class="productCard" *ngFor="let product of productData">
+        <div class="productImage">
+            <img [alt]="product.productTitle" src="assets/images/productsImages/{{categoryTitle}}/{{product.productTitle}}.jpg">
+        </div>
+        <button mat-raised-button color="warn" class="productAddToCartButton">Order for ${{product.productPrice}}</button>
+        <div class="productDetails">
+            <mat-card-title class="productTitle">{{product.productTitle}}</mat-card-title>
+            <mat-card-subtitle class="productDescription">{{product.productDescription}}</mat-card-subtitle>
+            <br>
+            <span class="productPill vegetarian" *ngIf="product.productIsVegetarian === 'true'">Vegetarian</span>
+            <span class="productPill nonVegetarian" *ngIf="product.productIsVegetarian === 'false'">Non Vegetarian</span>
+            <span class="productPill sweet" *ngIf="product.productIsSpicy === 'sweet'">Sweet</span>
+            <span class="productPill mildSpicy" *ngIf="product.productIsSpicy === 'mild'">Mild Spicy</span>
+            <span class="productPill mediumSpicy" *ngIf="product.productIsSpicy === 'medium'">Medium Spicy</span>
+            <span class="productPill spicyHot" *ngIf="product.productIsSpicy === 'hot'">Spicy Hot</span>
+        </div>
+    </mat-card>
+</div>

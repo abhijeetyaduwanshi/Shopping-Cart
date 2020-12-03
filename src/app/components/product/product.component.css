@@ -1,0 +1,76 @@
+.productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.productCard {
+    width: 300px;
+    height: auto;
+    margin: 10px 5px;
+    padding: 10px;
+}
+
+.productImage {
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.productImage img {
+    width: 90%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.productAddToCartButton {
+    width: 100%;
+    height: 38px;
+    margin: 10px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.productPill {
+    font-size: 14px;
+    padding: 5px;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+}
+
+.vegetarian {
+    color: #fff;
+    background-color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.nonVegetarian {
+    color: #fff;
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.sweet {
+    color: #fff;
+    background-color: hotpink;
+    border: 1px solid hotpink;
+}
+
+.mildSpicy {
+    color: #fff;
+    background-color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+
+.mediumSpicy {
+    color: #fff;
+    background-color: darkorange;
+    border: 1px solid darkorange;
+}
+
+.spicyHot {
+    color: #fff;
+    background-color: darkred;
+    border: 1px solid darkred;
+}
