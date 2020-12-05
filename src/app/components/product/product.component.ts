@@ -17,20 +17,54 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
-      const categoryTitle = params.get("categoryTitle");
-      this.getProducts(categoryTitle);
+      this.categoryTitle = params.get("categoryTitle");
+      this.getProducts();
     })
   }
 
   /**
    * GET all products
-   * 
-   * @param  {any} categoryTitle
    */
-  getProducts = (categoryTitle: any) => {
-    this.categoryTitle = categoryTitle;
-    this.productApi.getProducts(categoryTitle).subscribe(data => {
+  getProducts = () => {
+    this.productApi.getProducts(this.categoryTitle).subscribe(data => {
       this.productData = data;
     })
+  }
+
+  /**
+   * Product add to cart
+   * 
+   * @param  {any} productId
+   */
+  productAddToCart = (productId: any) => {
+    const productAddingToCart = [];
+    let isReturningProduct = false;
+
+    const productAddingToCartDetails = {
+      productId: productId,
+      type: this.categoryTitle,
+      count: 1
+    };
+
+    productAddingToCart.push(productAddingToCartDetails);
+
+    if (JSON.parse(localStorage.getItem('cartedProducts')) == null) {
+      localStorage.setItem('cartedProducts', JSON.stringify(productAddingToCart));
+    } else {
+      const cartedProducts = JSON.parse(localStorage.getItem('cartedProducts'));
+      for (let i = 0; i < cartedProducts.length; i++) {
+        if (cartedProducts[i].productId === productAddingToCartDetails.productId) {
+          cartedProducts[i].count++;
+          isReturningProduct = true;
+          break;
+        }
+      }
+
+      if (!isReturningProduct) {
+        cartedProducts.push(productAddingToCartDetails);
+      }
+
+      localStorage.setItem('cartedProducts', JSON.stringify(cartedProducts));
+    }
   }
 }

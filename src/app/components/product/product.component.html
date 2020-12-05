@@ -3,7 +3,7 @@
         <div class="productImage">
             <img [alt]="product.productTitle" src="assets/images/productsImages/{{categoryTitle}}/{{product.productTitle}}.jpg">
         </div>
-        <button mat-raised-button color="warn" class="productAddToCartButton">Order for ${{product.productPrice}}</button>
+        <button mat-raised-button color="warn" class="productAddToCartButton" (click)="productAddToCart(product._id)">Order for ${{product.productPrice}}</button>
         <div class="productDetails">
             <mat-card-title class="productTitle">{{product.productTitle}}</mat-card-title>
             <mat-card-subtitle class="productDescription">{{product.productDescription}}</mat-card-subtitle>
