@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
+import { NavigationService } from './services/navigationService/navigation.service';
 import { ProductComponent } from './components/product/product.component';
+import { ProductService } from './services/productService/product.service';
 
 @NgModule({
   bootstrap: [
@@ -27,7 +29,9 @@ import { ProductComponent } from './components/product/product.component';
     HttpClientModule
   ],
   providers: [
-    CategoryService
+    CategoryService,
+    NavigationService,
+    ProductService
   ]
 })
 
