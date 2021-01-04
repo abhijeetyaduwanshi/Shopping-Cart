@@ -11,6 +11,7 @@ import { CategoryService } from './services/categoryService/category.service';
 import { NavigationService } from './services/navigationService/navigation.service';
 import { ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
+import { TopNavigationComponent } from './components/navigation/top-navigation/top-navigation.component';
 
 @NgModule({
   bootstrap: [
@@ -19,7 +20,8 @@ import { ProductService } from './services/productService/product.service';
   declarations: [
     AppComponent,
     CategoryComponent,
-    ProductComponent
+    ProductComponent,
+    TopNavigationComponent
   ],
   imports: [
     AngularMaterialModule,
