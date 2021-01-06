@@ -11,13 +11,11 @@ import { ProductService } from './../../services/productService/product.service'
 
 export class ProductComponent implements OnInit {
   productData: any = [];
-  categoryTitle = "";
 
   constructor(private activatedRoute: ActivatedRoute, private productApi: ProductService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(params => {
-      this.categoryTitle = params.get("categoryTitle");
+    this.activatedRoute.params.subscribe(params => {
       this.getProducts();
     })
   }
@@ -26,7 +24,9 @@ export class ProductComponent implements OnInit {
    * GET all products
    */
   getProducts = () => {
-    this.productApi.getProducts(this.categoryTitle).subscribe(data => {
+    const categoryTitle = this.activatedRoute.snapshot.paramMap.get("categoryTitle");
+
+    this.productApi.getProducts(categoryTitle).subscribe(data => {
       this.productData = data;
     })
   }
@@ -37,12 +37,13 @@ export class ProductComponent implements OnInit {
    * @param  {any} productId
    */
   productAddToCart = (productId: any) => {
+    const categoryTitle = this.activatedRoute.snapshot.paramMap.get("categoryTitle");
     const productAddingToCart = [];
     let isReturningProduct = false;
 
     const productAddingToCartDetails = {
       productId: productId,
-      type: this.categoryTitle,
+      type: categoryTitle,
       count: 1
     };
 
