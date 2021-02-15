@@ -1,0 +1,18 @@
+.cartCard {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+}
+
+.emptyCartContainer {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.cartIcon {
+    font-size: 200px;
+    position: relative;
+    right: 90px
+}
