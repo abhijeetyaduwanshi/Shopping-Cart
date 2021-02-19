@@ -16,3 +16,32 @@
     position: relative;
     right: 90px
 }
+
+.cartTable {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.cartedProductTitleAndImage {
+    display: flex;
+    align-items:center;
+}
+
+.cartedProductImageContainer {
+    width: 100px;
+    min-width: 100px;
+}
+
+img {
+    width: 100%;
+}
+
+.cartedProductTitleContainer {
+    padding: 0 0 0 10px;
+}
+
+.cartTotal {
+    border-top: 1px solid black;
+}

@@ -14,6 +14,40 @@
     </mat-card>
 
     <mat-card class="cartCard" *ngIf="cartedProducts.length > 0">
-        <p>Not empty</p>
+        <table class="cartTable">
+            <thead>
+                <tr>
+                    <td><mat-card-title>Product</mat-card-title></td>
+                    <td><mat-card-title>Quantity</mat-card-title></td>
+                    <td><mat-card-title>Options</mat-card-title></td>
+                    <td><mat-card-title>Price</mat-card-title></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartedProduct of cartedProductData">
+                    <td class="cartedProductTitleAndImage">
+                        <span class="cartedProductImageContainer">
+                            <img src="assets/images/productsImages/{{cartedProduct.parentCategoryTitle}}/{{cartedProduct.productTitle}}.jpg">
+                        </span>
+                        <span class="cartedProductTitleContainer">
+                            {{cartedProduct.productTitle}}
+                        </span>
+                    </td>
+                    <td>{{cartedProduct.productQuantity}} X ${{cartedProduct.productPrice}}</td>
+                    <td>
+                        <button mat-raised-button color="warn" (click)="removeFromCart(cartedProduct)">
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                    </td>
+                    <td>${{cartedProduct.productCalculatedPrice}}</td>
+                </tr>
+                <tr class="cartTotal">
+                    <td><b>Total</b></td>
+                    <td></td>
+                    <td></td>
+                    <td>${{cartTotal | number:'1.2-2'}}</td>
+                </tr>
+            </tbody>
+        </table>
     </mat-card>
 </div>
