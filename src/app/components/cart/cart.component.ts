@@ -35,4 +35,31 @@ export class CartComponent implements OnInit {
       }
     }
   }
+
+  /**
+   * Removes product from cart
+   * 
+   * @param  {any} cartedProduct
+   */
+  removeFromCart = (cartedProduct: any) => {
+    let cartedProductDataIndex = this.cartedProductData.indexOf(cartedProduct);
+
+    if (cartedProductDataIndex >= 0) {
+      this.cartedProductData.splice(cartedProductDataIndex, 1);
+    } else {
+      return;
+    }
+
+    for (let i = 0; i < this.cartedProducts.length; i++) {
+      let product = this.cartedProducts[i];
+      if (product.productId === cartedProduct._id) {
+        let productIndex = this.cartedProducts.indexOf(product);
+        this.cartedProducts.splice(productIndex, 1);
+        break;
+      }
+    }
+
+    this.cartTotal -= parseFloat(cartedProduct.productCalculatedPrice);
+    localStorage.setItem("cartedProducts", JSON.stringify(this.cartedProducts));
+  }
 }
