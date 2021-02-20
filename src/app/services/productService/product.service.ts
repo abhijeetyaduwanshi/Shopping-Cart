@@ -21,4 +21,14 @@ export class ProductService {
   getProducts = (categoryTitle: string) => {
     return this.http.get(`${this.corsAnywhere + this.endpoint + "/" + categoryTitle}`);
   }
+
+  /**
+   * GET single product
+   * 
+   * @param  {string} categoryTitle
+   * @param  {string} id
+   */
+  getProduct = (categoryTitle: string, id: string) => {
+    return this.http.get(`${this.corsAnywhere + this.endpoint + "/" + categoryTitle + "/" + id}`);
+  }
 }
