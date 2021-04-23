@@ -1,5 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { ProductService } from './../../services/productService/product.service';
 
@@ -12,7 +13,7 @@ import { ProductService } from './../../services/productService/product.service'
 export class ProductComponent implements OnInit {
   productData: any = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private productApi: ProductService) { }
+  constructor(private activatedRoute: ActivatedRoute, private dialog: MatDialog, private productApi: ProductService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -68,4 +69,31 @@ export class ProductComponent implements OnInit {
       localStorage.setItem('cartedProducts', JSON.stringify(cartedProducts));
     }
   }
+
+  /**
+   * Open product added to cart dialog
+   * 
+   * @param  {any} product
+   */
+  openProductAddedToCartDialog = (product: any) => {
+    this.dialog.open(ProductAddedToCartDialog, {
+      data: {
+        product
+      }
+    });
+  }
+}
+
+export interface DialogData {
+  product: any;
+}
+
+@Component({
+  selector: 'app-product-added-to-cart-dialog',
+  templateUrl: './product.added.to.cart.dialog/product-added-to-cart-dialog.html',
+  styleUrls: ['./product.added.to.cart.dialog/product-added-to-cart-dialog.css']
+})
+
+export class ProductAddedToCartDialog {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }

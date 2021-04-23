@@ -1,0 +1,23 @@
+<div mat-dialog-content class="productAddedToCartDialogContainer">
+    <div class="productImageContainer">
+        <img [alt]="data.product.productTitle" src="assets/images/productsImages/{{data.product.parentCategoryTitle}}/{{data.product.productTitle}}.jpg">
+    </div>
+    <div class="productTitleContainer">
+        <span class="productTitle">
+            {{data.product.productTitle}}
+        </span>
+        added to cart!
+    </div>
+    <p class="productFeaturesContainer">
+        <span class="productPill vegetarian" *ngIf="data.product.productIsVegetarian === 'true'">Vegetarian</span>
+        <span class="productPill nonVegetarian" *ngIf="data.product.productIsVegetarian === 'false'">Non Vegetarian</span>
+        <span class="productPill sweet" *ngIf="data.product.productIsSpicy === 'sweet'">Sweet</span>
+        <span class="productPill mildSpicy" *ngIf="data.product.productIsSpicy === 'mild'">Mild Spicy</span>
+        <span class="productPill mediumSpicy" *ngIf="data.product.productIsSpicy === 'medium'">Medium Spicy</span>
+        <span class="productPill spicyHot" *ngIf="data.product.productIsSpicy === 'hot'">Spicy Hot</span>
+    </p>
+</div>
+<div mat-dialog-actions class="productAddToCartActionsContainer">
+    <button mat-raised-button color="primary" class="productAddToCartButton" [routerLink]="['/cart']" mat-dialog-close>View Cart</button>
+    <button mat-raised-button color="warn" class="continueShoppingButton" mat-dialog-close>Continue Shopping</button>
+</div>

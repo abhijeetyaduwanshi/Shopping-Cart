@@ -10,7 +10,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
 import { NavigationService } from './services/navigationService/navigation.service';
-import { ProductComponent } from './components/product/product.component';
+import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 import { TopNavigationComponent } from './components/navigation/top-navigation/top-navigation.component';
 
@@ -22,8 +22,12 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     AppComponent,
     CartComponent,
     CategoryComponent,
+    ProductAddedToCartDialog,
     ProductComponent,
     TopNavigationComponent
+  ],
+  entryComponents: [
+    ProductAddedToCartDialog
   ],
   imports: [
     AngularMaterialModule,
