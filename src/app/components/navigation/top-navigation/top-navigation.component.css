@@ -1,17 +1,64 @@
-.navigationItems {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.navigationMobileHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.navigationItems li {
-    float: left;
+.navigationMobileHamburger,
+.navigationMobileLogo {
+  display: block;
 }
 
-.navigationItems li a {
+.navigationMobileCart {
+  padding: 8px;
+}
+
+.navigationMobileCart a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navigationDesktopHeaderContainer {
+  display: none;
+}
+
+.navigationDesktopItems {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigationDesktopItems li {
+  float: left;
+}
+
+.navigationDesktopHomeLink,
+.navigationDesktopCartLink {
+  padding-top: 14px;
+}
+
+.navigationDesktopHomeLink mat-icon,
+.navigationDesktopCartLink mat-icon {
+  font-size: 30px;
+}
+
+.navigationMobileLogo a,
+.navigationDesktopItems li a {
+  display: block;
+  padding: 14px 10px;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (min-width: 1155px) {
+  .navigationMobileHamburger,
+  .navigationMobileLogo,
+  .navigationMobileCart {
+    display: none;
+  }
+
+  .navigationDesktopHeaderContainer {
     display: block;
-    padding: 14px 10px;
-    text-align: center;
-    color: inherit;
-    text-decoration: none;
+  }
 }

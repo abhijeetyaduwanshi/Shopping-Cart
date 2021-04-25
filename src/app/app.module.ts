@@ -12,6 +12,7 @@ import { CategoryService } from './services/categoryService/category.service';
 import { NavigationService } from './services/navigationService/navigation.service';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
+import { SideNavigationComponent } from './components/navigation/side-navigation/side-navigation.component';
 import { TopNavigationComponent } from './components/navigation/top-navigation/top-navigation.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     CategoryComponent,
     ProductAddedToCartDialog,
     ProductComponent,
+    SideNavigationComponent,
     TopNavigationComponent
   ],
   entryComponents: [
