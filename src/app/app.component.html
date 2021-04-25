@@ -1,8 +1,13 @@
 <div class="application">
-  <nav>
-    <app-top-navigation></app-top-navigation>
-  </nav>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <app-side-navigation (sidenavClose)="sidenav.close()"></app-side-navigation>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-top-navigation (sidenavToggle)="sidenav.toggle()"></app-top-navigation>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

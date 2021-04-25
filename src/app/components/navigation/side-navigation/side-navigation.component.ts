@@ -3,14 +3,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NavigationService } from './../../../services/navigationService/navigation.service';
 
 @Component({
-  selector: 'app-top-navigation',
-  templateUrl: './top-navigation.component.html',
-  styleUrls: ['./top-navigation.component.css']
+  selector: 'app-side-navigation',
+  templateUrl: './side-navigation.component.html',
+  styleUrls: ['./side-navigation.component.css']
 })
 
-export class TopNavigationComponent implements OnInit {
+export class SideNavigationComponent implements OnInit {
 
-  @Output() private sidenavToggle = new EventEmitter();
+  @Output() private sidenavClose = new EventEmitter();
 
   navigationData: any = [];
 
@@ -25,14 +25,14 @@ export class TopNavigationComponent implements OnInit {
    */
   getNavigation = () => {
     this.navigationApi.getNavigation().subscribe(data => {
-      this.navigationData = data;
+        this.navigationData = data;
     })
   }
 
   /**
-   * Toggle side navigation
+   * Close side navigation
    */
-  onToggleSidenav = () => {
-    this.sidenavToggle.emit();
+  onSidenavClose = () => {
+    this.sidenavClose.emit();
   }
 }
