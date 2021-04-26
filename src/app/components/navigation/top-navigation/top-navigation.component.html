@@ -6,14 +6,16 @@
                     <mat-icon>menu</mat-icon>
                 </button>
             </div>
-            <!-- <div class="navigationMobileLogo">
-                <a routerLink="/">Pizza</a>
+            <div class="navigationMobileLogo">
+                <a routerLink="/">
+                    <mat-icon>local_pizza</mat-icon>
+                </a>
             </div>
             <div class="navigationMobileCart">
                 <a routerLink="/cart">
                     <mat-icon [matBadge]="cartCount" #tooltip="matTooltip" matTooltip="Cart" matTooltipPosition="below">shopping_cart</mat-icon>
                 </a>
-            </div> -->
+            </div>
         </div>
         <div class="navigationDesktopHeaderContainer">
             <ul class="navigationDesktopItems">
@@ -27,11 +29,11 @@
                         {{navigation.categoryTitle}}
                     </a>
                 </li>
-                <!-- <li>
+                <li>
                     <a routerLink="/cart" class="navigationDesktopCartLink">
                         <mat-icon [matBadge]="cartCount" #tooltip="matTooltip" matTooltip="Cart" matTooltipPosition="below">shopping_cart</mat-icon>
                     </a>
-                </li> -->
+                </li>
             </ul>
         </div>
     </mat-toolbar>

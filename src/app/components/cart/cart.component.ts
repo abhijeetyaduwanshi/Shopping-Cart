@@ -43,6 +43,7 @@ export class CartComponent implements OnInit {
    */
   removeFromCart = (cartedProduct: any) => {
     let cartedProductDataIndex = this.cartedProductData.indexOf(cartedProduct);
+    let removingCartedProduct = cartedProduct.productQuantity;
 
     if (cartedProductDataIndex >= 0) {
       this.cartedProductData.splice(cartedProductDataIndex, 1);
@@ -61,5 +62,6 @@ export class CartComponent implements OnInit {
 
     this.cartTotal -= parseFloat(cartedProduct.productCalculatedPrice);
     localStorage.setItem("cartedProducts", JSON.stringify(this.cartedProducts));
+    this.productApi.editCartCount(-removingCartedProduct);
   }
 }

@@ -68,6 +68,7 @@ export class ProductComponent implements OnInit {
 
       localStorage.setItem('cartedProducts', JSON.stringify(cartedProducts));
     }
+    this.productApi.editCartCount(1);
   }
 
   /**
