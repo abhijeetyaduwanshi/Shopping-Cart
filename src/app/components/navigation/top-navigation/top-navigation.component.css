@@ -62,3 +62,9 @@
     display: block;
   }
 }
+
+@media (max-width: 1155px) {
+  .navigationMobileHeaderContainer {
+    width: 100%;
+  }
+}
