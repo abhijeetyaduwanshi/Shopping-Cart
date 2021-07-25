@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AngularMaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowseOurMenuComponent } from './components/home/browse-our-menu/browse-our-menu.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
@@ -23,6 +24,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
   ],
   declarations: [
     AppComponent,
+    BrowseOurMenuComponent,
     CartComponent,
     CategoryComponent,
     HomeComponent,
