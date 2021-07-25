@@ -9,7 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
+import { HomeComponent } from './components/home/home.component';
 import { NavigationService } from './services/navigationService/navigation.service';
+import { PopularItemsComponent } from './components/home/popular-items/popular-items.component';
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 import { SideNavigationComponent } from './components/navigation/side-navigation/side-navigation.component';
@@ -23,6 +25,8 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     AppComponent,
     CartComponent,
     CategoryComponent,
+    HomeComponent,
+    PopularItemsComponent,
     ProductAddedToCartDialog,
     ProductComponent,
     SideNavigationComponent,

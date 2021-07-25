@@ -1,0 +1,11 @@
+<div class="popularItemsContainer">
+    <mat-card class="popularItemCard" *ngFor="let product of popularData">
+        <div class="popularItemProductImage">
+            <img [alt]="product.productTitle"
+                src="assets/images/productsImages/{{product.parentCategoryTitle}}/{{product.productTitle}}.jpg">
+        </div>
+        <button mat-raised-button color="warn" class="popularItemAddToCrtBtn">Order for
+            ${{product.productPrice}}</button>
+        <h3 class="popularItemProductTitle">{{product.productTitle}} ${{product.productPrice}}</h3>
+    </mat-card>
+</div>
