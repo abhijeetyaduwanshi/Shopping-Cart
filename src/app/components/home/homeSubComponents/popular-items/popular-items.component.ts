@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProductService } from './../../../services/productService/product.service';
+import { ProductService } from './../../../../services/productService/product.service';
 
 @Component({
   selector: 'app-popular-items',
