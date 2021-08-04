@@ -1,5 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,7 @@ import { BrowseOurMenuComponent } from './components/home/homeSubComponents/brow
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
-import { DeliveryOrPickupComponent } from './components/home/homeSubComponents/delivery-or-pickup/delivery-or-pickup.component';
+import { DeliveryOrPickupComponent, PickupDialog } from './components/home/homeSubComponents/delivery-or-pickup/delivery-or-pickup.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationService } from './services/navigationService/navigation.service';
 import { PopularItemsComponent } from './components/home/homeSubComponents/popular-items/popular-items.component';
@@ -30,6 +31,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     CategoryComponent,
     DeliveryOrPickupComponent,
     HomeComponent,
+    PickupDialog,
     PopularItemsComponent,
     ProductAddedToCartDialog,
     ProductComponent,
@@ -37,6 +39,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     TopNavigationComponent
   ],
   entryComponents: [
+    PickupDialog,
     ProductAddedToCartDialog
   ],
   imports: [
@@ -44,7 +47,9 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     CategoryService,

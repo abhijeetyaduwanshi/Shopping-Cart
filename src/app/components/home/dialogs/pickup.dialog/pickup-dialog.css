@@ -1,0 +1,18 @@
+.pickupDetailsTable {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.pickupDetailsField {
+    width: 100%;
+}
+
+.pickupDetailsButtonTableData {
+    text-align: center;
+}
+
+.pickupDetailsButton {
+    width: 50%;
+    padding: 12px;
+    font-size: 16px;
+}
