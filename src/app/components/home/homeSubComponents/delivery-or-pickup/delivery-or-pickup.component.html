@@ -1,11 +1,11 @@
 <div class="deliveryOrPickupContainer">
-    <div class="deliveryImageContainer">
-        <img alt="deliveryOptionImage" src="assets/images/home/delivery.png">
+    <div class="deliveryContainer">
+        <button mat-raised-button color="primary">Order Delivery</button>
     </div>
-    <div>
-        <mat-card-title>OR</mat-card-title>
+    <div class="pickupContainer">
+        <button mat-raised-button color="primary" (click)="openPickupDialog()">Order Pickup</button>
     </div>
-    <div class="pickupImageContainer">
-        <img alt="pickupOptionImage" src="assets/images/home/pickup.png" (click)="openPickupDialog()">
+    <div class="curbsidePickupContainer">
+        <button mat-raised-button color="primary">Order Curbside Pickup</button>
     </div>
 </div>
