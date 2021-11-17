@@ -14,6 +14,25 @@ export class DeliveryOrPickupComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  openDeliveryDialog = () => {
+    this.dialog.open(DeliveryDialog);
+  }
+
+  openPickupDialog = () => {
+    this.dialog.open(PickupDialog);
+  }
+}
+
+@Component({
+  selector: 'delivery-dialog',
+  templateUrl: './../../dialogs/delivery.dialog/delivery-dialog.html',
+  styleUrls: ['./../../dialogs/delivery.dialog/delivery-dialog.css']
+})
+
+export class DeliveryDialog {
+
+  constructor(private dialog: MatDialog) { }
+
   openPickupDialog = () => {
     this.dialog.open(PickupDialog);
   }
