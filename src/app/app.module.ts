@@ -11,7 +11,7 @@ import { BrowseOurMenuComponent } from './components/home/homeSubComponents/brow
 import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryService } from './services/categoryService/category.service';
-import { DeliveryOrPickupComponent, DeliveryDialog, PickupDialog } from './components/home/homeSubComponents/delivery-or-pickup/delivery-or-pickup.component';
+import { CurbsidePickupDialog, DeliveryOrPickupComponent, DeliveryDialog, PickupDialog } from './components/home/homeSubComponents/delivery-or-pickup/delivery-or-pickup.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationService } from './services/navigationService/navigation.service';
 import { PopularItemsComponent } from './components/home/homeSubComponents/popular-items/popular-items.component';
@@ -29,6 +29,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     BrowseOurMenuComponent,
     CartComponent,
     CategoryComponent,
+    CurbsidePickupDialog,
     DeliveryDialog,
     DeliveryOrPickupComponent,
     HomeComponent,
@@ -40,6 +41,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     TopNavigationComponent
   ],
   entryComponents: [
+    CurbsidePickupDialog,
     DeliveryDialog,
     PickupDialog,
     ProductAddedToCartDialog

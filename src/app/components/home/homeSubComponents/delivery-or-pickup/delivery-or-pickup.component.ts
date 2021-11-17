@@ -14,6 +14,10 @@ export class DeliveryOrPickupComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  openCurbsidePickupDialog = () => {
+    this.dialog.open(CurbsidePickupDialog);
+  }
+
   openDeliveryDialog = () => {
     this.dialog.open(DeliveryDialog);
   }
@@ -22,6 +26,14 @@ export class DeliveryOrPickupComponent implements OnInit {
     this.dialog.open(PickupDialog);
   }
 }
+
+@Component({
+  selector: 'curbside-pickup-dialog',
+  templateUrl: './../../dialogs/curbside.pickup.dialog/curbside-pickup-dialog.html',
+  styleUrls: ['./../../dialogs/curbside.pickup.dialog/curbside-pickup-dialog.css']
+})
+
+export class CurbsidePickupDialog { }
 
 @Component({
   selector: 'delivery-dialog',
