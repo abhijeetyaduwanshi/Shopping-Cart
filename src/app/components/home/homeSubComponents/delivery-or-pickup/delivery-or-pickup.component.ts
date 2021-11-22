@@ -14,14 +14,23 @@ export class DeliveryOrPickupComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  /**
+   * Curbside pickup option dialog
+   */
   openCurbsidePickupDialog = () => {
     this.dialog.open(CurbsidePickupDialog);
   }
 
+  /**
+   * Delivery option dialog
+   */
   openDeliveryDialog = () => {
     this.dialog.open(DeliveryDialog);
   }
 
+  /**
+   * Pickup option dialog
+   */
   openPickupDialog = () => {
     this.dialog.open(PickupDialog);
   }
@@ -45,6 +54,9 @@ export class DeliveryDialog {
 
   constructor(private dialog: MatDialog) { }
 
+  /**
+   * Pickup option dialog
+   */
   openPickupDialog = () => {
     this.dialog.open(PickupDialog);
   }
@@ -75,14 +87,29 @@ export class PickupDialog {
 
   ngOnInit(): void { }
 
+  /**
+   * Pickup dialog first name error message
+   * 
+   * @returns first name error message
+   */
   getPickupDetailsFirstNameErrorMessage = () => {
     return this.pickupDetailsFirstName.hasError('required') ? 'You must enter your first name' : '';
   }
 
+  /**
+   * Pickup dialog last name error message
+   * 
+   * @returns last name error message
+   */
   getPickupDetailsLastNameErrorMessage = () => {
     return this.pickupDetailsLastName.hasError('required') ? 'You must enter your last name' : '';
   }
 
+  /**
+   * Pickup dialog email error message
+   * 
+   * @returns email error message
+   */
   getPickupDetailsEmailErrorMessage = () => {
     if (this.pickupDetailsEmail.hasError('required')) {
       return 'You must enter your email';
@@ -90,6 +117,11 @@ export class PickupDialog {
     return this.pickupDetailsEmail.hasError('email') ? 'Not a valid email' : '';
   }
 
+  /**
+   * Pickup dialog phone error message
+   * 
+   * @returns phone error message
+   */
   getPickupDetailsPhoneErrorMessage = () => {
     if (this.pickupDetailsPhone.hasError('required')) {
       return 'You must enter your phone number';
@@ -97,6 +129,9 @@ export class PickupDialog {
     return this.pickupDetailsPhone.hasError('pattern') ? 'Not a valid phone' : '';
   }
 
+  /**
+   * Pickup dialog form submit
+   */
   onPickupDetailsFormSubmit = () => {
     // TODO: Use EventEmitter with form value
     // TODO: Impliment the form
