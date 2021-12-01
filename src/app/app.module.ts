@@ -18,6 +18,7 @@ import { PopularItemsComponent } from './components/home/homeSubComponents/popul
 import { ProductAddedToCartDialog, ProductComponent } from './components/product/product.component';
 import { ProductService } from './services/productService/product.service';
 import { SideNavigationComponent } from './components/navigation/side-navigation/side-navigation.component';
+import { SignInOrCreateNewAccountComponent } from './components/home/homeSubComponents/signInOrCreateNewAccount/sign-in-or-create-new-account/sign-in-or-create-new-account.component';
 import { TopNavigationComponent } from './components/navigation/top-navigation/top-navigation.component';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { TopNavigationComponent } from './components/navigation/top-navigation/t
     ProductAddedToCartDialog,
     ProductComponent,
     SideNavigationComponent,
+    SignInOrCreateNewAccountComponent,
     TopNavigationComponent
   ],
   entryComponents: [
